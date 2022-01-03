@@ -50,8 +50,8 @@ quote: Shake it, baby! Shake the console and the Joy-Con controllers! Ooh yeeeah
     <tr>
       <td label="Setting value"><span>Auto</span></td>
       <td label="Description"><span>
-        <p>Automatically switches the target to be checked, depending on which controller is connected.</p>
-        <p>See also: <a href="/nodopedia/tips/automatic-controllers">Automatic Switching between Controllers</a></p>
+        <p>Automatically switches the target to be checked, depending on which controller is connected.<br>
+        <br>See also: <a href="/nodopedia/tips/automatic-controllers">Automatic Switching between Controllers</a></p>
       </span></td>
     </tr>
     <tr>

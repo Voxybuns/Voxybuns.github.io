@@ -92,19 +92,6 @@ main > article > div {
     max-width: 960px;
     margin: auto;
 }
-main > article::-webkit-scrollbar {
-    width: 16px;
-  }
-
-main > article::-webkit-scrollbar-track {
-background-color: var(--bg);
-}
-
-main > article::-webkit-scrollbar-thumb {
-background-color: var(--accent);
-border-radius: 10px;
-border: 6px solid var(--bg);
-}
 
 .show_mobile {
     display: none;
@@ -177,6 +164,10 @@ body.dark #sidenav-open > nav > .header {
     background-color: var(--accent);
     border-radius: 10px;
     border: 6px solid var(--bg-light);
+}
+
+#sidenav-open > nav .anchorjs-link {
+    display: none;
 }
 
 #sidenav-button {
@@ -447,6 +438,12 @@ a:any-link.anchorjs-link {
     font-size: 24px;
     font-weight: normal;
 }
+h1:hover > .anchorjs-link, h2:hover > .anchorjs-link {
+    opacity: 50%;
+}
+a:any-link:hover.anchorjs-link {
+    opacity: 100%;
+}
 
 [class^="icon-"], [class*=" icon-"] {
     font-family: 'Custom Icons' !important;
@@ -507,6 +504,8 @@ td > span, td > p {
     display: inline-block;
     padding: 0.6rem 1rem;
     vertical-align: top;
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .text_separate table p {
@@ -590,7 +589,7 @@ table.bgmnumber {
         transition: transform 0.4s cubic-bezier(0.5, 1, 0.89, 1);
     }
     a:any-link.anchorjs-link {
-        opacity: 100%;
+        opacity: 50%;
     }
 }
 
