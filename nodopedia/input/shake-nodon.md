@@ -3,7 +3,7 @@ layout: entry
 title:  "Shake Nodon"
 category: input
 order: 6
-quote: Shake it, baby! Shake the console and the Joy-Con controllers!<br />Ooh yeeeah! I'll let you know just how much you shook!
+quote: Shake it, baby! Shake the console and the Joy-Con controllers! Ooh yeeeah! I'll let you know just how much you shook!
 ---
 <h1>Port</h1>
 <h2>Input</h2>
