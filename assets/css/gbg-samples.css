@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/assets/fonts/MarkPro-Heavy.woff2') format('woff2'),
+        url('/assets/fonts/MarkPro-Heavy.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/assets/fonts/MarkPro-Book.woff2') format('woff2'),
+        url('/assets/fonts/MarkPro-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MarkPro';
+    src: url('/assets/fonts/MarkPro-Bold.woff2') format('woff2'),
+        url('/assets/fonts/MarkPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Switch Controls';
+    src: url('/assets/fonts/switch_buttons.woff2') format('woff2'),
+        url('/assets/fonts/switch_buttons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    --background: #161e4b;
+    --card: #2d335a;
+    --accent: #F9D349;
+    --muted: #7b90b1;
+    --ink: #fefefe;
+    color-scheme: dark;
+}
+html {
+    font-size: 14px;
+    font-family: 'MarkPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url('/assets/img/gbg-samples/pattern.svg');
+    background-size: 64px;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--background);
+    color: var(--ink);
+}
+
+main {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 1fr;
+    margin: auto;
+    max-width: 1200px;
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
+
+header {
+    background-color: var(--accent);
+    color: var(--background);
+    margin-bottom: 2rem;
+}
+header > div {
+    max-width: 1200px;
+    padding: 1rem;
+    margin: auto;
+}
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color:var(--card);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--card);
+    padding: 1rem;
+    padding-bottom: 0;
+    border-radius: 1rem;
+    border: 2px solid #373e6b;
+}
+
+h1,h2,h3 {
+    line-height: 1.1;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: var(--accent);
+}
+h3 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--muted);
+}
+p {
+    line-height: 1.4;
+}
+
+p:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+a:any-link {
+    cursor: pointer;
+    color: var(--accent);
+}
+a:any-link:hover {
+    text-decoration: underline;
+}
+small {
+    font-size: 0.8rem;
+}
+
+.nodon-list {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+}
+
+img.nodon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: -3px;
+}
+
+.icon {
+    font-family: 'Switch Controls';
+}
+
+/* Icons */
+
+.icon-a::after {
+    content: '\e0e0';
+}
+.icon-b::after {
+    content: '\e0e1';
+}
+.icon-x::after {
+    content: '\e0e2';
+}
+.icon-y::after {
+    content: '\e0e3';
+}
+.icon-dpad-up::after {
+    content: '\e0eb';
+}
+.icon-dpad-down::after {
+    content: '\e0ec';
+}
+.icon-dpad-left::after {
+    content: '\e0ed';
+}
+.icon-dpad-right::after {
+    content: '\e0ee';
+}
+.icon-l::after {
+    content: '\e0e4';
+}
+.icon-r::after {
+    content: '\e0e5';
+}
+.icon-sl::after {
+    content: '\e0e8';
+}
+.icon-sr::after {
+    content: '\e0e9';
+}
+.icon-zl::after {
+    content: '\e0e6';
+}
+.icon-zr::after {
+    content: '\e0e7';
+}
+.icon-buttons::after {
+    content: '\e0ea';
+}
+.icon-up::after {
+    content: '\e0ad';
+}
+.icon-down::after {
+    content: '\e0ac';
+}
+.icon-left::after {
+    content: '\e0ae';
+}
+.icon-right::after {
+    content: '\e0ab';
+}
+.icon-stick::after {
+    content: '\e100';
+}
+.icon-stick-press::after {
+    content: '\e103';
+}
+.icon-left-stick::after {
+    content: '\e101';
+}
+.icon-left-stick-press::after {
+    content: '\e104';
+}
+.icon-right-stick::after {
+    content: '\e102';
+}
+.icon-right-stick-press::after {
+    content: '\e105';
+}
+.icon-tilt-controller::after {
+    content: '\E0C8\e12c\e0c9';
+}
+.icon-tilt-switch::after {
+    content: '\E0C8\e121\e0c9';
+}
+.icon-tilt-joycon::after {
+    content: '\E0C8\e127\e0c9';
+}
+
+@media (min-width: 480px) {
+    html {
+        font-size: 20px;
+    }
+    main {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    }
+    header > div {
+        padding: 3rem 1rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+}

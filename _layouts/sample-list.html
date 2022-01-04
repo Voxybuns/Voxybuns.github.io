@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include gbg-samples/head.html %}
+    <body>
+        <header>
+            <div>
+                <h1>Game Builder Garage Samples</h1>
+                <p>Since the release of Game Builder Garage, Nintendo has been publishing sample files, each containing documented examples of code to implement a variety of game mechanics. This is a list of them, which I'll keep updated as new files are published.</p>
+                <p><small>Last updated: Jan 4, 2022</small></p>
+            </div>
+            
+        </header>
+        <main>
+            {% assign sample = site.samples | sort: 'order', 'last' %}
+            {% for item in sample %}
+            <article>
+                <div>
+                    <h2>
+                        <span>{{item.title}}</span>
+                    </h2>
+                    <h3>{{item.code}}</h3>
+                    {{ item.content }}
+                </div>
+                
+                <div class="nodon-list">
+                    {% for nodon in item.nodon %}
+                        <img class="nodon" src="/assets/img/gbg-samples/{{ nodon }}-nodon.webp">
+                    {% endfor %}
+                </div>
+            </article>
+        {% endfor %}
+        </main>
+        <footer>
+            <p>Put together by <a href="twitter.com/voxybuns">Voxy</a>. This website is not affiliated with, or endorsed by Nintendo.</p>
+        </footer>
+    </body>
+</html>
