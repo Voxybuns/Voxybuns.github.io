@@ -140,11 +140,13 @@ p:not(:last-child) {
 
 a:any-link {
     cursor: pointer;
-    color: var(--accent);
-}
-a:any-link:hover {
     text-decoration: underline;
 }
+
+footer a {
+    color: var(--accent);
+}
+
 small {
     font-size: 0.8rem;
 }
