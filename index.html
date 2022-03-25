@@ -1,45 +1,34 @@
+---
+title: Home
+description: Game Builder Garage resources and creations.
+---
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/reset.css">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <title>Voxy's tubular website!</title>
-</head>
+{% include common/head.html %}
 <body>
+    {% include common/navbar.html %}
     <main>
-        <img class="logo" src="/assets/img/logo.svg" alt="Voxy">
-        <section>
-            <article id="about">
-                <h1>Hello!</h1>
-                <p>I'm <strong>Voxy</strong> <small>(he/him)</small>, some guy who likes making stuff. In fact, you'll find some of that stuff on this very website! How exciting!</p>
-            </article>
-            <article id="contact">
-                <h1>Where to find me</h1>
-                <p>You can find me on <a href="https://twitter.com/voxybuns">Twitter</a>, <a href="https://www.youtube.com/c/voxybuns">YouTube</a> and <a href="https://github.com/Voxybuns">GitHub</a>.</p>
-            </article>
-            <article id="projects">
-                <h1>My silly projects</h1>
-                <a href="/nodopedia/" class="card"><div>
-                    <h2>Online Nodopedia</h2>
-                    <p>An online version of Nodopedia, the e-manual of <em>Game Builder Garage</em> for the Nintendo Switch.</p>
-                </div></a>
-                <a href="/gbg-samples/" class="card"><div>
-                    <h2>Game Builder Garage Samples</h2>
-                    <p>A list of all the <em>Game Builder Garage</em> code samples published by Nintendo.</p>
-                </div></a>
-                <a href="/agtd-controller-sprites/" class="card"><div>
-                    <h2>AGTD-Ready Controller Sprites</h2>
-                    <p>A collection of controller sprites for <em>Game Builder Garage</em>, designed to be used with the third-party <em>Automatic Game Builder Garage Texture Drawing</em> tool.</p>
-                </div></a>
-            </article>
+        <section id="hero">
+            <div>
+                <img src="/assets/common/img/logo_hero.svg" alt="Voxy's Rec Room">
+                <h1>Game Builder Garage resources and creations</h1>
+            </div>
+        </section>
+        <section id="main_nav">
+            <h1>Resources</h1>
+            <div class="nav_grid">
+                {% for item in site.data.main_nav %}
+                    <a href="{{ item.url }}" class="button_lg">
+                        <div class="top">
+                            <img class="card_icon" src="/assets/common/img/icon_{{ item.icon }}.png" alt="">
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.description }}</p>
+                        </div>
+                    </a> 
+                {% endfor %}
+            </div>
         </section>
     </main>
+    {% include common/footer.html %}
 </body>
 </html>

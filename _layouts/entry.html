@@ -24,7 +24,7 @@
             <div>
                 <p class="page_title">{{ page.title }}</p>
                 <div class="quote-wrapper {{ page.category }}">
-                    <div class="picture" style="background: url('/assets/img/nodopedia/{{ page.name | remove: ".md" }}.png') center/cover"></div>
+                    <div class="picture" style="background: url('/assets/nodopedia/img/{{ page.name | remove: ".md" }}.png') center/cover"></div>
                     <div class="quote">
                         <p>{{ page.quote }}</p>
                     </div>
@@ -33,7 +33,7 @@
             </div>
         </article>   
     </main>
-    <button class="theme_switch"><span class="icon-theme"></span></button>
+    <button class="theme_switch"><span class="icon-moon"></span></button>
     {% include nodopedia/js.html %}
 </body>
 </html>

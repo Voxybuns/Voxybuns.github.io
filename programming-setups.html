@@ -1,0 +1,42 @@
+---
+title: Programming Set-ups
+redirect_from: /gbg-samples/
+description: Learn to program all kinds of features with this list of programming set-ups created by Nintendo.
+---
+<!DOCTYPE html>
+<html lang="en">
+{% include common/head.html %}
+<body>
+    {% include common/navbar.html %}
+    <main>
+        <section>
+            <div>
+                <h1>Programming Set-ups</h1>
+                <p>Since the release of Game Builder Garage, Nintendo has been putting out weekly "set-ups", small demo games that showcase all kinds of game mechanics and how to program them. Unfortunately, while new set-ups are still being uploaded by Nintendo to this day, they are no longer being shared publicly through the News app. Therefore, I took it upon myself to compile all the set-ups on this webpage to provide easy access to all of them, alongside short descriptions of what they do.</p>
+                <p>Last updated: March 24th, 2022</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <div class="setups_grid">
+                    {% for item in site.data.programming_setups %}
+                        <article class="card">
+                            <div>
+                                <h3>{{ item.name }}</h3>
+                                <h4>{{ item.id }}</h4>
+                                <p>{{ item.description }}</p>
+                            </div>
+                            <div class="setups_nodon">
+                                {% for nodon in item.nodon %}
+                                    <img src="/assets/programming-setups/img/{{ nodon }}-nodon.webp">
+                                {% endfor %}
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </main>
+    {% include common/footer.html %}
+</body>
+</html>

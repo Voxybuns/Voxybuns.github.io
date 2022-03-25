@@ -1,0 +1,266 @@
+- name: Dashing with the B Button
+  id: G 000 M6M 5DL
+  description: How to make the Person Nodon dash when holding down a button.
+  nodon:
+    - button
+    - calculator
+    - person
+- name: Animations
+  id: G 000 V34 H09
+  description: How to animate between multiple textures using a sequence of Timer Nodon.
+  nodon:
+    - timer
+    - texture
+- name: Falling Platforms
+  id: G 000 6HT MRH
+  description: How to make a platform that starts falling the moment it’s stepped on.
+  nodon:
+    - object
+    - slide-connector
+    - person
+- name: Drop the Bomb!
+  id: G 002 RMX 283
+  description: How to give a player the ability to drop bombs that explode after a few seconds.
+  nodon:
+    - teleport-object-entrance
+    - teleport-object-exit
+    - effect
+    - destroy-object
+- name: Heads-Up Display
+  id: G 003 99B 2XN
+  nodon:
+    - number-object
+    - head
+  description: How to display information on screen with the Head Nodon.
+- name: Change Person Image with View
+  id: G 003 4DV PC5
+  description: How to change an object’s texture depending on which angle it’s viewed from.
+  nodon:
+    - angle-sensor
+    - angle-difference
+    - texture
+- name: Health Gauges
+  id: G 006 291 0GD
+  description: How to create a health meter using an Extending-Object Nodon.
+  nodon:
+    - counter
+    - map
+    - extending-object
+- name: Tracking Health
+  id: G 006 0BD FFX
+  description: How to keep track of health points and display them on-screen.
+  nodon:
+    - counter
+    - map
+    - marker-display
+    - texture
+- name: Triggering Person Actions
+  id: G 005 VF7 CDL
+  description: How to trigger different Person Nodon actions without changing its settings.
+  nodon:
+    - button
+    - map
+    - person
+- name: Breaking Off-Screen Objects
+  id: G 005 RGL VDD
+  description: How to detect when an object goes off-screen to destroy it.
+  nodon:
+    - location-sensor
+    - comparison
+    - destroy-object
+- name: Grabbing Objects
+  id: G 005 VFH 639
+  description: How to pick up and carry objects using Teleport-Object Nodon.
+  nodon:
+    - button
+    - teleport-object-entrance
+    - teleport-object-exit
+- name: Moving With Touch Controls
+  id: G 005 XD3 P3Y
+  description: How to grab objects with the touch-screen using the Touch-Position and Teleport-Object Nodon.
+  nodon:
+    - touch-position
+    - free-slide-connector
+    - teleport-object-entrance
+    - teleport-object-exit
+- name: Grabbing Objects With the Hand
+  id: G 006 0BN 849
+  description: How to grab objects with motion controls using the Hand Nodon.
+  nodon:
+    - hand
+    - stick
+    - button
+- name: Moving Objects Freely
+  id: G 006 298 T4Y
+  description: How to make any object move using the Free-Slide-Connector Nodon.
+  nodon:
+    - stick
+    - counter
+    - free-slide-connector
+- name: Kicking a Ball
+  id: G 000 W1M F4N
+  description: How to make the Person Nodon dribble and kick a ball.
+  nodon:
+    - person
+    - attract-object
+    - slide-connector
+- name: Creating Compositions
+  id: G 001 0XV H5N
+  description: How to compose custom music with Marker-Display and Bull’s-Eye Nodon.
+  nodon:
+    - marker-display
+    - bullseye
+    - play-sound
+- name: Interactive Background Music
+  id: G 000 K79 92N
+  description: How to program Background-Music Nodon to react to in-game events.
+  nodon:
+    - background-music
+    - touch-sensor
+- name: Randomly Creating a Platform
+  id: G 000 P4G C3N
+  description: How to create a platform game that generates its own levels using the Random and Launch-Object Nodon.
+  nodon:
+    - random
+    - map
+    - slide-connector
+    - launch-object
+- name: Snipping a Rope
+  id: G 001 3VP Y3N
+  description: How to create a rope you can snip using String-Connector Nodon.
+  nodon:
+    - string-connector
+    - object
+    - destroy-object
+- name: Shape-shifting
+  id: G 005 RG6 F89
+  description: How to transform a Person Nodon into a UFO Nodon and vice-versa using Teleport-Object Nodon.
+  nodon:
+    - person
+    - ufo
+    - teleport-object-entrance
+    - teleport-object-exit
+- name: Dash Panels
+  id: G 006 G03 TF9
+  description: How to create objects that make the Car Nodon dash when driven on.
+  nodon:
+    - car
+    - fancy-object
+    - touch-sensor
+- name: Launching at Random Intervals
+  id: G 006 475 4BT
+  description: How to make a Launch-Object Nodon less predictable using a Random Nodon.
+  nodon:
+    - random
+    - launch-object
+- name: Measuring Distance
+  id: G 004 JBW 02H
+  description: How to calculate the distance between two objects using the Location-Sensor and the Square-Root Nodon.
+  nodon:
+    - location-sensor
+    - calculator
+    - square-root
+- name: Creating a Cursor
+  id: G 004 FF8 WH4
+  description: How to create a cursor that moves along a grid using the Free-Slide-Connector.
+  nodon:
+    - button
+    - counter
+    - free-slide-connector
+- name: Making a Claw Crane
+  id: G 004 HCW DHR
+  description: How to make a claw that can pick up objects using Hinge-Connector Nodon.
+  nodon:
+    - ufo
+    - button
+    - hinge-connector
+- name: Tracking Artillery
+  id: G 005 DPJ CRD
+  description: How to create a cannon that always aims at a character using the Position-to-Angle Nodon.
+  nodon:
+    - location-sensor
+    - position-to-angle
+    - hinge-connector
+- name: Launching a Random Object
+  id: G 005 GN4 XT2
+  description: How to randomly launch different types of objects by combining multiple Launch-Object Nodon.
+  nodon:
+    - random
+    - comparison
+    - launch-object
+- name: Moving in a Circle
+  id: G 005 JLN 14N
+  description: How to make an object move in a circular trajectory.
+  nodon:
+    - counter
+    - angle-to-position
+    - free-slide-connector
+- name: Launching Faster and Faster
+  id: G 005 LK8 J5B
+  description: How to decrease the launch interval of a Launch-Object Nodon over time.
+  nodon:
+    - counter
+    - comparison
+    - launch-object
+- name: Increasing In-Game Difficulty
+  id: G 005 NHW 35N
+  description: How to increase the difficulty of a game based on how many times the player has cleared it.
+  nodon:
+    - swap-game
+    - counter
+- name: Launching in Random Directions
+  id: G 005 RGF L6B
+  description: How to randomize the firing direction of a Launch-Object Nodon after each launch.
+  nodon:
+    - random
+    - hinge-connector
+    - launch-object
+- name: Breaking Targeted Objects
+  id: G 005 6W4 V67
+  description: How to create an aiming system to destroy objects.
+  nodon:
+    - head
+    - touch-sensor
+    - destroy-object
+- name: Move the Camera by Tilting
+  id: G 005 11C 749
+  description: How to create a camera you can move with motion controls.
+  nodon:
+    - tilt
+    - map
+    - camera-direction
+- name: Switching the Camera's Focus
+  id: G 005 2YY R4Y
+  description: How to switch the camera’s focus between different objects.
+  nodon:
+    - camera-target
+    - location-sensor
+    - counter
+- name: Play Music at Random
+  id: G 003 RX1 VTK
+  description: How to create melodies by triggering Play Sound Nodon at random.
+  nodon:
+    - random
+    - marker-display
+    - play-sound
+- name: Transferring the Counter Value
+  id: G 007 7D7 RLH
+  description: How to transfer a number from one Counter Nodon to another.
+  nodon:
+    - counter
+    - calculator
+- name: Angling the Joy-Con to Vibrate
+  id: G 007 F81 CN1
+  description: How to create a vibration-based minigame where the player must hold the Joy-Con at a certain angle to win.
+  nodon:
+    - tilt
+    - angle-difference
+    - vibration
+- name: Programming a Sequence
+  id: G 007 C9D VMH
+  description: How to program a game with a sequence of different events.
+  nodon:
+    - counter
+    - marker-display
+    - bullseye
+    - wormhole-entrance

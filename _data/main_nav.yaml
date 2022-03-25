@@ -1,0 +1,16 @@
+- name: Online Nodopedia
+  url: /nodopedia/
+  description: An online version of Nodopedia, the Game Builder Garage e-manual. Learn the secrets of every Nodon, even when you're on the go!
+  icon: nodopedia
+- name: Programming Set-ups
+  url: /programming-setups/
+  description: Learn to program all kinds of features with this list of programming set-ups created by Nintendo.
+  icon: setups
+- name: Controller Sprites
+  url: /controller-sprites/
+  description: A collection of button and controller sprites, for use with the GBG Texture Tools.
+  icon: controller
+- name: GBG Soundtrack
+  url: https://www.youtube.com/playlist?list=PL4471pK3uzH3IjJLqyGHtr5WnNF6Aclto
+  description: Wanna jam to some Game Builder Garage tunes while programming? Then, this playlist is for you!
+  icon: soundtrack

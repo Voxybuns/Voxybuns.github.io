@@ -13,7 +13,7 @@ order: 2
 <p>The two handles can be moved left or right.<br />The raw input value (for example, the amount that a control stick is tilted) is converted according to the graph shown above the slider and then sent as output.</p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/handles.svg" height="124" class="embedded-image" />
+    <img src="/assets/nodopedia/img/handles.svg" height="124" class="embedded-image" />
   </span>
 </p>
 <p>The horizontal axis represents the input, and the vertical axis represents the output.</p>
@@ -37,17 +37,17 @@ order: 2
       <th>Display</th>
       <td>
           <p>
-              <img src="/assets/img/nodopedia/indicator_empty.svg" class="embedded-image" />
+              <img src="/assets/nodopedia/img/indicator_empty.svg" class="embedded-image" />
           </p>
       </td>
       <td>
           <p>
-              <img src="/assets/img/nodopedia/indicator_half.svg" height="48" class="embedded-image" />
+              <img src="/assets/nodopedia/img/indicator_half.svg" height="48" class="embedded-image" />
           </p>
       </td>
       <td>
           <p>
-              <img src="/assets/img/nodopedia/indicator_full.svg" height="48" class="embedded-image" />
+              <img src="/assets/nodopedia/img/indicator_full.svg" height="48" class="embedded-image" />
           </p>
       </td>
     </tr>
@@ -62,19 +62,19 @@ order: 2
     <tr>
       <td label="Output"><span>0.00</span></td>
       <td label="Display">
-          <p><img src="/assets/img/nodopedia/indicator_empty.svg" class="embedded-image" /></p>
+          <p><img src="/assets/nodopedia/img/indicator_empty.svg" class="embedded-image" /></p>
       </td>
     </tr>
     <tr>
       <td label="Output"><span>0.50</span></td>
       <td label="Display">
-          <p><img src="/assets/img/nodopedia/indicator_half.svg" height="48" class="embedded-image" /></p>
+          <p><img src="/assets/nodopedia/img/indicator_half.svg" height="48" class="embedded-image" /></p>
       </td>
     </tr>
     <tr>
         <td label="Output"><span>1.00</span></td>
         <td label="Display">
-          <p><img src="/assets/img/nodopedia/indicator_full.svg" height="48" class="embedded-image" /></p>
+          <p><img src="/assets/nodopedia/img/indicator_full.svg" height="48" class="embedded-image" /></p>
         </td>
     </tr>
 
@@ -85,7 +85,7 @@ order: 2
 <p>This refers to analog ranges with a small deadzone—for example, 0.10 to 1.00.</p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/threshold_analog.svg" height="70" class="embedded-image" />
+    <img src="/assets/nodopedia/img/threshold_analog.svg" height="70" class="embedded-image" />
   </span>
 </p>
 <p>Input values lower than 0.10 will be output as 0.00, so very small input will be disregarded. We can call 0.10 the "input threshold."<br />If the input exceeds 0.10, it'll start to output, and the output will increase along with the input. If 1.00 is received as input, it'll send 1.00 as output.<br />When called up, most input Nodon will have their ranges set like this by default. (Some Nodon may have different input thresholds for the lower margin.)<br />A Nodon like the Shake Nodon can pick up slight movement even when the player is trying to hold the Joy-Con still, so having an input threshold can ensure that output is sent only when the Joy-Con is intentionally shaken.</p>
@@ -93,7 +93,7 @@ order: 2
 <p>Settings similar to an analog range of 0.00 to 0.50.</p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/sensitive_analog.svg" height="70" class="embedded-image" />
+    <img src="/assets/nodopedia/img/sensitive_analog.svg" height="70" class="embedded-image" />
   </span>
 </p>
 <p>Responds sensitively to input. Any input above a certain value will result in an output of 1.00.<br />In the example above, an input of 0.50 will result in an output of 1.00, which represents a sensitivity double that of a range like 0.00 to 1.00.<br />You can adjust the sensitivity by moving the slider on the right.</p>
@@ -101,7 +101,7 @@ order: 2
 <p>Settings similar to an analog range of 0.00 to 1.00.</p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/raw_analog.svg" height="70" class="embedded-image" />
+    <img src="/assets/nodopedia/img/raw_analog.svg" height="70" class="embedded-image" />
   </span>
 </p>
 <p>With a range of 0.00 to 1.00, the value received as input will be sent unchanged as output.</p>
@@ -109,7 +109,7 @@ order: 2
 <p>Settings similar to a digital range of 0.10 to 1.00.</p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/ifstyle_digital.svg" height="70" class="embedded-image" />
+    <img src="/assets/nodopedia/img/ifstyle_digital.svg" height="70" class="embedded-image" />
   </span>
 </p>
 <p>Use this when you want to make a clear, digital judgment of a momentary occurrence—for example, the swinging of a Joy-Con.<br />Very small input won't produce any response (it'll continue to output 0.00), but if it goes over the threshold, it'll output 1.00. It won't output intermediate values like 0.50.<br />You can adjust the handle for the lower margin to change the input threshold.</p>
@@ -117,7 +117,7 @@ order: 2
 <p>Settings similar to a digital range of 0.50 to 0.60.</p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/whilestyle_digital.svg" height="70" class="embedded-image" />
+    <img src="/assets/nodopedia/img/whilestyle_digital.svg" height="70" class="embedded-image" />
   </span>
 </p>
 <p>Outputs 1.00 under specific input conditions. Outside of those conditions,<br />outputs 0.00.<br />For example, you might use this type of setting if you wanted to use the If-Face-Up Nodon to check whether the Joy-Con is held at a certain angle.</p>

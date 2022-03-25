@@ -7,7 +7,7 @@ order: 9
 <p>Game Builder Garage uses the x, y, and z axes to refer to direction, position, and rotation.<br />All three axes meet each other at right angles.<br /></p>
 <p>
   <span class="embedded-file-wrapper ">
-    <img src="/assets/img/nodopedia/axes.svg" class="embedded-image" />
+    <img src="/assets/nodopedia/img/axes.svg" class="embedded-image" />
   </span>
 </p>
 <h1>Referring to Direction</h1>
