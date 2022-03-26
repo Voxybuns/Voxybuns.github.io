@@ -264,3 +264,11 @@
     - marker-display
     - bullseye
     - wormhole-entrance
+- name: Checking Timing
+  id: P 007 2K0 D57
+  description: How to create a rhythm game that checks how good the player's timing is.
+  nodon:
+    - marker-display
+    - bullseye
+    - calculator
+    - comparison
