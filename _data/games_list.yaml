@@ -1,5 +1,15 @@
 - name: Touch Hockey
   id: G 002 KT8 F0N
   icon: touchhockey
-  description: Do you like ice hockey? Touching the screen? Neon graphics? Lame AIs? If you said "yes" to any of those things, then Touch Hockey might just be the game for you!
+  description: My first proper Game Builder Garage game. A singleplayer table hockey game, with neon graphics and a lackluster AI opponent.
   controls: Touch the screen and drag to move your paddle around. Score 10 points to win!
+- name: Mousey's Burrow Run
+  id: G 003 YTF DG5
+  icon: mouseysburrowrun
+  description: A mouse's life ain't easy... With traps at every corner and a hungry cat on the loose, Mousey can only count on you to help him reach his burrow in one piece! Use different moves and collect power-ups to help the poor rodent avoid the dangerous obstacles awaiting him in this retro 2D endless runner!<br><br>Original characters by VideoDojo, used with permission.
+  controls: Dodge obstacles by jumping (<span class="input-b"></span>), dashing (<span class="input-a"></span>), or crawling (<span class="input-y"></span>). Try to score as many points as you can!
+- name: Mousey's Cheese Land
+  id: G 006 37K V56
+  icon: mouseyscheeseland
+  description: While you were busy fighting Meowsy, the nefarious Rat King and his minions blew open the Cheese Maze to invade it and steal all its delicious cheese! Luckily for you, their cannonballs are still littering the place... Maybe you could use your inhaling abilities to your advantage, and chase off those pesky intruders!<br><br>This game was created for VideoDojo's second game jam, themed around his Mousey character.
+  controls: <span class="input-left-stick"></span> to move, hold <span class="input-b"></span> or <span class="input-zl"></span> to dash. Hold <span class="input-a"></span> or <span class="input-zr"></span> to inhale, and press it again to spit out cannonballs after inhaling them.
