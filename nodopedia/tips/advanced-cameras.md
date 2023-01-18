@@ -21,7 +21,7 @@ order: 12
   </li>
 </ul>
 <h1>Uncalled Advanced Camera Nodon</h1>
-<p>If one advanced camera Nodon is called, the ones that haven't been called will have the following settings by default:<br /><br />Camera Position: Set at the center (0, 0, 0)<br />Camera Target: Set at the center (0, 0, 0)<br />Camera Angle: Set to 90° horizontal<br />Camera Direction: Follows camera position and camera target<br /><br />Please note, when neither the Camera-Position Nodon nor the Camera-Target Nodon are called, the camera position and target will be determined based on whatever was in view on the program screen before program execution. If both Nodon have the same value, the camera direction will point toward Z+.</p>
+<p>If one advanced camera Nodon is called, the ones that haven't been called will have the following settings by default:<br /><br />Camera Position: Set at the center (0, 0, 0)<br />Camera Target: Set at the center (0, 0, 0)<br />Camera Angle: Set to 60° horizontal<br />Camera Direction: Follows camera position and camera target<br /><br />Please note, when neither the Camera-Position Nodon nor the Camera-Target Nodon are called, the camera position and target will be determined based on whatever was in view on the program screen before program execution. If both Nodon have the same value, the camera direction will point toward Z+.</p>
 <h2>All Advanced Camera Nodon</h2>
 <table class="wrapped cameradetail">
   <colgroup> <col /> <col /> <col /> <col /> <col /> </colgroup>
