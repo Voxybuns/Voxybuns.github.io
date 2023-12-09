@@ -1,58 +1,177 @@
 ---
-title: Home
-description: Game Builder Garage resources and creations.
+title: Voxy's Space
+description: Welcome to a silly bunny's space. Make yourself at home!
 ---
+
 <!DOCTYPE html>
 <html lang="en">
-{% include common/head.html %}
-<body>
-    {% include common/navbar.html %}
-    <main>
-        <section id="hero">
-            <div>
-                <img src="/assets/common/img/logo_hero.svg" alt="Voxy's Rec Room">
-                <h1>Game Builder Garage resources and creations</h1>
-            </div>
-        </section>
-        <section id="resources">
-            <div>
-                <h1>Resources</h1>
-                <div class="nav_grid">
-                    {% for item in site.data.main_nav %}
-                        <a href="{{ item.url }}" class="button_lg">
-                            <div class="top">
-                                <img class="card_icon" src="/assets/common/img/icon_{{ item.icon }}.png" alt="">
-                                <h3>{{ item.name }}</h3>
-                                <p>{{ item.description }}</p>
-                            </div>
-                        </a> 
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        <section id="games">
-            <div>
-                <h1>Games</h1>
-                <div class="games_grid">
-                    {% for item in site.data.games_list %}
-                        <div class="card">
-                            <img class="card_icon" src="/assets/common/img/icon_{{ item.icon }}.png" alt="">
-                            <div class="game_title">
-                                <h3>{{ item.name }}</h3>
-                                <h4>{{ item.id }}</h4>
-                            </div>
-                            <div class="game_content">
-                                <p>{{ item.description }}</p>
-                                <h4>How to play</h4>
-                                <p>{{ item.controls }}</p>
-                            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/common/img/favicon.png" type="image/x-icon">
+    <meta name="description" content="{{ page.description }}" />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
 
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/assets/common/img/favicon.png" />
+    <meta property="og:image:secure_url" content="{{ site.url }}/assets/common/img/favicon.png" />
+    <meta property="og:description" content="{{ page.description }}" />
+    <title>Voxy's Space</title>
+</head>
+<style>
+    :root {
+        --pink: #F680A4;
+        --orange: #F6C47C;
+        --yellow: #FFD540;
+        --green: #67E5DB;
+        --purple: #CF84F0;
+    }
+    
+        @font-face {
+        font-family: 'Mohr Rounded';
+        src: url('/assets/common/font/MohrRounded-HeavyIt.woff2') format('woff2'),
+            url('/assets/common/font/MohrRounded-HeavyIt.woff') format('woff');
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Mohr Rounded';
+        src: url('/assets/common/font/MohrRounded-RegularIt.woff2') format('woff2'),
+            url('/assets/common/font/MohrRounded-RegularIt.woff') format('woff');
+        font-weight: normal;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Mohr Rounded';
+        src: url('/assets/common/font/MohrRounded-Heavy.woff2') format('woff2'),
+            url('/assets/common/font/MohrRounded-Heavy.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Mohr Rounded';
+        src: url('/assets/common/font/MohrRounded-Regular.woff2') format('woff2'),
+            url('/assets/common/font/MohrRounded-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Mohr Rounded';
+        src: url('/assets/common/font/MohrRounded-BoldIt.woff2') format('woff2'),
+            url('/assets/common/font/MohrRounded-BoldIt.woff') format('woff');
+        font-weight: bold;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Mohr Rounded';
+        src: url('/assets/common/font/MohrRounded-Bold.woff2') format('woff2'),
+            url('/assets/common/font/MohrRounded-Bold.woff') format('woff');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @keyframes rainbow {
+        0% {color: var(--pink);}
+        20% {color: var(--orange);}
+        40% {color: var(--yellow);}
+        60% {color: var(--green);}
+        80% {color: var(--purple);}
+        100% {color: var(--pink);}
+    }
+
+
+    body {
+        background: url("/assets/common/img/pattern_banana.png");
+        font-family: 'Mohr Rounded';
+    }
+
+    main {
+        max-width: 1024px;
+        padding-block: 24px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+    }
+    
+    .logoImage {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .emphasis {
+        font-size: 36px;
+        line-height: 1.1;
+    }
+
+    .rainbow > span {
+        animation-name: rainbow;
+        animation-duration: 4s;
+        animation-fill-mode: both;
+        animation-iteration-count: infinite;
+        animation-timing-function: step-end;
+    }
+    .rainbow > span:nth-child(2) { animation-delay: -3.2s }
+    .rainbow > span:nth-child(3) { animation-delay: -2.4s }
+    .rainbow > span:nth-child(4) { animation-delay: -1.6s }
+    .rainbow > span:nth-child(5) { animation-delay: -0.8s }
+
+    p {
+        margin-block-end: 16px;
+    }
+
+    .button:any-link {
+        --color: white;
+        color: #111827;
+        border-radius: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--color);
+        padding: 16px 32px;
+        text-decoration: none;
+        font-weight: bold;
+        flex: 1 1 0px;
+    }
+
+    .buttonList {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 360px;
+        margin: 0 auto;
+        margin-block-start: 72px;
+    }
+
+</style>
+<body>
+    <main>
+        <img src="/assets/common/img/logo_new.svg" alt="Voxy" class="logoImage">
+        <p class="emphasis">Hello, and welcome to Voxy's <strong class="rainbow">
+            <span>s</span><span>p</span><span>a</span><span>c</span><span>e</span></strong>!</p>
+        <p>(New version of the site currently under construction!)</p>
+
+        <div class="buttonList">
+            <a href="/nodopedia/" class="button" style="--color: var(--pink);">GBG Nodopedia</a>
+            <a href="/programming-setups/" class="button" style="--color: var(--orange);">GBG Programming Set-ups</a>
+            <a href="/controller-sprites/" class="button" style="--color: var(--yellow);">GBG Button Sprites</a>
+            <a href="https://www.youtube.com/@voxybuns" class="button" style="--color: var(--green);">My YouTube Channel</a>
+            <a href="https://twitter.com/voxybuns" class="button" style="--color: var(--purple);">My Twitter</a>
+        </div>
     </main>
-    {% include common/footer.html %}
 </body>
 </html>
