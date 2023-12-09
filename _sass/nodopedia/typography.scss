@@ -1,0 +1,132 @@
+// Typography
+
+@font-face {
+    font-family: 'Switch UI';
+    src: url('/data/nodopedia/font/switch.woff2');
+}
+
+@font-face {
+    font-family: 'Switch Buttons';
+    src: url('/data/nodopedia/font/switch_buttons.woff2');
+}
+
+@font-face {
+    font-family: 'Nodopedia Icons';
+    src: url('/data/nodopedia/font/nodopedia.woff2');
+}
+
+html {
+    font-family: 'Switch Buttons', 'Switch UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--main);
+    @media screen and (min-width: 1024px) {
+        font-size: 18px;
+    }
+
+}
+
+h1,h2,h3,h4,h5,h6 {
+    display: block;
+}
+
+h1 {
+    font-size: 1.2rem;
+    margin-block-end: 2rem;
+}
+
+h1::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 3px;
+    border-radius: 1rem;
+    background: var(--main);
+}
+
+:is(p, table) ~ :is(h1,h2,h3) {
+    margin-block-start: 1.5rem;
+}
+
+aside > nav > h1 {
+    margin-block-end: 0.25rem
+}
+
+h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-block-end: 1rem;
+}
+
+h2::before {
+    content: "";
+    margin-right: 0.5rem;
+    width: 0.8rem;
+    height: 1.6rem;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+h3 {
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--bg-dark);
+    display: inline-block;
+    border-radius: 30rem;
+    margin-block-end: 0.5rem;
+}
+
+p.title {
+    font-size: 2.5rem;
+    margin-block-end: 1rem;
+}
+
+p {
+    margin-block-end: 1rem;
+}
+
+table + p {
+    margin-block-start: 1rem;
+}
+
+ul li {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    list-style: disc;
+}
+
+ol li {
+    margin-left: 2rem;
+    margin-bottom: 0.5rem;
+    list-style: decimal;
+}
+
+a:not([class]):any-link {
+    color: #4287c0;
+}
+
+// Icons
+
+[class^="np-"]:before, [class*=" np-"]:before {
+    font-family: "Nodopedia Icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 24px;
+}
+
+.np-home:before { content: '\e804'; } /* '' */
+.np-next:before { content: '\e807'; } /* '' */
+.np-object:before { content: '\e808'; } /* '' */
+.np-previous:before { content: '\e80a'; } /* '' */
+.np-tips:before { content: '\e80b'; } /* '' */
+.np-input:before { content: '\e80c'; } /* '' */
+.np-middle:before { content: '\e80d'; } /* '' */
+.np-output:before { content: '\e80e'; } /* '' */
+.np-anchor:before { content: '\e800', }
+.np-menu:before { content: '\e801', }
+.np-search:before { content: '\e802', }

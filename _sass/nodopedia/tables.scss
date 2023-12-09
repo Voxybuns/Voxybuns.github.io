@@ -1,0 +1,53 @@
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    table-layout:fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: var(--bg-light);
+    text-align: left;
+    clip-path: inset(0 0 0 0 round 0.5rem);
+    margin-block-start: 0.5rem;
+    width: 100%;
+    min-width: 800px;
+}
+
+td, th {
+    &:first-child:not(table.even :is(td, th)) {
+        width: 10rem;
+    }
+    &:nth-child(3):not(table.even :is(td, th)) {
+        width: 25%;
+    }
+}
+
+td:not(:last-child),
+th:not(:last-child) {
+    border-right: 4px solid var(--bg);
+}
+
+tr:first-child th:first-child {
+    min-width: 8rem;
+}
+
+tr:not(:last-child) td,
+tr th {
+    border-bottom: 4px solid var(--bg); 
+}
+
+th {
+    font-weight: bold;
+    padding: 0.6rem 1rem;
+    background-color: var(--accent);
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td {
+    vertical-align: middle;
+    padding: 0.6rem 1rem;
+}

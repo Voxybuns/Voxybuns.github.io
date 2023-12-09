@@ -1,0 +1,12 @@
+---
+layout: nodopedia/base
+---
+<p class="title">{{ page.title }}</p>
+{% if page.quote %}
+    <section class="quote {{ page.category }}">
+        <img src="/data/nodopedia/img/nodon/{{ page.title | slugify }}.png" alt="">
+        <p>{{ page.quote }}</p>
+    </section>
+{% endif %}
+{{ content }}
+{% include nodopedia/pagination.html %}

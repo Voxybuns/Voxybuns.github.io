@@ -1,0 +1,17 @@
+<aside id="nav">
+    <nav>
+        {% assign current_url = page.url | replace: ".html", "/" %}
+        {% for item in site.data.nodopedia.navigation.category %}
+            <h1><span class="icon-{{ item.title | slugify }}"></span> {{ item.title }}</h1>
+            <menu>
+                {%- for entry in item.entries -%}
+                    <a href="{{ entry.url }}" class="navitem {{ entry.category }} {% if entry.url == current_url %}active{% endif %}">
+                        <img src="/data/nodopedia/img/nodon/{{ entry.name | slugify }}.png" alt="">
+                        {{ entry.name }}
+                    </a>
+                {% endfor %}
+            </menu>
+        {% endfor %}
+    </nav>
+</aside>
+<div id="scrim" onclick="navtoggle()"></div>

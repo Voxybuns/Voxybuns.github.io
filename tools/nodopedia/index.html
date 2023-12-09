@@ -1,0 +1,24 @@
+---
+layout: nodopedia/base
+title: Home
+---
+
+<section class="hero">
+    <img src="/data/nodopedia/img/icon_top.svg" alt="Welcome to Nodopedia">
+    <p>This is an online version of Nodopedia, the e-manual of Game Builder Garage. Here you can find detailed descriptions of each Nodon, without having to leave the programming screen!</p>
+    <p>A project by <a href="https://www.twitter.com/voxybuns">@voxybuns</a>. Not affiliated with Nintendo.</p>
+</section>
+
+{% for item in site.data.nodopedia.navigation.category %}
+    <details class="{{ item.title | slugify }}">
+        <summary><span><span class="np-{{ item.title | slugify }}"></span> {{ item.title }}</span><span class="np-next"></span></summary>
+        <div class="list">
+            {% for page in item.entries %}
+                <a href="{{ page.url }}" class="navitem {{ page.category }}">
+                    <img src="/data/nodopedia/img/nodon/{{ page.name | slugify }}.png" alt="">
+                    {{ page.name }}
+                </a>
+            {% endfor %}
+        </div>
+    </details>
+{% endfor %}

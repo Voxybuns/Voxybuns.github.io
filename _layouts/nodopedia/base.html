@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/data/nodopedia/style.css">
+    <title>{{ page.title }} — Nodopedia</title>
+</head>
+<body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+    {% include nodopedia/navigation.html %}
+    <main>
+        <header>
+            <div class="header-contents">
+                <span class="spacer"><button onclick="navtoggle()"><span class="np-menu"></span></button></span>
+                <a href="/tools/nodopedia/" class="logo"><img src="/data/nodopedia/img/icon.svg" height="48px">Nodopedia</a>
+                <span class="spacer"><a href="/tools/nodopedia/search" title="Search" class="button"><span class="np-search"></span></a></span>
+            </div>
+        </header>
+        <section class="content">
+            {% include common/anchor_headings.html html=content anchorClass="anchor-link" anchorBody="<span class='anchor np-anchor'></span>" h_max=2 %}
+        </section>
+    </main>
+</body>
+
+<!-- Navigation Pane (thanks rae <3) -->
+<script>
+    function navtoggle() {
+        var nav = document.getElementById('nav');
+        var scrim = document.getElementById('scrim');
+        if(nav.classList.contains('active')) {
+            nav.style.transform = "translateX(-20rem)";
+            scrim.style.background = "rgba(0,0,0,0)";
+            setTimeout(function() {
+                nav.classList.remove('active');
+                scrim.classList.remove('active');
+            }, 200);
+        } else {
+            nav.classList.add('active');
+            scrim.classList.add('active');
+            setTimeout(function() {
+                nav.style.transform = "translateX(0)";
+                scrim.style.background = "rgba(0,0,0,0.5)";
+            }, 1);
+        }
+    }
+</script>
+<!-- Persistent Scrolling on Nav Pane -->
+<script>
+    const sidebar = document.getElementById('nav');
+
+    var scrollpos = sessionStorage.getItem("sidebar-scroll");
+    if(scrollpos !== null) {
+        console.log(scrollpos);
+        sidebar.scrollTop = scrollpos;
+    }
+
+    window.addEventListener("visibilitychange", () => {
+        sessionStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+    });
+</script>
+
+</html>

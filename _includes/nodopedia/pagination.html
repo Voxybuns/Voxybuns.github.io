@@ -1,0 +1,40 @@
+{%- assign entries = site.data.nodopedia.entries.entries | join: ';' | split: ';' -%}
+<section class="pagination">
+    {% for entry in entries %}
+        {% assign entry_name = site.data.nodopedia.entries.entries | map: 'name' | join: ';' | split: ';' %}
+        {% assign entry_url = site.data.nodopedia.entries.entries | map: 'url' | join: ';' | split: ';' %}
+        {% assign entry_category = site.data.nodopedia.entries.entries | map: 'category' | join: ';' | split: ';' %}
+        {% assign this_url = page.url | replace: ".html", "/" %}
+        {% if entry_url[forloop.index0] == this_url %}
+            {% if forloop.first %}
+                <span class="pagination_previous disabled">
+                    <div>← Previous</div>
+                    <div>None</div>
+                </span>
+            {% else %}
+                {% assign previous = forloop.index0 | minus: 1 -%}
+                {% assign previous_page = entry_url[previous] -%}
+                {% assign previous_name = entry_name[previous] -%}
+                <a href="{{ previous_page }}" class="pagination_previous">
+                    <div>← Previous</div>
+                    <div>{{ previous_name }}</div>
+                </a>
+            {% endif %}
+            <a href="/tools/nodopedia/" class="pagination_home"><span><span class="np-home"></span>   Go back home</span></a>
+            {% if forloop.last %}
+                <span class="pagination_next disabled">
+                    <div>Next up →</div>
+                    <div>None</div>
+                </span>
+            {% else %}
+                {% assign next = forloop.index0 | plus: 1 -%}
+                {% assign next_page = entry_url[next] -%}
+                {% assign next_name = entry_name[next] -%}
+                <a href="{{ next_page }}" class="pagination_next">
+                    <div>Next up →</div>
+                    <div>{{ next_name }}</div>
+                </a>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</section>
