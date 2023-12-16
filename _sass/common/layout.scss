@@ -1,0 +1,19 @@
+header {
+    background: var(--grape-900);
+    height: 56px;
+    overflow: hidden;
+
+    nav {
+        display: flex;
+        max-width: 1024px;
+        margin: 0 auto;
+        padding-inline: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        
+        menu {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+}

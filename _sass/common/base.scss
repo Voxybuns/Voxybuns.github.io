@@ -110,4 +110,8 @@
     --neutral-700: #374151;
     --neutral-800: #1F2937;
     --neutral-900: #111827;
+
+    /* Color tokens */
+    --background-base: var(--neutral-900);
+    --text-base: var(--neutral-50);
 }

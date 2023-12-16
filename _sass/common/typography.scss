@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-Bold.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-Regular.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-BoldIt.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-BoldIt.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-RegularIt.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-RegularIt.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Voxyphs Icons';
+    src: url('/data/common/font/voxyphs-icon.woff2') format('woff2'),
+         url('/data/common/font/voxyphs-icon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: "Voxyphs Icons";
+    font-style: normal;
+    font-weight: normal;
+
+    font-size: 24px;
+    font-variant: normal;
+    text-transform: none;
+  
+    line-height: 1em;
+}
+
+:root {
+    color: var(--text-base);
+    font-family: 'Mohr Rounded';
+}
