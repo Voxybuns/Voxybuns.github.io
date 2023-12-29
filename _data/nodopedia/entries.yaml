@@ -1,295 +1,295 @@
 entries:
   - name: Constant Nodon
-    url: /tools/nodopedia/input/constant-nodon/
+    url: /gbg/nodopedia/input/constant-nodon/
     category: input
   - name: Button Nodon
-    url: /tools/nodopedia/input/button-nodon/
+    url: /gbg/nodopedia/input/button-nodon/
     category: input
   - name: Stick Nodon
-    url: /tools/nodopedia/input/stick-nodon/
+    url: /gbg/nodopedia/input/stick-nodon/
     category: input
   - name: If-Touched Nodon
-    url: /tools/nodopedia/input/if-touched-nodon/
+    url: /gbg/nodopedia/input/if-touched-nodon/
     category: input
   - name: Touch-Position Nodon
-    url: /tools/nodopedia/input/touch-position-nodon/
+    url: /gbg/nodopedia/input/touch-position-nodon/
     category: input
   - name: Shake Nodon
-    url: /tools/nodopedia/input/shake-nodon/
+    url: /gbg/nodopedia/input/shake-nodon/
     category: input
   - name: Tilt Nodon
-    url: /tools/nodopedia/input/tilt-nodon/
+    url: /gbg/nodopedia/input/tilt-nodon/
     category: input
   - name: If-Face-Up Nodon
-    url: /tools/nodopedia/input/if-face-up-nodon/
+    url: /gbg/nodopedia/input/if-face-up-nodon/
     category: input
   - name: Rotation-Speed Nodon
-    url: /tools/nodopedia/input/rotation-speed-nodon/
+    url: /gbg/nodopedia/input/rotation-speed-nodon/
     category: input
   - name: IR Motion Camera Nodon
-    url: /tools/nodopedia/input/ir-motion-camera-nodon/
+    url: /gbg/nodopedia/input/ir-motion-camera-nodon/
     category: input
   - name: Object-Break Nodon
-    url: /tools/nodopedia/input/object-break-nodon/
+    url: /gbg/nodopedia/input/object-break-nodon/
     category: input
   - name: On-Start Nodon
-    url: /tools/nodopedia/input/on-start-nodon/
+    url: /gbg/nodopedia/input/on-start-nodon/
     category: input
   - name: Calculator Nodon
-    url: /tools/nodopedia/middle/calculator-nodon/
+    url: /gbg/nodopedia/middle/calculator-nodon/
     category: middle
   - name: Map Nodon
-    url: /tools/nodopedia/middle/map-nodon/
+    url: /gbg/nodopedia/middle/map-nodon/
     category: middle
   - name: Digitize Nodon
-    url: /tools/nodopedia/middle/digitize-nodon/
+    url: /gbg/nodopedia/middle/digitize-nodon/
     category: middle
   - name: Square-Root Nodon
-    url: /tools/nodopedia/middle/square-root-nodon/
+    url: /gbg/nodopedia/middle/square-root-nodon/
     category: middle
   - name: Absolute-Value Nodon
-    url: /tools/nodopedia/middle/absolute-value-nodon/
+    url: /gbg/nodopedia/middle/absolute-value-nodon/
     category: middle
   - name: +－ Inversion Nodon
-    url: /tools/nodopedia/middle/inversion-nodon/
+    url: /gbg/nodopedia/middle/inversion-nodon/
     category: middle
   - name: Trigger-From-0 Nodon
-    url: /tools/nodopedia/middle/trigger-from-0-nodon/
+    url: /gbg/nodopedia/middle/trigger-from-0-nodon/
     category: middle
   - name: Position → Angle Nodon
-    url: /tools/nodopedia/middle/position-angle-nodon/
+    url: /gbg/nodopedia/middle/position-angle-nodon/
     category: middle
   - name: Angle → Position Nodon
-    url: /tools/nodopedia/middle/angle-position-nodon/
+    url: /gbg/nodopedia/middle/angle-position-nodon/
     category: middle
   - name: Angle-Difference Nodon
-    url: /tools/nodopedia/middle/angle-difference-nodon/
+    url: /gbg/nodopedia/middle/angle-difference-nodon/
     category: middle
   - name: Comparison Nodon
-    url: /tools/nodopedia/middle/comparison-nodon/
+    url: /gbg/nodopedia/middle/comparison-nodon/
     category: middle
   - name: AND Nodon
-    url: /tools/nodopedia/middle/and-nodon/
+    url: /gbg/nodopedia/middle/and-nodon/
     category: middle
   - name: NOT Nodon
-    url: /tools/nodopedia/middle/not-nodon/
+    url: /gbg/nodopedia/middle/not-nodon/
     category: middle
   - name: Flag Nodon
-    url: /tools/nodopedia/middle/flag-nodon/
+    url: /gbg/nodopedia/middle/flag-nodon/
     category: middle
   - name: Counter Nodon
-    url: /tools/nodopedia/middle/counter-nodon/
+    url: /gbg/nodopedia/middle/counter-nodon/
     category: middle
   - name: Random Nodon
-    url: /tools/nodopedia/middle/random-nodon/
+    url: /gbg/nodopedia/middle/random-nodon/
     category: middle
   - name: Timer Nodon
-    url: /tools/nodopedia/middle/timer-nodon/
+    url: /gbg/nodopedia/middle/timer-nodon/
     category: middle
   - name: Bull's-Eye Nodon
-    url: /tools/nodopedia/middle/bull-s-eye-nodon/
+    url: /gbg/nodopedia/middle/bull-s-eye-nodon/
     category: middle
   - name: Wormhole-Entrance Nodon
-    url: /tools/nodopedia/middle/wormhole-entrance-nodon/
+    url: /gbg/nodopedia/middle/wormhole-entrance-nodon/
     category: middle
   - name: Wormhole-Exit Nodon
-    url: /tools/nodopedia/middle/wormhole-exit-nodon/
+    url: /gbg/nodopedia/middle/wormhole-exit-nodon/
     category: middle
   - name: Comment Nodon
-    url: /tools/nodopedia/middle/comment-nodon/
+    url: /gbg/nodopedia/middle/comment-nodon/
     category: middle
   - name: Play-Sound Nodon
-    url: /tools/nodopedia/output/play-sound-nodon/
+    url: /gbg/nodopedia/output/play-sound-nodon/
     category: output
   - name: Background-Music Nodon
-    url: /tools/nodopedia/output/background-music-nodon/
+    url: /gbg/nodopedia/output/background-music-nodon/
     category: output
   - name: Vibration Nodon
-    url: /tools/nodopedia/output/vibration-nodon/
+    url: /gbg/nodopedia/output/vibration-nodon/
     category: output
   - name: Reduce-Gravity Nodon
-    url: /tools/nodopedia/output/reduce-gravity-nodon/
+    url: /gbg/nodopedia/output/reduce-gravity-nodon/
     category: output
   - name: Slow-Time Nodon
-    url: /tools/nodopedia/output/slow-time-nodon/
+    url: /gbg/nodopedia/output/slow-time-nodon/
     category: output
   - name: Retry Nodon
-    url: /tools/nodopedia/output/retry-nodon/
+    url: /gbg/nodopedia/output/retry-nodon/
     category: output
   - name: End-Game Nodon
-    url: /tools/nodopedia/output/end-game-nodon/
+    url: /gbg/nodopedia/output/end-game-nodon/
     category: output
   - name: Swap-Game Nodon
-    url: /tools/nodopedia/output/swap-game-nodon/
+    url: /gbg/nodopedia/output/swap-game-nodon/
     category: output
   - name: Marker-Display Nodon
-    url: /tools/nodopedia/output/marker-display-nodon/
+    url: /gbg/nodopedia/output/marker-display-nodon/
     category: output
   - name: 2D-Marker-Display Nodon
-    url: /tools/nodopedia/output/2d-marker-display-nodon/
+    url: /gbg/nodopedia/output/2d-marker-display-nodon/
     category: output
   - name: Continuous-Marker-Display Nodon
-    url: /tools/nodopedia/output/continuous-marker-display-nodon/
+    url: /gbg/nodopedia/output/continuous-marker-display-nodon/
     category: output
   - name: IR-Light Nodon
-    url: /tools/nodopedia/output/ir-light-nodon/
+    url: /gbg/nodopedia/output/ir-light-nodon/
     category: output
   - name: Puzzle-Clear Nodon
-    url: /tools/nodopedia/output/puzzle-clear-nodon/
+    url: /gbg/nodopedia/output/puzzle-clear-nodon/
     category: output
   - name: Person Nodon
-    url: /tools/nodopedia/object/person-nodon/
+    url: /gbg/nodopedia/object/person-nodon/
     category: object
   - name: Car Nodon
-    url: /tools/nodopedia/object/car-nodon/
+    url: /gbg/nodopedia/object/car-nodon/
     category: object
   - name: UFO Nodon
-    url: /tools/nodopedia/object/ufo-nodon/
+    url: /gbg/nodopedia/object/ufo-nodon/
     category: object
   - name: Object Nodon
-    url: /tools/nodopedia/object/object-nodon/
+    url: /gbg/nodopedia/object/object-nodon/
     category: object
   - name: Fancy-Object Nodon
-    url: /tools/nodopedia/object/fancy-object-nodon/
+    url: /gbg/nodopedia/object/fancy-object-nodon/
     category: object
   - name: Moving-Object Nodon
-    url: /tools/nodopedia/object/moving-object-nodon/
+    url: /gbg/nodopedia/object/moving-object-nodon/
     category: object
   - name: Rotating-Object Nodon
-    url: /tools/nodopedia/object/rotating-object-nodon/
+    url: /gbg/nodopedia/object/rotating-object-nodon/
     category: object
   - name: Extending-Object Nodon
-    url: /tools/nodopedia/object/extending-object-nodon/
+    url: /gbg/nodopedia/object/extending-object-nodon/
     category: object
   - name: Effect Nodon
-    url: /tools/nodopedia/object/effect-nodon/
+    url: /gbg/nodopedia/object/effect-nodon/
     category: object
   - name: Text-Object Nodon
-    url: /tools/nodopedia/object/text-object-nodon/
+    url: /gbg/nodopedia/object/text-object-nodon/
     category: object
   - name: Number-Object Nodon
-    url: /tools/nodopedia/object/number-object-nodon/
+    url: /gbg/nodopedia/object/number-object-nodon/
     category: object
   - name: Texture Nodon
-    url: /tools/nodopedia/object/texture-nodon/
+    url: /gbg/nodopedia/object/texture-nodon/
     category: object
   - name: Touch-Sensor Nodon
-    url: /tools/nodopedia/object/touch-sensor-nodon/
+    url: /gbg/nodopedia/object/touch-sensor-nodon/
     category: object
   - name: Destroying-Sensor Nodon
-    url: /tools/nodopedia/object/destroying-sensor-nodon/
+    url: /gbg/nodopedia/object/destroying-sensor-nodon/
     category: object
   - name: Destroyed-Sensor Nodon
-    url: /tools/nodopedia/object/destroyed-sensor-nodon/
+    url: /gbg/nodopedia/object/destroyed-sensor-nodon/
     category: object
   - name: Grabbed-Sensor Nodon
-    url: /tools/nodopedia/object/grabbed-sensor-nodon/
+    url: /gbg/nodopedia/object/grabbed-sensor-nodon/
     category: object
   - name: Location-Sensor Nodon
-    url: /tools/nodopedia/object/location-sensor-nodon/
+    url: /gbg/nodopedia/object/location-sensor-nodon/
     category: object
   - name: Speed-Sensor Nodon
-    url: /tools/nodopedia/object/speed-sensor-nodon/
+    url: /gbg/nodopedia/object/speed-sensor-nodon/
     category: object
   - name: Acceleration-Sensor Nodon
-    url: /tools/nodopedia/object/acceleration-sensor-nodon/
+    url: /gbg/nodopedia/object/acceleration-sensor-nodon/
     category: object
   - name: Angle-Sensor Nodon
-    url: /tools/nodopedia/object/angle-sensor-nodon/
+    url: /gbg/nodopedia/object/angle-sensor-nodon/
     category: object
   - name: Rotation-Speed-Sensor Nodon
-    url: /tools/nodopedia/object/rotation-speed-sensor-nodon/
+    url: /gbg/nodopedia/object/rotation-speed-sensor-nodon/
     category: object
   - name: Slide-Connector Nodon
-    url: /tools/nodopedia/object/slide-connector-nodon/
+    url: /gbg/nodopedia/object/slide-connector-nodon/
     category: object
   - name: Free-Slide-Connector Nodon
-    url: /tools/nodopedia/object/free-slide-connector-nodon/
+    url: /gbg/nodopedia/object/free-slide-connector-nodon/
     category: object
   - name: Hinge-Connector Nodon
-    url: /tools/nodopedia/object/hinge-connector-nodon/
+    url: /gbg/nodopedia/object/hinge-connector-nodon/
     category: object
   - name: String-Connector Nodon
-    url: /tools/nodopedia/object/string-connector-nodon/
+    url: /gbg/nodopedia/object/string-connector-nodon/
     category: object
   - name: Launch-Object Nodon
-    url: /tools/nodopedia/object/launch-object-nodon/
+    url: /gbg/nodopedia/object/launch-object-nodon/
     category: object
   - name: Destroy-Object Nodon
-    url: /tools/nodopedia/object/destroy-object-nodon/
+    url: /gbg/nodopedia/object/destroy-object-nodon/
     category: object
   - name: Teleport-Object-Entrance Nodon
-    url: /tools/nodopedia/object/teleport-object-entrance-nodon/
+    url: /gbg/nodopedia/object/teleport-object-entrance-nodon/
     category: object
   - name: Teleport-Object-Exit Nodon
-    url: /tools/nodopedia/object/teleport-object-exit-nodon/
+    url: /gbg/nodopedia/object/teleport-object-exit-nodon/
     category: object
   - name: Attract-Object Nodon
-    url: /tools/nodopedia/object/attract-object-nodon/
+    url: /gbg/nodopedia/object/attract-object-nodon/
     category: object
   - name: World Nodon
-    url: /tools/nodopedia/object/world-nodon/
+    url: /gbg/nodopedia/object/world-nodon/
     category: object
   - name: Game-Screen Nodon
-    url: /tools/nodopedia/object/game-screen-nodon/
+    url: /gbg/nodopedia/object/game-screen-nodon/
     category: object
   - name: Camera Nodon
-    url: /tools/nodopedia/object/camera-nodon/
+    url: /gbg/nodopedia/object/camera-nodon/
     category: object
   - name: Camera-Position Nodon
-    url: /tools/nodopedia/object/camera-position-nodon/
+    url: /gbg/nodopedia/object/camera-position-nodon/
     category: object
   - name: Camera-Target Nodon
-    url: /tools/nodopedia/object/camera-target-nodon/
+    url: /gbg/nodopedia/object/camera-target-nodon/
     category: object
   - name: Camera-Direction Nodon
-    url: /tools/nodopedia/object/camera-direction-nodon/
+    url: /gbg/nodopedia/object/camera-direction-nodon/
     category: object
   - name: Camera-Angle Nodon
-    url: /tools/nodopedia/object/camera-angle-nodon/
+    url: /gbg/nodopedia/object/camera-angle-nodon/
     category: object
   - name: Head Nodon
-    url: /tools/nodopedia/object/head-nodon/
+    url: /gbg/nodopedia/object/head-nodon/
     category: object
   - name: Hand Nodon
-    url: /tools/nodopedia/object/hand-nodon/
+    url: /gbg/nodopedia/object/hand-nodon/
     category: object
   - name: Controls
-    url: /tools/nodopedia/tips/controls/
+    url: /gbg/nodopedia/tips/controls/
     category: tips
   - name: Output Conversion Settings
-    url: /tools/nodopedia/tips/output-conversion-settings/
+    url: /gbg/nodopedia/tips/output-conversion-settings/
     category: tips
   - name: Signals and Input/Output Ports
-    url: /tools/nodopedia/tips/signals-and-input-output-ports/
+    url: /gbg/nodopedia/tips/signals-and-input-output-ports/
     category: tips
   - name: About Properties
-    url: /tools/nodopedia/tips/about-properties/
+    url: /gbg/nodopedia/tips/about-properties/
     category: tips
   - name: When Color Is Set to Auto
-    url: /tools/nodopedia/tips/when-color-is-set-to-auto/
+    url: /gbg/nodopedia/tips/when-color-is-set-to-auto/
     category: tips
   - name: "Connection Point: Auto"
-    url: /tools/nodopedia/tips/connection-point-auto/
+    url: /gbg/nodopedia/tips/connection-point-auto/
     category: tips
   - name: Automatic Switching Between Controllers
-    url: /tools/nodopedia/tips/automatic-switching-between-controllers/
+    url: /gbg/nodopedia/tips/automatic-switching-between-controllers/
     category: tips
   - name: About Performance
-    url: /tools/nodopedia/tips/about-performance/
+    url: /gbg/nodopedia/tips/about-performance/
     category: tips
   - name: "X, Y, Z Direction and Rotation"
-    url: /tools/nodopedia/tips/x-y-z-direction-and-rotation/
+    url: /gbg/nodopedia/tips/x-y-z-direction-and-rotation/
     category: tips
   - name: Object Connections and Forces
-    url: /tools/nodopedia/tips/object-connections-and-forces/
+    url: /gbg/nodopedia/tips/object-connections-and-forces/
     category: tips
   - name: Nodon and Connection Limits
-    url: /tools/nodopedia/tips/nodon-and-connection-limits/
+    url: /gbg/nodopedia/tips/nodon-and-connection-limits/
     category: tips
   - name: Advanced Cameras
-    url: /tools/nodopedia/tips/advanced-cameras/
+    url: /gbg/nodopedia/tips/advanced-cameras/
     category: tips
   - name: Sharing and Receiving
-    url: /tools/nodopedia/tips/sharing-and-receiving/
+    url: /gbg/nodopedia/tips/sharing-and-receiving/
     category: tips

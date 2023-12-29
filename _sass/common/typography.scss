@@ -9,6 +9,24 @@
 
 @font-face {
     font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-Medium.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-SemiBold.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
     src: url('/data/common/font/MohrRounded-Regular.woff2') format('woff2'),
         url('/data/common/font/MohrRounded-Regular.woff') format('woff');
     font-weight: normal;
@@ -21,6 +39,24 @@
     src: url('/data/common/font/MohrRounded-BoldIt.woff2') format('woff2'),
         url('/data/common/font/MohrRounded-BoldIt.woff') format('woff');
     font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-MediumIt.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-MediumIt.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/common/font/MohrRounded-SemiBoldIt.woff2') format('woff2'),
+        url('/data/common/font/MohrRounded-SemiBoldIt.woff') format('woff');
+    font-weight: 600;
     font-style: italic;
     font-display: swap;
 }
@@ -42,19 +78,75 @@
     font-style: normal;
 }
 
+:root {
+    color: var(--color-text);
+    font-family: 'Mohr Rounded';
+}
+
+body {
+    font-size: 1.125rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+    line-height: 1.1;
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+}
+
+p {
+    color: var(--color-text);
+}
+
+p + p {
+    margin-block-start: var(--size-200);
+}
+
+p.tagline {
+    font-size: var(--size-150);
+}
+
+a:any-link:not(:is(.card, .button)) {
+    text-decoration: underline;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
 .icon {
     font-family: "Voxyphs Icons";
     font-style: normal;
     font-weight: normal;
 
-    font-size: 24px;
+    font-size: 1.5rem;
     font-variant: normal;
     text-transform: none;
   
     line-height: 1em;
+
+    color: var(--color-text);
 }
 
-:root {
-    color: var(--text-base);
-    font-family: 'Mohr Rounded';
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
 }

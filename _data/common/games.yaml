@@ -1,0 +1,14 @@
+- name: Horder Up!
+  cover: horder-up
+  platform: Playdate
+  description: "Defend your kitchen from hordes of evil sentient foodstuffs hellbent on taking it for themselves!<br>Developed in collaboration with <a href='https://rae.wtf' class='text-pink'>Rae</a>"
+  button-text: Coming 2024!
+  button-active: false
+
+- name: War is Hare
+  cover: war-is-hare
+  platform: Playdate
+  description: "Lead your squad of trigger-hoppy rabbits to victory in this turn-based, two-player strategy game for Playdate!"
+  button-text: Check it out!
+  button-active: true
+  button-link: "https://voxybuns.itch.io/war-is-hare"

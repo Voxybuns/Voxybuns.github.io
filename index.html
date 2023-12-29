@@ -1,14 +1,72 @@
 ---
-layout: common/base
+title: Home • Voxy's Space
+layout: common/page
 ---
 
-<header>
-    <nav>
-        <img src="/data/common/img/logo_fullcolor.svg" alt="Voxy" class="navbarLogo">
-        <menu>
-            <li><a href="#">Test</a></li>
-            <li><a href="#">Test</a></li>
-            <li><a href="#">Test</a></li>
-        </menu>
-    </nav>
-</header>
+<section class="p-600 theme-yellow wave-bottom hero">
+    <div class="container">
+        <h1>Hello!</h1>
+        <p class="tagline">Welcome to the space of a silly bunny! I've created this website to list some of the silly things I've made, mostly games and lil' web dohickeys. I hope you enjoy your stay!</p>
+    </div>
+</section>
+<section class="pt-600" id="games">
+    <div class="container">
+
+        <h1 class="text-pink">Games</h1>
+        <p class="tagline">These are some games that I got a chance to work on, or even create all by myself!</p>
+
+        <div class="mt-200 container-grid">
+            {% for item in site.data.common.games %}
+                <article class="card theme-darker-purple wave-hover-animation">
+                    <img src="/data/games/{{ item.cover }}.png" alt="" class="wave-bottom">
+                    <div class="card-contents">
+                        <h2 class="text-pink">{{ item.name }}</h2>
+                        <h6 class="text-muted">{{ item.platform }}</h6>
+                        <spacer-block class="h-100"></spacer-block>
+                        <p>
+                            {{ item.description }}
+                        </p>
+                        <spacer-block class="h-150"></spacer-block>
+                        {% if item.button-active == true %}
+                        <a class="button theme-pink" href="{{ item.button-link }}">{{ item.button-text }}</a>
+                        {% elsif item.button-active == false %}
+                        <a class="button theme-dark-purple">{{ item.button-text }}</a>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="pt-600" id="gbg-tools">
+    <div class="container">
+
+        <h1 class="text-teal">GBG Tools</h1>
+        <p class="tagline">A bunch of utilities for <em>Game Builder Garage</em>!</p>
+
+        <div class="mt-200 container-grid">
+            {% for item in site.data.common.gbg_tools %}
+                <a class="card theme-darker-purple wave-hover-animation" href="{{ item.url }}">
+                    <img src="/data/gbg/{{ item.cover }}.png" alt="" class="wave-bottom">
+                    <div class="card-contents">
+                        <h2 class="text-teal">{{ item.name }}</h2>
+                        <spacer-block class="h-100"></spacer-block>
+                        <p>
+                            {{ item.description }}
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="p-600" id="places">
+    <div class="container">
+
+        <h1 class="text-purple">Places</h1>
+        <p class="tagline">Other pockets of Internet where you can find me!</p>
+
+    </div>
+</section>

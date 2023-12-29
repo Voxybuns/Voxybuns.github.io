@@ -1,0 +1,34 @@
+---
+layout: common/page
+title: Programming Set-ups • Voxy's Space
+---
+
+<section class="p-600">
+    <div class="container">
+
+        <h1 class="text-teal">Programming Set-ups</h1>
+        <p>Between June 2021 and March 2022, Nintendo has released 39 weekly sample games created with Game Builder Garage. Each of those samples (called "programming set-ups") showcased various game mechanics, and explained how to program them in your own creations.</p>
+        <p>Despite all set-ups getting localized and uploaded to the Game Builder Garage servers, Japan was the only region to consistently release them through a dedicated news channel. To help preserve them and make them easier to access, I've compiled all of them onto this very page, along with short descriptions of what they contain.</p>
+        <p>I hope you'll find them useful in your own game creation process!</p>
+
+        <div class="mt-200 container-grid">
+            {% for item in site.data.programming_setups %}
+                <article class="card theme-darker-purple">
+                    <div class="card-contents">
+                        <h2 class="text-teal">{{ item.name }}</h2>
+                        <spacer-block class="h-25"></spacer-block>
+                        <h3>{{ item.id }}</h3>
+                        <spacer-block class="h-100"></spacer-block>
+                        <p>{{ item.description }}</p>
+                    </div>
+                    <div class="nodon-display">
+                        {% for nodon in item.nodon %}
+                            <img src="/data/gbg/setups/{{ nodon }}-nodon.webp">
+                        {% endfor %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
