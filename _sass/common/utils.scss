@@ -38,6 +38,7 @@
     --color-heading: var(--gray-50);
     --color-background: var(--gray-900);
     --color-hover: var(--gray-800);
+    --color-active: var(--gray-700);
 }
 
 .theme-transparent {
@@ -45,6 +46,7 @@
     --color-heading: var(--gray-50);
     --color-background: transparent;
     --color-hover: var(--gray-800);
+    --color-active: var(--gray-700);
 }
 
 .theme-darker-purple {
@@ -52,6 +54,7 @@
     --color-heading: var(--gray-50);
     --color-background: var(--purple-900);
     --color-hover: var(--purple-800);
+    --color-active: var(--purple-700);
 }
 
 .theme-dark-purple {
@@ -59,6 +62,7 @@
     --color-heading: var(--gray-50);
     --color-background: var(--purple-800);
     --color-hover: var(--purple-700);
+    --color-active: var(--purple-600);
 }
 
 .theme-pink {
@@ -66,6 +70,7 @@
     --color-heading: var(--gray-900);
     --color-background: var(--pink-400);
     --color-hover: var(--pink-300);
+    --color-active: var(--pink-200);
 }
 
 .theme-yellow {
@@ -73,6 +78,7 @@
     --color-heading: var(--gray-900);
     --color-background: var(--yellow-300);
     --color-hover: var(--yellow-200);
+    --color-active: var(--yellow-100);
 }
 
 .theme-teal {
@@ -80,6 +86,7 @@
     --color-heading: var(--gray-900);
     --color-background: var(--teal-300);
     --color-hover: var(--teal-200);
+    --color-active: var(--teal-100);
 }
 
 .theme-purple {
@@ -87,6 +94,7 @@
     --color-heading: var(--gray-900);
     --color-background: var(--purple-400);
     --color-hover: var(--purple-300);
+    --color-active: var(--purple-200);
 }
 
 /* Text colors */
@@ -133,6 +141,23 @@
 .h-1000 { height: var(--size-1000); }
 .h-1500 { height: var(--size-1500); }
 .h-2000 { height: var(--size-2000); }
+
+.w-25 { width: var(--size-25); }
+.w-50 { width: var(--size-50); }
+.w-100 { width: var(--size-100); }
+.w-125 { width: var(--size-125); }
+.w-150 { width: var(--size-150); }
+.w-200 { width: var(--size-200); }
+.w-250 { width: var(--size-250); }
+.w-300 { width: var(--size-300); }
+.w-400 { width: var(--size-400); }
+.w-500 { width: var(--size-500); }
+.w-600 { width: var(--size-600); }
+.w-700 { width: var(--size-700); }
+.w-800 { width: var(--size-800); }
+.w-1000 { width: var(--size-1000); }
+.w-1500 { width: var(--size-1500); }
+.w-2000 { width: var(--size-2000); }
 
 .p-25 { padding-block: var(--size-25); }
 .p-50 { padding-block: var(--size-50); }

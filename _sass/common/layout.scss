@@ -16,8 +16,7 @@ body {
 
 header {
     background: var(--purple-900);
-    height: 72px;
-    overflow: hidden;
+    height: 48px;
     position: sticky;
     top: 0px;
     z-index: 1000;
@@ -30,9 +29,21 @@ header {
         padding-inline: 1rem;
         justify-content: space-between;
         align-items: center;
+
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .navbar-logo {
+            height: 100%;
+            & img {
+                display: block;
+                height: 100%;
+            }
+        }
         
-        menu {
-            display: flex;
+        .desktop-nav {
+            display: none;
             gap: 0rem;
         }
     }
@@ -70,4 +81,23 @@ footer {
     background: var(--color-background);
     color: var(--color-text);
     text-align: center;
+}
+
+@media only screen and (min-width: 1024px) { 
+	header {
+        height: 72px;
+        nav {
+            .dropdown {
+                display: none;
+            }
+
+            spacer-object {
+                display: none;
+            }
+
+            .desktop-nav {
+                display: flex;
+            }
+        }
+    }
 }

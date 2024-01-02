@@ -136,8 +136,8 @@
     /* Color tokens */
     --color-text: var(--gray-50);
     --color-heading: var(--gray-50);
-    --color-background: var(--gray-900);
-    --color-hover: var(--gray-800);
+    --color-background: transparent;
+    --color-hover: transparent;
 
     /* Other tokens */
     --ease-out-quart: cubic-bezier(0.165, 0.840, 0.440, 1.000);

@@ -13,6 +13,7 @@ spacer-block {
     color: var(--color-text);
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
 
     transition: background 0.25s var(--ease-out-quart);
     &:any-link {
@@ -21,9 +22,29 @@ spacer-block {
     &:hover {
         background: var(--color-hover);
     }
+    &:active {
+        background: var(--color-active);
+    }
 }
 
+details[open] > summary > .button {
+    background: var(--color-active);
+}
 
+.button-square {
+    padding: 0.5rem;
+}
+.button-sharp {
+    border-radius: 0;
+}
+
+a.card:hover {
+    background: var(--color-hover);
+}
+
+a.card:active {
+    background: var(--color-active);
+}
 .card {
     background: var(--color-background);
     border-radius: 3rem;
@@ -32,6 +53,7 @@ spacer-block {
     flex-direction: column;
     text-decoration: none;
     font-weight: initial;
+    transition: background 0.25s var(--ease-out-quart);
 }
 
 .card-contents {
@@ -55,5 +77,41 @@ spacer-block {
         width: var(--size-400);
         height: var(--size-400);
         margin-bottom: -3px;
+    }
+}
+
+details > summary {
+    list-style: none;
+    cursor: pointer;
+    & > .icon::before {
+        content: '🗄️';
+    }
+}
+
+details[open] > summary > .icon::before {
+    content: '❌';
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+details {
+    position: relative;
+}
+
+details > menu {
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 0.5rem 0;
+    position: absolute;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 1000;
+    margin-block-start: 1rem;
+    & .button {
+        justify-content: flex-start;
     }
 }
