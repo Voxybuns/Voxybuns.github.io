@@ -8,5 +8,8 @@
   url: 'https://twitter.com/voxybuns'
   description: Insane ramblings from the bunny
 - name: Bluesky
-  url: 'https://bsky.app/profile/voxybuns.bsky.social'
+  url: 'https://bsky.app/profile/voxy.space'
   description: The same, but less frequent
+- name: Mastodon
+  url: 'https://mastodon.gamedev.place/@voxybuns'
+  description: The same, but even less frequent
