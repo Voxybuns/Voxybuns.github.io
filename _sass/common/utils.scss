@@ -27,8 +27,18 @@
     }
 }
 
+.wave-bottom-animated {
+    animation: 12s linear wave-animation;
+    animation-iteration-count: infinite;
+}
+
+.wave-hover-animation img {
+    animation: 4s linear wave-animation;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
 .wave-hover-animation:hover img {
-    animation: 3s infinite linear wave-animation;
+    animation-play-state: running;
 }
 
 /* Color themes */

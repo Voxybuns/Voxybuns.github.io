@@ -3,10 +3,13 @@ title: Home • Voxy's Space
 layout: common/page
 ---
 
-<section class="p-600 theme-yellow wave-bottom hero">
+<section class="theme-yellow wave-bottom wave-bottom-animated hero">
     <div class="container">
-        <h1>Hello!</h1>
-        <p class="tagline">Welcome to the space of a silly bunny! I've created this website to list some of the silly things I've made, mostly games and lil' web dohickeys. I hope you enjoy your stay!</p>
+        <div class="p-600">
+            <h1>Hello!</h1>
+            <p class="tagline">Welcome to the space of a silly bunny! I've created this website to list some of the silly things I've made, mostly games and lil' web dohickeys. I hope you enjoy your stay!</p>
+        </div>
+        <img src="/data/common/img/hero-image.png" alt="">
     </div>
 </section>
 <section class="pt-600" id="games">
@@ -68,5 +71,16 @@ layout: common/page
         <h1 class="text-purple">Places</h1>
         <p class="tagline">Other pockets of Internet where you can find me!</p>
 
+
+        <div class="mt-200 container-grid">
+            {% for item in site.data.common.places %}
+            <a href="{{ item.url }}" class="card theme-purple">
+                <div class="card-contents">
+                    <h2>{{ item.name }}</h2>
+                    <p>{{ item.description }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
     </div>
 </section>

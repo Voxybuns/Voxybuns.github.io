@@ -57,22 +57,38 @@ section {
     background: var(--color-background);
 }
 
-.hero {
-    background-image: url("/data/common/img/test-hero.png");
-    background-repeat: no-repeat;
-    background-position: center 20rem top;
-    background-size: 40rem;
-}
-
 .container {
     max-width: 1024px;
     margin: 0 auto;
     padding-inline: 1rem;
 }
 
+.hero > .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    > div {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        z-index: 8;
+    }
+    > img {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        flex-shrink: 1;
+        max-height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
 .container-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1rem;
 }
@@ -100,4 +116,10 @@ footer {
             }
         }
     }
+
+    .container-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    .hero > .container > img { grid-column-start: 2; max-height: 24rem; object-position: top;}
 }

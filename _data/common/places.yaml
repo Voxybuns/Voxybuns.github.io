@@ -1,0 +1,12 @@
+- name: YouTube
+  url: 'https://www.youtube.com/@Voxybuns'
+  description: Occasional streams and videos
+- name: itch.io
+  url: 'https://voxybuns.itch.io/'
+  description: The place to find all my games
+- name: Twitter
+  url: 'https://twitter.com/voxybuns'
+  description: Insane ramblings from the bunny
+- name: Bluesky
+  url: 'https://bsky.app/profile/voxybuns.bsky.social'
+  description: The same, but less frequent

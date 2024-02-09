@@ -3,7 +3,7 @@ spacer-block {
 }
 
 .button {
-    display: flex;
+    display: inline-flex;
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,10 @@ spacer-block {
     &:active {
         background: var(--color-active);
     }
+}
+
+.button-full-width {
+    width: 100%;
 }
 
 details[open] > summary > .button {
@@ -74,8 +78,8 @@ a.card:active {
     margin-block-start: calc(var(--size-200) * -1);
     padding-inline: var(--size-200);
     > img {
-        width: var(--size-400);
-        height: var(--size-400);
+        width: var(--size-300);
+        height: var(--size-300);
         margin-bottom: -3px;
     }
 }
@@ -114,4 +118,19 @@ details > menu {
     & .button {
         justify-content: flex-start;
     }
+}
+
+iframe.video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 3rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .nodon-display > img {
+        width: var(--size-400);
+        height: var(--size-400);
+    }
+
 }

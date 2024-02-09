@@ -79,8 +79,10 @@
 }
 
 :root {
+    font-size: 14px;
     color: var(--color-text);
     font-family: 'Mohr Rounded';
+    hyphens: auto;
 }
 
 body {
@@ -149,4 +151,10 @@ strong {
 
 em {
     font-style: italic;
+}
+
+@media only screen and (min-width: 1024px) {
+    :root {
+        font-size: 16px;
+    }
 }
