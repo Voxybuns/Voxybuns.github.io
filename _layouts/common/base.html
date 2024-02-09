@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/data/common/style.css">
     <title>{{ page.title }}</title>
+    <link rel="shortcut icon" href="/data/common/img/favicon.png" type="image/x-icon">
+    <meta name="description" content="{{ page.description }}" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/data/common/img/favicon.png" />
+    <meta property="og:image:secure_url" content="{{ site.url }}/data/common/img/favicon.png" />
+    <meta property="og:description" content="{{ page.description }}" />
 </head>
 <body>
     {{ content }}

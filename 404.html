@@ -1,20 +1,15 @@
 ---
-title: 404!
+title: Page not found • Voxy's Space
+layout: common/page
+permalink: /404.html
 ---
-<!DOCTYPE html>
-<html lang="en">
-{% include common/head.html %}
-<body>
-    {% include common/navbar.html %}
-    <main>
-        <section>
-            <div style="text-align: center;">
-                <img src="/assets/common/img/404.png" alt="" style="max-width: 32rem; margin: auto; margin-block-end: 3rem;">
-                <h1>404, that's an error!</h1>
-                <p>Sorry, the page you're looking for doesn't exist! Try heading back to the <a href="/">homepage!</a></p>
-            </div>
-        </section>
-    </main>
-    {% include common/footer.html %}
-</body>
-</html>
+
+<section class="p-600">
+    <div class="container">
+        <h1 class="text-yellow">Page not found!</h1>
+        <spacer-block class="h-100"></spacer-block>
+        <p>Whoops, seems like the page you're looking for doesn't exist, or has been moved elsewhere! Sorry about that!</p>
+        <spacer-block class="h-200"></spacer-block>
+        <a href="/" class="button theme-yellow">Go back home</a>
+    </div>
+</section>
