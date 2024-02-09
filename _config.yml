@@ -23,7 +23,7 @@ email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   The space of a silly bunny.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://voxybuns.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.voxy.space" # the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 
