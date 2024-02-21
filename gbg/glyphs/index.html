@@ -4,7 +4,7 @@ layout: common/page
 description: A collection of controller and input icons to make your in-game tutorials look really pro!
 ---
 
-<section class="p-600">
+<section class="pv-600">
     <div class="container">
         <h1 class="text-teal">Controller Glyphs</h1>
         <spacer-block class="h-100"></spacer-block>
@@ -29,9 +29,49 @@ description: A collection of controller and input icons to make your in-game tut
 
         <h2 class="text-teal">AGTD method</h2>
         <spacer-block class="h-50"></spacer-block>
-        <p>This method uses AGTD, an Arduino script by <a href="https://www.youtube.com/channel/UCjdquv22VPfwetg0JBV_JcA">Borri</a> and <a href="https://twitter.com/Scrubz_GBG/">Scrubz</a> which allows textures to be drawn automatically inside of Game Builder Garage using an Arduino microcontroller.</p>
-        <p>To use this method, you'll need the advanced AGTD setup, which uses the SD card readers. For more details, check out <a href="https://youtu.be/PTDiTS-Exjk">this other video</a> by Dom. Download the .zip archive below and copy the glyphs you need onto the root of the SD card. Insert the SD card into the Arduino setup, and start the script to import them in your project.</p>
+        <p>This method uses AGTD, an Arduino script by <a href="https://www.youtube.com/channel/UCjdquv22VPfwetg0JBV_JcA">Borri</a> and <a href="https://twitter.com/Scrubz_GBG/">Scrubz</a> which allows textures to be drawn automatically inside of Game Builder Garage using an Arduino microcontroller. For more info about AGTD, check out <a href="https://youtu.be/PTDiTS-Exjk">this other video</a> by Dom.</p>
+        <p>There are two ways to setup AGTD, each with its own data format and instructions. Refer to the section corresponding to the setup you use to get started with this method!</p>
+
         <spacer-block class="h-200"></spacer-block>
-        <a href="/data/gbg/glyphs/GBG_Controller_Glyphs.zip" download class="button theme-teal">Download the glyphs</a>
+
+        <details class="collapsible-section theme-darker-purple">
+            <summary class="pv-200 ph-200"><h3 class="text-teal"><span class="icon">🔻</span> Basic AGTD setup</h3></summary>
+            <div class="pv-200 ph-200 pt-0">
+                <p>If you use the basic AGTD setup, which requires pasting the texture data into the script manually, you can click any of the buttons below to copy the corresponding glyph's data to your clipboard. This way, you can easily paste it into the AGTD script.</p>
+                <spacer-block class="h-200"></spacer-block>
+                <div class="glyph-grid">
+                    {% for item in site.data.controller_sprites %}
+                        <button class="button button-square theme-teal" onclick="copyToClipboard(event)">
+                            <img class="controller-glyph-image" data-index="{{ forloop.index0 }}" title="{{ item.name }}" src="/data/gbg/glyphs/icons/{{ item.image }}.svg">
+                        </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </details>
+
+        <spacer-block class="h-200"></spacer-block>
+
+        <details class="collapsible-section theme-darker-purple">
+            <summary class="pv-200 ph-200"><h3 class="text-teal"><span class="icon">🔻</span> Advanced AGTD setup</h3></summary>
+            <div class="pv-200 ph-200 pt-0">
+                <p>If you use the advanced AGTD setup, which uses an SD card reader to draw up to 128 consecutive textures in one go, you can download the .zip archive below, which contains all the glyphs in the .gtd format. Simply copy the glyphs you need onto the root of the SD card, and you're all set!</p>
+                <spacer-block class="h-200"></spacer-block>
+                <a href="/data/gbg/glyphs/GBG_Controller_Glyphs.zip" download class="button theme-teal">Download the glyphs</a>
+            </div>
+        </details>
+
     </div>
 </section>
+<div id="snackbar" class="theme-teal pv-100 ph-200"><p>Copied to clipboard!</p></div>
+<script type="text/javascript" src="/data/gbg/glyphs/texture-data.js"></script>
+<script>
+    function copyToClipboard(event) {
+        var input = event.target;
+        var i = input.dataset.index;
+        navigator.clipboard.writeText(sprites[i]);
+        console.log(sprites[i]);
+        var x = document.getElementById("snackbar");
+        x.className = "show theme-teal pv-100 ph-200";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
+</script>

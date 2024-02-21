@@ -101,6 +101,13 @@ section {
     gap: 1rem;
 }
 
+.glyph-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(3rem, 1fr));
+    grid-auto-rows: 1fr;
+}
+
 footer {
     background: var(--color-background);
     color: var(--color-text);
