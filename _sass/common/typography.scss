@@ -93,6 +93,7 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: bold;
     line-height: 1.1;
     color: var(--color-heading);
+    scroll-margin-block-start: 88px;
 }
 
 h1 {
@@ -113,6 +114,14 @@ h6 {
     font-style: italic;
 }
 
+p + :is(h1,h2,h3,h4,h5,h6) {
+    margin-block-start: var(--size-400);
+}
+
+:is(h2,h3,h4,h5,h6) + p {
+    margin-block-start: var(--size-100);
+}
+
 p {
     color: var(--color-text);
 }
@@ -123,6 +132,10 @@ p + p {
 
 p.tagline {
     font-size: var(--size-150);
+}
+
+p > img {
+    border-radius: 2rem;
 }
 
 a:any-link:not(:is(.card, .button)) {

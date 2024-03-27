@@ -17,7 +17,7 @@ description: Welcome to the space of a silly bunny!
     <div class="container">
 
         <h1 class="text-pink"><span class="icon icon-adaptive">🎮</span> Games</h1>
-        <p class="tagline">Games that I've worked on.</p>
+        <p class="tagline">Some games I worked on, or created myself!</p>
 
         <div class="mt-200 container-grid">
             {% for item in site.data.common.games %}
@@ -46,7 +46,25 @@ description: Welcome to the space of a silly bunny!
 <section class="pt-600" id="thoughts">
     <div class="container">
         <h1 class="text-yellow"><span class="icon icon-adaptive">💭</span> Thoughts</h1>
-        <p class="tagline">Articles about my current projects.</p>
+        <p class="tagline">A space for me to write about my projects!</p>
+
+        <div class="mt-200 container-grid">
+            {% for post in site.posts %}
+                <a class="card theme-darker-purple wave-hover-animation" href="{{ post.url }}">
+                    <img class="wave-bottom">
+                    <div class="card-contents">
+                        <h2 class="text-yellow">{{ post.title }}</h2>
+                        <h6 class="text-muted">{{ post.date | date_to_string: "ordinal", "US" }}</h6>
+                        <spacer-block class="h-100"></spacer-block>
+                        <p>
+                            {{ post.excerpt | strip_html }}
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <spacer-block class="h-100"></spacer-block>
+        <a href="#" class="button button-full-width theme-yellow">View all posts</a>
     </div>
 </section>
 
@@ -54,7 +72,7 @@ description: Welcome to the space of a silly bunny!
     <div class="container">
 
         <h1 class="text-teal"><span class="icon icon-adaptive">🔨</span> GBG Tools</h1>
-        <p class="tagline">Utilities for <em>Game Builder Garage</em>.</p>
+        <p class="tagline">Utilities for <em>Game Builder Garage</em>!</p>
 
         <div class="mt-200 container-grid">
             {% for item in site.data.common.gbg_tools %}
@@ -77,7 +95,7 @@ description: Welcome to the space of a silly bunny!
     <div class="container">
 
         <h1 class="text-purple"><span class="icon icon-adaptive">🪐</span> Places</h1>
-        <p class="tagline">Other pockets of Internet where you can find me.</p>
+        <p class="tagline">Other pockets of Internet where you can find me!</p>
 
 
         <div class="mt-200 container-grid">
@@ -85,7 +103,7 @@ description: Welcome to the space of a silly bunny!
             <a href="{{ item.url }}" class="card theme-purple">
                 <div class="card-contents">
                     <h2>{{ item.name }}</h2>
-                    <p>{{ item.description }}</p>
+                    <p class="mt-0">{{ item.description }}</p>
                 </div>
             </a>
             {% endfor %}

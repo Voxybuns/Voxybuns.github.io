@@ -190,6 +190,15 @@ iframe.video {
     border-radius: 3rem;
 }
 
+#table-of-contents {
+    display: block;
+    align-self: flex-start;
+    background-color: var(--color-background);
+    border-radius: 1rem;
+    position: sticky;
+    top: 88px;
+}
+
 @media only screen and (min-width: 1024px) {
     .nodon-display > img {
         width: var(--size-400);
