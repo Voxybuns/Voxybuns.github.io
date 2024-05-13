@@ -101,6 +101,12 @@ section {
     gap: 1rem;
 }
 
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 1rem;
+}
+
 .glyph-grid {
     display: grid;
     gap: 0.5rem;

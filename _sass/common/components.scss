@@ -63,6 +63,9 @@ a.card:active {
     text-decoration: none;
     font-weight: initial;
     transition: background 0.25s var(--ease-out-quart);
+    & > img {
+        max-height: 270px;
+    }
 }
 
 .card-contents {
@@ -188,6 +191,15 @@ iframe.video {
     width: 100%;
     overflow: hidden;
     border-radius: 3rem;
+}
+
+#table-of-contents {
+    display: block;
+    align-self: flex-start;
+    background-color: var(--color-background);
+    border-radius: 1rem;
+    position: sticky;
+    top: 88px;
 }
 
 @media only screen and (min-width: 1024px) {
