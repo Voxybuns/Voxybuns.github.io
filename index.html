@@ -1,5 +1,5 @@
 ---
-title: Home • Voxy's Space
+title: Home
 layout: common/page
 description: Welcome to the space of a silly bunny!
 ---
@@ -63,8 +63,10 @@ description: Welcome to the space of a silly bunny!
                 </a>
             {% endfor %}
         </div>
+        <!-- 
         <spacer-block class="h-100"></spacer-block>
         <a href="#" class="button button-full-width theme-yellow">View all posts</a>
+        -->
     </div>
 </section>
 
@@ -100,7 +102,7 @@ description: Welcome to the space of a silly bunny!
 
         <div class="mt-200 container-grid">
             {% for item in site.data.common.places %}
-            <a href="{{ item.url }}" class="card theme-purple">
+            <a href="{{ item.url }}" class="card theme-purple center-on-axis">
                 <div class="card-contents">
                     <h2>{{ item.name }}</h2>
                     <p class="mt-0">{{ item.description }}</p>

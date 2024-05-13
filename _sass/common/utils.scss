@@ -1,19 +1,21 @@
 .wave-top {
-    mask-image: url('/data/common/img/wave-mask-top.svg'), linear-gradient(transparent 0 34px, black 34px 100%);
-    -webkit-mask-image: url('/data/common/img/wave-mask-top.svg'), linear-gradient(transparent 0 34px, black 34px 100%);
+    mask-image: url('/data/common/img/wave-mask-top.svg'), linear-gradient(transparent 0 36px, black 36px 100%);
+    -webkit-mask-image: url('/data/common/img/wave-mask-top.svg'), linear-gradient(transparent 0 36px, black 36px 100%);
     mask-position: top;
     -webkit-mask-position: top;
     mask-repeat: repeat-x;
     -webkit-mask-repeat: repeat-x;
+    will-change: mask-position, -webkit-mask-position;
 }
 
 .wave-bottom {
-    mask-image: url("/data/common/img/wave-mask-bottom.svg"), linear-gradient(black 0 calc(100% - 34px), transparent calc(100% - 34px) 100%);
-    -webkit-mask-image: url("/data/common/img/wave-mask-bottom.svg"), linear-gradient(black 0 calc(100% - 34px), transparent calc(100% - 34px) 100%);
+    mask-image: url("/data/common/img/wave-mask-bottom.svg"), linear-gradient(black 0 calc(100% - 36px), transparent calc(100% - 36px) 100%);
+    -webkit-mask-image: url("/data/common/img/wave-mask-bottom.svg"), linear-gradient(black 0 calc(100% - 36px), transparent calc(100% - 36px) 100%);
     mask-position: 0px bottom;
     -webkit-mask-position: 0px bottom;
     mask-repeat: repeat-x;
     -webkit-mask-repeat: repeat-x;
+    will-change: mask-position, -webkit-mask-position;
 }
 
 @keyframes wave-animation {
@@ -281,4 +283,12 @@
 .text-left {
     text-align: left;
     justify-content: flex-start;
+}
+
+.center-cross-axis {
+    align-items: center;
+}
+
+.center-on-axis {
+    justify-content: center;
 }
