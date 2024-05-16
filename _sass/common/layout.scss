@@ -103,8 +103,21 @@ section {
 
 .article-grid {
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 1rem;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    > article {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    > aside {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
 }
 
 .glyph-grid {
@@ -145,4 +158,24 @@ footer {
         background-image: none;
     }
     .hero > .container > img { display: block; }
+
+    .article-grid {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 320px;
+        gap: 1rem;
+        > article {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        > aside {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            position: sticky;
+            top: 88px;
+        }
+    }
 }
