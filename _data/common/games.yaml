@@ -1,9 +1,10 @@
-- name: Horder Up!
-  cover: horder-up
-  platform: Playdate
-  description: "Defend your kitchen from hordes of evil sentient foodstuffs hellbent on taking it for themselves!<br>Developed in collaboration with <a href='https://rae.wtf' class='text-pink'>Rae</a>"
-  button-text: Coming 2024!
+- name: Townbox™
+  cover: townbox
+  platform: Steam
+  description: "Townbox™ is a single player sandbox town building game with an emphasis on creativity and self expression! Take on the role of trainee town planner and expand your teeny-tiny starting island into a bustling town of your own design."
+  button-text: Wishlist now!
   button-active: false
+  button-link: "https://store.steampowered.com/app/2906440/Townbox/"
 
 - name: War is Hare
   cover: war-is-hare
