@@ -3,7 +3,7 @@
   platform: Steam
   description: "Townbox™ is a single player sandbox town building game with an emphasis on creativity and self expression! Take on the role of trainee town planner and expand your teeny-tiny starting island into a bustling town of your own design."
   button-text: Wishlist now!
-  button-active: false
+  button-active: true
   button-link: "https://store.steampowered.com/app/2906440/Townbox/"
 
 - name: War is Hare
