@@ -1,18 +1,12 @@
 - name: YouTube
   url: 'https://www.youtube.com/@Voxybuns'
   description: Occasional streams and videos
+- name: Bluesky
+  url: 'https://bsky.app/profile/voxy.space'
+  description: All the ramblings and updates
 - name: itch.io
   url: 'https://voxybuns.itch.io/'
   description: The place to find all my games
 - name: GitHub
   url: 'https://github.com/Voxybuns'
   description: Open source projects
-- name: Twitter
-  url: 'https://twitter.com/voxybuns'
-  description: Insane ramblings from the bunny
-- name: Bluesky
-  url: 'https://bsky.app/profile/voxy.space'
-  description: The same, but less frequent
-- name: Mastodon
-  url: 'https://mastodon.gamedev.place/@voxybuns'
-  description: The same, but even less frequent

@@ -80,9 +80,9 @@
 .theme-pink {
     --color-text: var(--gray-900);
     --color-heading: var(--gray-900);
-    --color-background: var(--pink-400);
-    --color-hover: var(--pink-300);
-    --color-active: var(--pink-200);
+    --color-background: var(--pink-300);
+    --color-hover: var(--pink-200);
+    --color-active: var(--pink-100);
 }
 
 .theme-yellow {
@@ -96,24 +96,24 @@
 .theme-teal {
     --color-text: var(--gray-900);
     --color-heading: var(--gray-900);
-    --color-background: var(--teal-300);
-    --color-hover: var(--teal-200);
-    --color-active: var(--teal-100);
+    --color-background: var(--teal-200);
+    --color-hover: var(--teal-100);
+    --color-active: var(--teal-50);
 }
 
 .theme-purple {
     --color-text: var(--gray-900);
     --color-heading: var(--gray-900);
-    --color-background: var(--purple-400);
-    --color-hover: var(--purple-300);
-    --color-active: var(--purple-200);
+    --color-background: var(--purple-300);
+    --color-hover: var(--purple-200);
+    --color-active: var(--purple-100);
 }
 
 /* Text colors */
 
 .text-pink {
-    --color-text: var(--pink-400);
-    --color-heading: var(--pink-400);
+    --color-text: var(--pink-300);
+    --color-heading: var(--pink-300);
 }
 
 .text-yellow {
@@ -122,13 +122,13 @@
 }
 
 .text-teal {
-    --color-text: var(--teal-300);
-    --color-heading: var(--teal-300);
+    --color-text: var(--teal-200);
+    --color-heading: var(--teal-200);
 }
 
 .text-purple {
-    --color-text: var(--purple-400);
-    --color-heading: var(--purple-400);
+    --color-text: var(--purple-300);
+    --color-heading: var(--purple-300);
 }
 
 .text-muted {
