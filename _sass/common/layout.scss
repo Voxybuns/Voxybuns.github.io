@@ -10,13 +10,13 @@ body {
     display: flex;
     flex-direction: column;
 
-    background: url('/data/common/img/pattern-base.png'), var(--purple-900);
+    background: url('/data/common/img/pattern-bunnies.png'), var(--gray-900);
     background-size: 480px;
 }
 
 header {
     background: var(--purple-900);
-    height: 48px;
+    height: 64px;
     position: sticky;
     top: 0px;
     z-index: 1000;
@@ -35,10 +35,11 @@ header {
         }
 
         .navbar-logo {
+            display: flex;
+            align-items: center;
             height: 100%;
             & img {
                 display: block;
-                height: 100%;
             }
         }
         
@@ -58,9 +59,8 @@ section {
 }
 
 .hero {
-    background-image: url('/data/common/img/hero-image.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url('/data/common/img/pattern-stripes.png');
+    background-repeat: repeat;
     background-position: center;
 }
 
@@ -154,10 +154,6 @@ footer {
     .container-grid {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     }
-    .hero {
-        background-image: none;
-    }
-    .hero > .container > img { display: block; }
 
     .article-grid {
         grid-template-rows: 1fr;
