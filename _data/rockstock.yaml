@@ -1,0 +1,961 @@
+- category: "Sediment"
+  contents:
+  - name: "Ground"
+    slug: "ground"
+    desc: |
+      The solid ground of the Planet and Moons.
+      <br>Its appearance depends on the location and development status.
+    obtain: |
+      Ground covers the totality of Planetary Blocks and Moons. It can be created when:
+      - A [Leveler Stone](#leveler-stone) is broken
+      - [&nbsp;Concrete](#concrete) reacts with [&nbsp;Water](#water)
+    break: |
+      Ground can only be broken using a Hammer. Upon breaking, it yields nothing.
+
+  - name: " Soil"
+    slug: "soil"
+    desc: |
+      Used to grow [&nbsp;Seeds](#seed).
+      <br>Fuses with adjacent [&nbsp;Clay](#clay) pieces.
+    obtain: |
+      Deposits of Soil generate abudantly on Planetary Blocks. It can also be found on certain Moons. Soil is obtained when:
+      - [&nbsp;Magma](#magma) reacts to &nbsp;Frost
+      - [&nbsp;Magma](#magma) reacts to [&nbsp;Ice](#ice)
+      - [&nbsp;Magma](#magma) reacts to [&nbsp;Water](#water)
+      - [&nbsp;Sand](#sand) reacts to [&nbsp;Water](#water)
+    usage: |
+      A [&nbsp;Seed](#seed) placed on top of Soil changes to a [&nbsp;Growing Seed](#growing-seed).
+      <br>Changes to [&nbsp;Field Soil](#field-soil) when a Garden Hoe is used.
+      <br>Changes to [&nbsp;Sand](#sand) when reacting to [&nbsp;Swamp](#swamp).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Soil has low hardness. Upon breaking, it yields nothing.
+
+  - name: " Field Soil"
+    slug: "field-soil"
+    desc: |
+      Used to grow [&nbsp;Seeds](#seed) faster than regular [&nbsp;Soil](#soil).
+      <br>Fuses with adjacent [&nbsp;Clay](#clay) pieces.
+    obtain: |
+      Field Soil generates naturally within deposits of [&nbsp;Soil](#soil). Field Soil is obtained when a Garden Hoe is used on [&nbsp;Soil](#soil).
+    usage: |
+      A [&nbsp;Seed](#seed) placed on top of Field Soil changes to a [&nbsp;Growing Seed](#growing-seed), and grows faster than regular Soil.
+      <br>Changes to [&nbsp;Sand](#sand) when reacting to [&nbsp;Swamp](#swamp).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Field Soil has higher hardness than [&nbsp;Soil](#soil). Upon breaking, it yields nothing.
+    
+  - name: " Sand"
+    slug: "sand"
+    desc: |
+      <br>
+    obtain: |
+      Deposits of Sand generate abundantly on Planetary Blocks. It can also be found on certain Moons. Sand is obtained when:
+      - [&nbsp;Soil](#soil) reacts to [&nbsp;Swamp](#swamp)
+      - [&nbsp;Field Soil](#field-soil) reacts to [&nbsp;Swamp](#swamp)
+      - [&nbsp;Grass](#grass) reacts to [&nbsp;Swamp](#swamp)
+      - [&nbsp;Glass Spike](#glass-spike) reacts to [&nbsp;Swamp](#swamp)
+      - [&nbsp;Glass](#glass) reacts to [&nbsp;Swamp](#swamp)
+    usage: |
+      Changes to [&nbsp;Glass Spike](#glass-spike) when reacting to [&nbsp;Magma](#magma).
+      <br>Changes to [&nbsp;Soil](#soil) when reacting to [&nbsp;Water](#water).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Sand has very low hardness. Upon breaking, it yields nothing, and adjacent Sand pieces also break.
+
+  - name: " Clay"
+    slug: "clay"
+    desc: |
+      Fuses with adjacent Clay, [&nbsp;Ceramic](#ceramic), [&nbsp;Soil](#soil), and [&nbsp;Field Soil](#field-soil) pieces.
+    obtain: |
+      Clay can be found on certain Moons. Clay is obtained when any type of Rock reacts to [&nbsp;Swamp](#swamp).
+    usage: |
+      Changes to [&nbsp;Ceramic](#ceramic) when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Clay has low hardness. Upon breaking, it yields nothing.
+
+  - name: " Ceramic"
+    slug: "ceramic"
+    desc: |
+      Fuses with adjacent [&nbsp;Clay](#clay) pieces.
+    obtain: |
+      Ceramic can be found on certain Moons. Ceramic is obtained when [&nbsp;Clay](#clay) reacts to [&nbsp;Magma](#magma).
+    usage: |
+      Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Ceramic has medium hardness. Upon breaking, it yields nothing.
+
+- category: "Plant"
+  contents:
+  - name: " Grass"
+    slug: "grass"
+    desc: |
+      <br>
+    obtain: |
+      Grass generates naturally on Planetary Blocks. It can also be found on certain Moons. [&nbsp;Water](#water) creates Grass pieces when it cannot flow further.
+    usage: |
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Grass has very low hardness. It breaks when a piece is placed on top, or when adjacent to [&nbsp;Magma](#magma). Upon breaking, it yields nothing.
+  - name: " Tree Trunk"
+    slug: "tree-trunk"
+    desc: |
+      A source of Wood cards found in trees.
+    obtain: |
+      Tree Trunks can be found on certain Moons. Tree Trunks are obtained when:
+      - [&nbsp;Sprout](#sprout) reacts to [&nbsp;Water](#water), growing a tree
+      - [&nbsp;Dead Wood](#dead-wood) reacts to [&nbsp;Water](#water) or developed [Ground](#ground)
+      - [&nbsp;Tree Knots](#tree-knot) are struck, growing a tree further
+      - Darkness is vainquished, growing a tree
+    usage: |
+      Changes to [&nbsp;Charcoal](#charcoal) when reacting to [&nbsp;Magma](#magma).
+      <br>
+      Changes to [&nbsp;Dead Wood](#dead-wood) when reacting to [&nbsp;Swamp](#swamp).
+      <br>
+      Woodworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Tree Trunks have low hardness. Upon breaking, it yields a Wood card.
+
+  - name: " Dead Wood"
+    slug: "dead-wood"
+    desc: |
+      <br>
+    obtain: |
+      Dead Wood can be found in Planetary Blocks as part of Broot trees. Dead Wood is obtained when:
+      - [&nbsp;Tree Trunks](#tree-trunk) react to [&nbsp;Swamp](#swamp)
+    usage: |
+      Changes to [&nbsp;Tree Trunk](#tree-trunk) when reacting to [&nbsp;Water](#water) or placed on developed [Ground](#ground).
+      <br>
+      Changes to [&nbsp;Charcoal](#charcoal) when reacting to [&nbsp;Magma](#magma).
+      <br>
+      Woodworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Dead Wood has the same hardness as [&nbsp;Tree Trunks](#tree-trunk). Upon breaking, it yields a Wood card.
+
+  - name: " Tree Leaf"
+    slug: "tree-leaf"
+    desc: |
+      A source of Wood cards and Noots found in trees.
+    obtain: |
+      Tree Leaves can be found on certain Moons. Tree Leaves are obtained when:
+      - [&nbsp;Sprout](#sprout) reacts to [&nbsp;Water](#water), growing a tree
+      - [&nbsp;Dead Leaf](#dead-leaf) reacts to [&nbsp;Water](#water) or developed [Ground](#ground)
+      - [&nbsp;Tree Knots](#tree-knot) are struck, growing a tree further
+      - Darkness is vainquished, growing a tree
+    usage: |
+      Changes to [&nbsp;Charcoal](#charcoal) when reacting to [&nbsp;Magma](#magma).
+      <br>
+      Changes to [&nbsp;Dead Leaf](#dead-leaf) when reacting to [&nbsp;Swamp](#swamp).
+      <br>
+      Woodworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Tree Leaves have low hardness. Upon breaking, it yields a Wood card and has a chance to spawn a Noot.
+
+  - name: " Dead Leaf"
+    slug: "dead-leaf"
+    desc: |
+      Breaks when stepped on.
+    obtain: |
+      Dead Leaves are obtained when [&nbsp;Tree Leaves](#tree-leaf) react to [&nbsp;Swamp](#swamp)
+    usage: |
+      Changes to [&nbsp;Tree Leaf](#tree-leaf) when reacting to [&nbsp;Water](#water) or placed on developed [Ground](#ground).
+      <br>
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Dead Leaves have very low hardness. They break when stepped on. Breaking them also breaks adjacent fragile pieces. Upon breaking, it yields a Wood card.
+
+  - name: " Tree Knot"
+    slug: "tree-knot"
+    desc: |
+      Grows branches when struck.
+    obtain: |
+      Tree Knots are obtained when a tree grows from a [&nbsp;Sprout](#sprout) or defeating Darkness.
+    usage: |
+      Tree Knots turn into [&nbsp;Tree Trunks](#tree-trunk) if unfused and placed elsewhere.
+      <br>
+      Changes to [&nbsp;Charcoal](#charcoal) when reacting to [&nbsp;Magma](#magma).
+      <br>
+      Changes to [&nbsp;Dead Wood](#dead-wood) when reacting to [&nbsp;Swamp](#swamp).
+      <br>
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Tree Knots have the same hardness as [&nbsp;Tree Trunks](#tree-trunk). When struck, a tree branch grows in its place.
+
+  - name: " Seed"
+    slug: "seed"
+    desc: |
+      Used to grow a Used to obtain a [&nbsp;Sprout](#sprout) or regain health.
+    obtain: |
+      Seeds have a chance to spawn on the canopy of a tree when it grows.
+    usage: |
+      Changes to [&nbsp;Growing Seed](#growing-seed) when placed on top of [&nbsp;Soil](#soil) or [&nbsp;Field Soil](#field-soil).
+      <br>
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Seeds have low hardness. Upon breaking, they grant half a heart worth of health to the player who broke them.
+
+  - name: " Growing Seed"
+    slug: "growing-seed"
+    desc: |
+      A [&nbsp;Seed](#seed) that has been planted. Changes to a [&nbsp;Buried Sprout](#buried-sprout) after some time.
+    obtain: |
+      Growing Seeds are obtained when a [&nbsp;Seed](#seed) is placed on top of [&nbsp;Soil](#soil) or [&nbsp;Field Soil](#field-soil). 
+    usage: |
+      Changes to [&nbsp;Buried Sprout](#buried-sprout) after a certain duration has passed, which depends on whether it was planted on [&nbsp;Soil](#soil) or [&nbsp;Field Soil](#field-soil).
+      <br>
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Growing Seeds have low hardness. Upon breaking, they yield nothing.
+
+  - name: " Buried Sprout"
+    slug: "buried-sprout"
+    desc: |
+      A [&nbsp;Seed](#seed) that has fully grown. Used to obtain a [&nbsp;Sprout](#sprout).
+    obtain: |
+      Buried Sprouts are obtained when [&nbsp;Growing Seed](#growing-seed) have fully developed after an amount of time.
+    usage: |
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Growing Seeds have low hardness. Upon breaking, they turn to a [&nbsp;Sprout](#sprout).
+
+  - name: " Sprout"
+    slug: "sprout"
+    desc: |
+      Used to grow a tree.
+    obtain: |
+      Sprouts have a chance to spawn on the canopy of a tree. Sprouts can be obtained when a [&nbsp;Buried Sprout](#buried-sprout) is broken.
+    usage: |
+      Grows a tree when reacting to [&nbsp;Water](#water). The type of tree is randomly assigned when the Sprout is created, and is indicated on the top side of the piece.
+      <br>
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Sprouts have low hardness. Upon breaking, they yield nothing.
+
+  - name: " Berry"
+    slug: "berry"
+    desc: |
+      Used to obtain [&nbsp;Water](#water).
+    obtain: |
+      Berries have a chance to spawn on the canopy of a tree when it grows.
+    usage: |
+      Changes to [&nbsp;Rotten Berry](#rotten-berry) when reacting to [&nbsp;Swamp](#swamp).
+      <br><dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Berries have low hardness. Breaking them shoots a [&nbsp;Water](#water) droplet which turns into a piece when landing. Upon breaking, they yield nothing.
+
+  - name: " Rotten Berry"
+    slug: "rotten-berry"
+    desc: |
+      Used to obtain [&nbsp;Swamp](#swamp).
+    obtain: |
+      Rotten Berry are obtained when [&nbsp;Berries](#berry) react to [&nbsp;Swamp](#swamp).
+    usage: |
+      <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Rotten Berries have the same hardness as [&nbsp;Berries](#berry). Breaking them shoots a [&nbsp;Swamp](#swamp) droplet which turns into a piece when landing. Upon breaking, they yield nothing.
+
+
+  - name: " Charcoal"
+    slug: "charcoal"
+    desc: |
+      Used to obtain Charcoal cards.
+    obtain: |
+      Charcoal is obtained when:
+      - [&nbsp;Tree Trunks](#tree-trunk) react to [&nbsp;Magma](#magma).
+      - [&nbsp;Dead Wood](#dead-wood) reacts to [&nbsp;Magma](#magma).
+      - [&nbsp;Tree Leaves](#tree-leaf) react to [&nbsp;Magma](#magma).
+    usage: |
+      Woodworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Charcoal has lower durability than [&nbsp;Tree Trunks](#tree-trunk). Upon breaking, it yields a Charcoal card.
+
+
+- category: "Rock"
+  contents:
+  - name: " Raw Ore"
+    slug: "raw-ore"
+    desc: |
+      Can be mined for a chance to obtain Stone.
+    obtain: |
+      Deposits of Raw Ore generate on Planetary Blocks and certain Moons. Raw Ore is obtained by:
+      - Breaking a [Pillar Stone](#pillar-stone)
+      - Breaking a [Platform Stone](#platform-stone)
+      - Breaking a [Stair Stone](#stair-stone)
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Raw Ore has medium hardness. Upon breaking, it has a random chance to change to [&nbsp;Stone](#stone), [&nbsp;Junk Stone](#junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 1 [&nbsp;Bomb](#bomb).
+  - name: " Stone"
+    slug: "stone"
+    desc: |
+      Used to obtain Stone cards.
+    obtain: |
+      Stone can be found within deposits of [&nbsp;Raw Ore](#raw-ore). Stone has a chance to appear when [&nbsp;Raw Ore](#raw-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Stone has the same hardness as [&nbsp;Raw Ore](#raw-ore). Breaking it breaks adjacent [&nbsp;Raw Ore](#raw-ore) pieces. Upon breaking, it yields a Stone card.
+  - name: " Junk Stone"
+    slug: "junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Junk Stone has a chance to appear when [&nbsp;Raw Ore](#raw-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Junk Stone has the same hardness as [&nbsp;Raw Ore](#raw-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Copper Ore"
+    slug: "copper-ore"
+    desc: |
+      Can be mined for a chance to obtain Copper.
+    obtain: |
+      Deposits of Copper Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Copper Ore has medium hardness. Upon breaking, it has a random chance to change to [&nbsp;Copper](#copper), [&nbsp;Copper Junk Stone](#copper-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 2 [&nbsp;Bomb](#bomb).
+  - name: " Copper Junk Stone"
+    slug: "copper-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Copper Junk Stone has a chance to appear when [&nbsp;Copper Ore](#copper-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Copper Junk Stone has the same hardness as [&nbsp;Copper Ore](#copper-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Iron Ore"
+    slug: "iron-ore"
+    desc: |
+      Can be mined for a chance to obtain Iron.
+    obtain: |
+      Deposits of Iron Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Iron Ore has medium hardness. Upon breaking, it has a random chance to change to [&nbsp;Iron](#iron), [&nbsp;Iron Junk Stone](#iron-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 2 [&nbsp;Bomb](#bomb).
+  - name: " Iron Junk Stone"
+    slug: "iron-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Iron Junk Stone has a chance to appear when [&nbsp;Iron Ore](#iron-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Iron Junk Stone has the same hardness as [&nbsp;Iron Ore](#iron-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Silver Ore"
+    slug: "silver-ore"
+    desc: |
+      Can be mined for a chance to obtain Silver.
+    obtain: |
+      Deposits of Silver Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Silver Ore has medium hardness. Upon breaking, it has a random chance to change to [&nbsp;Silver](#silver), [&nbsp;Silver Junk Stone](#silver-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 3 [&nbsp;Bomb](#bomb).
+  - name: " Silver Junk Stone"
+    slug: "silver-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Silver Junk Stone has a chance to appear when [&nbsp;Silver Ore](#silver-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Silver Junk Stone has the same hardness as [&nbsp;Silver Ore](#silver-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Gold Ore"
+    slug: "gold-ore"
+    desc: |
+      Can be mined for a chance to obtain Gold.
+    obtain: |
+      Deposits of Gold Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Gold Ore has high hardness. Upon breaking, it has a random chance to change to [&nbsp;Gold](#gold), [&nbsp;Gold Junk Stone](#gold-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 4 [&nbsp;Bomb](#bomb).
+  - name: " Gold Junk Stone"
+    slug: "gold-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Gold Junk Stone has a chance to appear when [&nbsp;Gold Ore](#gold-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Gold Junk Stone has the same hardness as [&nbsp;Gold Ore](#gold-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Diamond Ore"
+    slug: "diamond-ore"
+    desc: |
+      Can be mined for a chance to obtain Diamond. May have a spiked top surface that deals damage.
+    obtain: |
+      Deposits of Diamond Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Diamond Ore has very high hardness. Upon breaking, it has a random chance to change to [&nbsp;Diamond](#diamond), [&nbsp;Diamond Junk Stone](#diamond-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 5 [&nbsp;Bomb](#bomb).
+  - name: " Diamond Junk Stone"
+    slug: "diamond-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Diamond Junk Stone has a chance to appear when [&nbsp;Diamond Ore](#diamond-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Diamond Junk Stone has the same hardness as [&nbsp;Diamond Ore](#diamond-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Sapphire Ore"
+    slug: "sapphire-ore"
+    desc: |
+      Can be mined for a chance to obtain Sapphire. May have a spiked top surface that deals damage.
+    obtain: |
+      Deposits of Sapphire Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Sapphire Ore has very high hardness. Upon breaking, it has a random chance to change to [&nbsp;Sapphire](#sapphire), [&nbsp;Sapphire Junk Stone](#sapphire-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 5 [&nbsp;Bomb](#bomb).
+  - name: " Sapphire Junk Stone"
+    slug: "sapphire-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Sapphire Junk Stone has a chance to appear when [&nbsp;Sapphire Ore](#sapphire-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Sapphire Junk Stone has the same hardness as [&nbsp;Sapphire Ore](#sapphire-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Ruby Ore"
+    slug: "ruby-ore"
+    desc: |
+      Can be mined for a chance to obtain Ruby. May have a spiked top surface that deals damage.
+    obtain: |
+      Deposits of Ruby Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Ruby Ore has very high hardness. Upon breaking, it has a random chance to change to [&nbsp;Ruby](#ruby), [&nbsp;Ruby Junk Stone](#ruby-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 5 [&nbsp;Bomb](#bomb).
+  - name: " Ruby Junk Stone"
+    slug: "ruby-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Ruby Junk Stone has a chance to appear when [&nbsp;Ruby Ore](#ruby-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Ruby Junk Stone has the same hardness as [&nbsp;Ruby Ore](#ruby-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+  - name: " Emerald Ore"
+    slug: "emerald-ore"
+    desc: |
+      Can be mined for a chance to obtain Emerald. May have a spiked top surface that deals damage.
+    obtain: |
+      Deposits of Emerald Ore generate on Planetary Blocks and certain Moons.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Emerald Ore has very high hardness. Upon breaking, it has a random chance to change to [&nbsp;Emerald](#emerald), [&nbsp;Emerald Junk Stone](#emerald-junk-stone), [&nbsp;Broot Egg](#broot-egg), or a level 5 [&nbsp;Bomb](#bomb).
+  - name: " Emerald Junk Stone"
+    slug: "emerald-junk-stone"
+    desc: |
+      <br>
+    obtain: |
+      Emerald Junk Stone has a chance to appear when [&nbsp;Emerald Ore](#emerald-ore) is broken.
+    usage: |
+      Changes to [&nbsp;Clay](#clay) when reacing to [&nbsp;Swamp](#swamp).
+      <br>
+      Fuses with adjacent Rock pieces when reacting to [&nbsp;Magma](#magma).
+      <br>Stoneworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+    break: |
+      Emerald Junk Stone has the same hardness as [&nbsp;Emerald Ore](#emerald-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields nothing.
+
+- category: "Metal"
+  contents:
+    - name: " Copper"
+      slug: "copper"
+      desc: |
+        Used to obtain a Copper card.
+      obtain: |
+        Copper can be found within deposits of [&nbsp;Copper Ore](#copper-ore). Copper has a chance to appear when [&nbsp;Copper Ore](#copper-ore) is broken.
+      usage: |
+        Fuses with adjacent Metal pieces when reacting to [&nbsp;Magma](#magma).
+        <br>Metalworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Copper has the same hardness as [&nbsp;Copper Ore](#copper-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Copper card.
+    - name: " Iron"
+      slug: "iron"
+      desc: |
+        Used to obtain an Iron card.
+      obtain: |
+        Iron can be found within deposits of [&nbsp;Iron Ore](#iron-ore). Iron has a chance to appear when [&nbsp;Iron Ore](#iron-ore) is broken.
+      usage: |
+        Fuses with adjacent Metal pieces when reacting to [&nbsp;Magma](#magma).
+        <br>Metalworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Iron has the same hardness as [&nbsp;Iron Ore](#iron-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Iron card.
+    - name: " Silver"
+      slug: "silver"
+      desc: |
+        Used to obtain a Silver card.
+      obtain: |
+        Silver can be found within deposits of [&nbsp;Silver Ore](#silver-ore). Silver has a chance to appear when [&nbsp;Silver Ore](#silver-ore) is broken.
+      usage: |
+        Fuses with adjacent Metal pieces when reacting to [&nbsp;Magma](#magma).
+        <br>Metalworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Silver has the same hardness as [&nbsp;Silver Ore](#silver-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Silver card.
+    - name: " Gold"
+      slug: "gold"
+      desc: |
+        Used to obtain a Gold card.
+      obtain: |
+        Gold can be found within deposits of [&nbsp;Gold Ore](#gold-ore). Gold has a chance to appear when [&nbsp;Gold Ore](#gold-ore) is broken.
+      usage: |
+        Fuses with adjacent Metal pieces when reacting to [&nbsp;Magma](#magma).
+        <br>Metalworker and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Gold has the same hardness as [&nbsp;Gold Ore](#gold-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Gold card.
+
+- category: "Jewel"
+  contents:
+    - name: " Diamond"
+      slug: "diamond"
+      desc: |
+        Used to obtain a Diamond card.
+      obtain: |
+        Diamond has a chance to appear when [&nbsp;Diamond Ore](#diamond-ore) is broken.
+      usage: |
+        Jeweler and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Diamond has the same hardness as [&nbsp;Diamond Ore](#diamond-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Diamond card.
+    - name: " Sapphire"
+      slug: "sapphire"
+      desc: |
+        Used to obtain a Sapphire card.
+      obtain: |
+        Sapphire has a chance to appear when [&nbsp;Sapphire Ore](#sapphire-ore) is broken.
+      usage: |
+        Jeweler and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Diamond has the same hardness as [&nbsp;Sapphire Ore](#sapphire-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Sapphire card.
+    - name: " Ruby"
+      slug: "ruby"
+      desc: |
+        Used to obtain a Ruby card.
+      obtain: |
+        Ruby has a chance to appear when [&nbsp;Ruby Ore](#ruby-ore) is broken.
+      usage: |
+        Jeweler and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Ruby has the same hardness as [&nbsp;Ruby Ore](#ruby-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Ruby card.
+    - name: " Emerald"
+      slug: "emerald"
+      desc: |
+        Used to obtain an Emerald card.
+      obtain: |
+        Emerald has a chance to appear when [&nbsp;Emerald Ore](#emerald-ore) is broken.
+      usage: |
+        Jeweler and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      breaking: |
+        Emerald has the same hardness as [&nbsp;Emerald Ore](#emerald-ore). Breaking it breaks adjacent ore pieces. Upon breaking, it yields a Emerald card.
+- category: "Elemental"
+  contents:
+    - name: " Water"
+      slug: "water"
+      desc: |
+        Used to grow Sprouts.
+      obtain: |
+        Water can be found in rivers or lakes on Planetary Blocks and certain Moons. Water is obtained when a [&nbsp;Berry](#berry) is broken.
+      usage: |
+        When placed or when an adjacent non-Water piece is broken, Water will attempt to spread outwards. After 4 successful attempts, it causes [&nbsp;Grass](#grass) to appear.
+        <br>
+        Changes to [&nbsp;Ice](#ice) when reacting to [&nbsp;Ice](#ice) or Frost.
+        <br>
+        Changes [&nbsp;Sand](#sand) to [&nbsp;Soil](#soil).
+        <br>
+        Changes [&nbsp;Dead Wood](#dead-wood) to [&nbsp;Tree Trunk](#tree-trunk).
+        <br>
+        Changes [&nbsp;Dead Leaf](#dead-leaf) to [&nbsp;Tree Leaf](#tree-leaf)
+        <br>
+        Grows a [&nbsp;Sprout](#sprout) into a tree.
+        <br>
+        Its pattern cannot be changed.
+      break:
+        Water breaks instantly. Breaking it breaks adjacent Water pieces in a radius. Upon breaking, it yields nothing.
+    - name: " Magma"
+      slug: "magma"
+      desc: |
+        Fuses Metal and Rock. Deals damage when touched.
+      obtain: |
+        Magma can be found in lakes on Planetary Blocks and certain Moons.
+      usage: |
+        Magma deals damage when touched unless the player is in a vehicle.
+        <br>
+        When placed or when an adjacent non-Magma piece is broken, Magma will attempt to spread outwards. After 4 successful attempts, it causes [&nbsp;Soil](#soil) to appear.
+        <br>
+        Changes to [&nbsp;Ash](#ash) when reacting to [&nbsp;Swamp](#swamp).
+        <br>
+        Destroys adjacent [&nbsp;Grass](#grass) pieces.
+        <br>
+        Adjacent Metal and Rock pieces are fused together.
+        <br>
+        Changes [&nbsp;Clay](#clay) to [&nbsp;Ceramic](#ceramic).
+        <br>
+        Changes [&nbsp;Sand](#sand) to [&nbsp;Glass Spike](#glass-spike).
+        <br>
+        Changes [&nbsp;Tree Trunk](#tree-trunk) to [&nbsp;Charcoal](#charcoal)l.
+        <br>
+        Changes [&nbsp;Dead Wood](#dead-wood) to [&nbsp;Charcoal](#charcoal).
+        <br>
+        Changes [&nbsp;Tree Leaf](#tree-leaf) to [&nbsp;Charcoal](#charcoal).
+        <br>
+        Its pattern cannot be changed.
+      break:
+        Magma breaks instantly. Breaking it breaks adjacent Magma pieces in a radius. Upon breaking, it yields nothing.
+    - name: " Swamp"
+      slug: "swamp"
+      desc: |
+        Drains energy when walked on.
+      obtain: |
+        Swamp can be found in lakes on Planetary Blocks and certain Moons. Swamp is obtained when a [&nbsp;Rotten Berry](#rotten-berry) is broken.
+      usage: |
+        When walked on or driven on, the player's energy rapidly drains.
+        <br>
+        When placed or when an adjacent non-Swamp piece is broken, Swamp will attempt to spread outwards. After 4 successful attempts, it causes [&nbsp;Sand](#sand) to appear.
+        <br>
+        Changes [&nbsp;Soil](#soil) to [&nbsp;Sand](#sand).
+        <br>
+        Changes [&nbsp;Field Soil](#field-soil) to [&nbsp;Sand](#sand).
+        <br>
+        Changes [&nbsp;Grass](#grass) to [&nbsp;Sand](#sand).
+        <br>
+        Changes [&nbsp;Tree Trunk](#tree-trunk) to [&nbsp;Dead Wood](#dead-wood).
+        <br>
+        Changes [&nbsp;Tree Leaf](#tree-leaf) to [&nbsp;Dead Leaf](#dead-leaf).
+        <br>
+        Changes all Rock pieces to [&nbsp;Clay](#clay).
+        <br>
+        Changes [&nbsp;Magma](#magma) to [&nbsp;Ash](#ash).
+        <br>
+        Changes [&nbsp;Glass Spike](#glass-spike) to [&nbsp;Sand](#sand).
+        <br>
+        Changes [&nbsp;Glass](#glass) to [&nbsp;Sand](#sand).
+        <br>
+        Its pattern cannot be changed.
+      break:
+        Swamp breaks instantly. Breaking it breaks adjacent Swamp pieces in a radius. Upon breaking, it yields nothing.
+    - name: " Ash"
+      slug: "ash"
+      desc: |
+        Used to create [&nbsp;Smoke](#smoke).
+      obtain: |
+        Ash is obtained when [&nbsp;Magma](#magma) reacts to [&nbsp;Swamp](#swamp).
+      usage: |
+        Its pattern cannot be changed.
+      break: |
+        Ash has very low hardness. Breaking it releases [&nbsp;Smoke](#smoke) in a small radius. Upon breaking, it yields nothing.
+    - name: " Smoke"
+      slug: "smoke"
+      desc: |
+        Disappears after a few seconds. Produces an Explosion when hit.
+      obtain: |
+        Smoke is obtained when [&nbsp;Ash](#ash) is broken.
+      usage: |
+        When placed, Smoke spreads outwards to form a cloud, and disappears after a few seconds.
+        <br>
+        Changes to [&nbsp;Cloud](#cloud) when reacting to Frost.
+        <br>
+        Its pattern cannot be changed.
+      break: |
+        Smoke breaks instantly. Breaking it produces an Explosion. Upon breaking, it yields nothing.
+    - name: " Cloud"
+      slug: "cloud"
+      desc: |
+        Floats in mid-air. Produces Electricity when hit.
+      obtain: |
+        Clouds generate on Planetary Blocks and Moons. Cloud is obtained when [&nbsp;Smoke](#smoke) reacts to Frost.
+      use: |
+        Unlike most other pieces, Cloud is not affected by gravity.
+        <br>
+        Its pattern cannot be changed.
+      break: |
+        Cloud breaks instantly. Breaking it produces Electricity. Upon breaking, it yields nothing.
+    - name: " Ice"
+      slug: "ice"
+      desc: |
+        Walking on it feels slippery. Produces Frost when hit.
+      obtain: |
+        Ice can be found on certain Moons. Ice is obtained when [&nbsp;Water](#water) reacts to [&nbsp;Ice](#ice) or Frost.
+      usage: |
+        Ice is slippery, causing the player to slide after walking on it.
+        <br>
+        Changes [&nbsp;Water](#water) to Ice.
+      break: |
+        Ice has low hardness. Breaking it releases a cloud of Frost. Upon breaking, it yields nothing.
+- category: "Ornamental"
+  contents:
+    - name: " Glass Spike"
+      slug: "glass-spike"
+      desc: |
+        Deals damage when walked on. Used to produce [&nbsp;Glass](#glass).
+      obtain: |
+        Glass Spike can be found on certain Moons. Glass Spike is obtained when [&nbsp;Sand](#sand) reacts to [&nbsp;Magma](#magma).
+      usage: |
+        The player receives damage if they touch the spike part.
+        <br>
+        Changes to [&nbsp;Sand](#sand) when reacting to [&nbsp;Swamp](#swamp).
+        <br>
+        Glazier and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Glass Spike has low hardness. Breaking it changes it to [&nbsp;Glass](#glass).
+    - name: " Glass"
+      slug: "glass"
+      desc: |
+        Used to obtain a Glass card.
+      obtain: |
+        Glass is obtained when [&nbsp;Glass Spike](#glass-spike) is broken.
+      usage: |
+        Changes to [&nbsp;Sand](#sand) when reacting to [&nbsp;Swamp](#swamp).
+        <br>
+        Glazier and <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Glass has low hardness. Upon breaking, it yields a Glass card.
+    - name: "Decorative Piece"
+      slug: "decorative-piece"
+      desc: |
+        The result of using an <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfit on any piece.
+      obtain: |
+        Decorative Pieces are obtained when any piece gets a pattern applied by an <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfit. This change is permanent.
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Decorative Pieces break instantly. Upon breaking, they yield nothing.
+- category: "Fauna"
+  contents:
+    - name: " Broot Egg"
+      slug: "broot-egg"
+      desc: |
+        Used to spawn a random Broot.
+      obtain: |
+        Broot Eggs have a chance to spawn on the canopy of trees, and when any type of Ore is broken.
+      usage: |
+        Its pattern cannot be changed.
+      break: |
+        Broot Eggs have very low hardness. Upon breaking, a random Broot is spawned.
+    - name: " Broot Nest"
+      slug: "broot-nest"
+      desc: |
+        Spawns multiple random Broots when disturbed.
+      obtain: |
+        Broot Nests have a chance to spawn on the canopy of trees.
+      usage: |
+        Its pattern cannot be changed.
+      break: |
+        Broot Nests have very low hardness. Upon breaking, multiple random Broots are spawned.
+    - name: " Fossil"
+      slug: "fossil"
+      desc: |
+        Used to obtain a [&nbsp;Kyoot Egg](#kyoot-egg).
+      obtain: |
+        Fossils can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. They have a chance to appear when a Darkness-born Broot is defeated.
+      usage: |
+        When placed at an altitude of 100m or higher, it changes to a random [&nbsp;Kyoot Egg](#kyoot-egg) after 24 hours. The species of Kyoot depends on which Planetary Block it develops in.
+        <br>
+        Its pattern cannot be changed.
+      break: |
+        Fossils have low hardness. Upon breaking, it yields nothing.
+    - name: " Kyoot Egg"
+      slug: "kyoot-egg"
+      desc: |
+        Used to spawn a random Kyoot.
+      obtain: |
+        Kyoot Eggs are obtained when a [&nbsp;Fossil](#fossil) fully develops.
+      usage: |
+        Its pattern cannot be changed.
+      break: |
+        Kyoot Eggs have low hardness. Upon breaking, it spawns a random Kyoot. The species of Kyoot depends on which Planetary Block the [&nbsp;Fossil](#fossil) was developed in.
+- category: "Utility"
+  contents:
+    - name: " Dev Stone"
+      slug: "dev-stone"
+      desc: |
+        Used to develop the land.
+      obtain: |
+        Dev Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Dev Stones can be obtained by:
+        - Obtaining them from Daily Supplies at the Dev Core
+        - Defeating a Darkness-born Oot
+        - Completing a Gate of Darkness
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+        - Randomly appearing on the canopy of trees
+      usage: |
+        Dev Stones are used to develop the land.
+        <br>
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Dev Stones have very low hardness. Breaking them releases developing light in a radius corresponding to the altitude at which it was broken. Upon breaking, they yield a Dev Stone card.
+    - name: " Life Stone"
+      slug: "life-stone"
+      desc: |
+        Used to recover health.
+      obtain: |
+        Life Stones are obtained when defeating Life Stone Broots.
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Life Stones have low hardness. Breaking them fills the player's health bar with hearts. Upon breaking, they yield a Life Stone card.
+    - name: "Pillar Stone"
+      slug: "pillar-stone"
+      desc: |
+        Used to create a pillar.
+      obtain: |
+        Pillar Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Pillar Stones can be obtained by:
+        - Defeating a Darkness-born Oot
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Pillar Stones have low hardness. Upon breaking, an 18-meter-tall pillar made of [&nbsp;Raw Ore](#raw-ore) appears.
+    - name: "Platform Stone"
+      slug: "platform-stone"
+      desc: |
+        Used to create a horizontal platform.
+      obtain: |
+        Platform Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Platform Stones can be obtained by:
+        - Defeating a Darkness-born Oot
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Platform Stones have low hardness. Upon breaking, a 9×9 platform made of [&nbsp;Raw Ore](#raw-ore) appears.
+    - name: "Stair Stone"
+      slug: "stair-stone"
+      desc: |
+        Used to create a staircase.
+      obtain: |
+        Stair Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Stair Stones can be obtained by:
+        - Defeating a Darkness-born Oot
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Pillar Stones have low hardness. Upon breaking, staircase with 8 steps made of [&nbsp;Raw Ore](#raw-ore) appears.
+    - name: " Concrete"
+      slug: "concrete"
+      desc: |
+        Used to create [Ground](#ground)
+      obtain: |
+        Concrete can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Concrete can be obtained by crafting it from a Concrete Blueprint piece.
+      usage: |
+        Changes [&nbsp;Water](#water) to [Ground](#ground) in a radius.
+        <br>
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Concrete has low hardness. Upon breaking, it yields nothing.
+    - name: "Leveler Stone"
+      slug: "leveler-stone"
+      desc: |
+        Used to create [Ground](#ground)
+      obtain: |
+        Leveler Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Leveler Stones can be obtained by:
+        - Defeating a Darkness-born Oot
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Leveler Stones have low hardness. Upon breaking, they generate [Ground](#ground) in a radius.
+    - name: "Destructor Stone"
+      slug: "destructor-stone"
+      desc: |
+        Used to destroy pieces in a radius.
+      obtain: |
+        Destructor Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Destructor Stones can be obtained by:
+        - Defeating a Darkness-born Oot
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Destructor Stones have low hardness. Breaking them destroys pieces in a radius around the stone. Upon breaking, it yields a Destructor Stone card.
+    - name: "Flame Stone"
+      slug: "flame-stone"
+      desc: |
+        Used to produce Fire.
+      obtain: |
+        Flame Stones can be randomly found beneath patches of naturally fused pieces on Planetary Blocks. Flame Stones can be obtained by:
+        - Defeating a Darkness-born Oot
+        - Completing a Drop of Darkness
+        - Completing a Darkness Puzzle
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Flame Stones have low hardness. Upon breaking, they produce Fire in a radius.
+    - name: " Bomb"
+      slug: "bomb"
+      desc: |
+        Explodes when struck. Used to obtain a Gunpowder card.
+      obtain: |
+        Bombs have a chance to appear when any type of Ore is broken. Depending on the type of Ore, Bombs have a level of 1 to 5, indicated on all sides of the piece.
+      usage: |
+        <dfn title="Fantasy Crafter, Fashion Designer, Confectioner, Sushi Chef, Cake Maker, Dev-Core Crafter">Artisan</dfn> outfits can be used to apply a pattern on this piece.
+      break: |
+        Bombs break instantly. Breaking them primes them, indicated by a red color. After a second, they produce lines of Explosion in all directions. The bomb's level indicates how far the Explosion spreads. Upon breaking, they yield a Gunpowder card.

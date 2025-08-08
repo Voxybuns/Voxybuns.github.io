@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'NinDev-Planet';
+    src: url('font/NinDevPlanet-Bold.woff2') format('woff2'),
+        url('font/NinDevPlanet-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NinDev-PlanetExt';
+    src: url('font/NinDevPlanetExt-Medium.woff2') format('woff2'),
+        url('font/NinDevPlanetExt-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NinDev-PlanetExt';
+    src: url('font/NinDevPlanetExt-Medium.woff2') format('woff2'),
+        url('font/NinDevPlanetExt-Medium.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NinDev-Planet';
+    src: url('font/NinDevPlanet-Medium.woff2') format('woff2'),
+        url('font/NinDevPlanet-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    color-scheme: dark;
+    font-family: 'NinDev-Planet', 'NinDev-PlanetExt', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    background-image: url(/rockstock/data/img/background_ptn.png);
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+    scroll-margin-block-start: 1rem;
+}
+
+body {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 20rem 1fr;
+    font-size: 1.25rem;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+main {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr min(960px, 100%) 1fr;
+    & > * {
+        grid-column: 2;
+    }
+}
+
+aside {
+    overflow-y: auto;
+    padding: 2rem;
+    position: sticky;
+    height: auto;
+    max-height: calc(100vh - 2rem);
+    top: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa rgba(0,0,0,0);
+    background-color: #111;
+    border-radius: 1rem;
+}
+
+:is(h1,h2,h3,h4,h5,h6) {
+    font-weight: bold;
+    line-height: 1.1;
+    color: #aaa;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-block-end: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-block-end: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-block-end: 0.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-block-end: 0.5rem;
+}
+
+menu + h4 {
+    margin-block-start: 1rem;
+}
+
+p + :is(h1,h2,h3,h4,h5,h6,p) {
+    margin-block-start: 1.5rem;
+}
+
+p + :is(h2, p:has(img)) {
+    margin-block-start: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:any-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.33em;
+}
+
+a:any-link:not(menu a) {
+    /* text-decoration: underline;
+    text-underline-offset: 0.33em; */
+    font-weight: bold;
+}
+
+img {
+    float: inline-start;
+    margin-inline-end: 1rem;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 3rem;
+    background-image: linear-gradient(90deg,rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), url("/rockstock/data/img/hero.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 2rem;
+    margin-block-end: 2rem;
+}
+
+h2:has(img) + p {
+    min-height: 3lh;
+}
+
+ul {
+    margin-block-start: 0.5rem;
+    padding-inline-start: 1rem;
+}
+
+dfn, abbr {
+    font-style: normal;
+    text-decoration: underline dotted;
+    text-underline-offset: 0.33em;
+    text-decoration-color: #aaa;
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    aside {
+        display: none;
+    }
+    main {
+        padding: 1rem;
+    }
+}

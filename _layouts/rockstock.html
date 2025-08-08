@@ -1,0 +1,49 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/rockstock/data/reset.css">
+    <link rel="stylesheet" href="/rockstock/data/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <aside>
+        {% for category in site.data.rockstock %}
+            <h4>{{ category.category }}</h4>
+            <menu>
+                {% for piece in category.contents %}
+                <li><a href="#{{ piece.slug }}">{{ piece.name }}</a></li>
+                {% endfor %}
+            </menu>
+        {% endfor %}
+    </aside>
+    <main>
+        <div>
+            <div class="hero">
+                <h1>Rockstock Pieces Guide</h1>
+                <p>A non-exhaustive guide to the naturally-occuring Pieces found in the NSO Playtest Program, compiled by <a href="https://voxy.space">Voxy.</a></p>
+            </div>
+            {% for category in site.data.rockstock %}
+                {% for piece in category.contents %}
+                    <h2 id="{{ piece.slug }}">
+                        <img src="/rockstock/data/img/pieces/{{ piece.slug }}.png" alt="{{ piece.name }}">
+                        {{ piece.name }}
+                    </h2>
+                    {{ piece.desc | markdownify }}
+                    <h3>Obtaining</h3>
+                    {{ piece.obtain | markdownify }}
+                    {% if piece.usage %}
+                        <h3>Usage</h3>
+                        {{ piece.usage | markdownify }}
+                    {% endif %}
+                    <h3>Breaking</h3>
+                    {{ piece.break | markdownify }}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>
