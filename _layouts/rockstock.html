@@ -7,7 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/rockstock/data/reset.css">
     <link rel="stylesheet" href="/rockstock/data/style.css">
-    <title>Document</title>
+    <title>{{ page.title }} • Voxy's Space</title>
+    <link rel="shortcut icon" href="/data/common/img/favicon.png" type="image/x-icon">
+    <link rel="me" href="https://mastodon.gamedev.place/@voxybuns">
+    <meta name="description" content="{{ page.description }}" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ page.title }} • Voxy's Space" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/data/common/img/favicon.png" />
+    <meta property="og:image:secure_url" content="{{ site.url }}/data/common/img/favicon.png" />
+    <meta property="og:description" content="{{ page.description }}" />
 </head>
 <body>
     <aside>
