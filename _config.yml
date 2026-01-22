@@ -28,7 +28,6 @@ url: "https://www.voxy.space" # the base hostname & protocol for your site, e.g.
 permalink: pretty
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
