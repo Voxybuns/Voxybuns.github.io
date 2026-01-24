@@ -1,114 +1,16 @@
 ---
-title: Home
-layout: common/page
+title: home
+layout: page
 description: Welcome to the space of a silly bunny!
 ---
 
-<section class="theme-yellow wave-bottom wave-bottom-animated hero">
-    <div class="container">
-        <div class="pv-600">
-            <h1>Hello!</h1>
-            <p class="tagline">Welcome to the space of a silly bunny! I've created this website to list some of the silly things I've made, mostly games and lil' web dohickeys. I hope you enjoy your stay!</p>
-        </div>
-        <img src="/data/common/img/hero-image.png" alt="">
-    </div>
+<section style="--section-background: var(--color-base-yellow); --section-text: var(--color-base-black);" class="hero">
+    <h1>
+        hi!
+        <br>i'm <strong>valentin</strong>,<br>
+        <strong>ui</strong> & <strong>graphic</strong> designer!
+    </h1>
 </section>
-<section class="pt-600" id="games">
-    <div class="container">
-
-        <h1 class="text-pink"><span class="icon icon-adaptive">🎮</span> Games</h1>
-        <p class="tagline">Some games I worked on, or created myself!</p>
-
-        <div class="mt-200 container-grid">
-            {% for item in site.data.common.games %}
-                <article class="card theme-darker-purple wave-hover-animation">
-                    <img src="/data/games/{{ item.cover }}.png" alt="" class="wave-bottom">
-                    <div class="card-contents">
-                        <h2 class="text-pink">{{ item.name }}</h2>
-                        <h6 class="text-muted">{{ item.platform }}</h6>
-                        <spacer-block class="h-100"></spacer-block>
-                        <p>
-                            {{ item.description }}
-                        </p>
-                        <spacer-block class="h-150"></spacer-block>
-                        {% if item.button-active == true %}
-                        <a class="button theme-pink" href="{{ item.button-link }}">{{ item.button-text }}</a>
-                        {% elsif item.button-active == false %}
-                        <a class="button theme-dark-purple">{{ item.button-text }}</a>
-                        {% endif %}
-                    </div>
-                </article>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="pt-600" id="thoughts">
-    <div class="container">
-        <h1 class="text-yellow"><span class="icon icon-adaptive">💭</span> Thoughts</h1>
-        <p class="tagline">A space for me to write about my projects!</p>
-
-        <div class="mt-200 container-grid">
-            {% for post in site.posts %}
-                <a class="card theme-darker-purple wave-hover-animation" href="{{ post.url }}">
-                    <img class="wave-bottom">
-                    <div class="card-contents">
-                        <h2 class="text-yellow">{{ post.title }}</h2>
-                        <h6 class="text-muted">{{ post.date | date_to_string: "ordinal", "US" }}</h6>
-                        <spacer-block class="h-100"></spacer-block>
-                        <p>
-                            {{ post.excerpt | strip_html }}
-                        </p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-        <!-- 
-        <spacer-block class="h-100"></spacer-block>
-        <a href="#" class="button button-full-width theme-yellow">View all posts</a>
-        -->
-    </div>
-</section>
-
-<section class="pt-600" id="gbg-tools">
-    <div class="container">
-
-        <h1 class="text-teal"><span class="icon icon-adaptive">🔨</span> GBG Tools</h1>
-        <p class="tagline">Utilities for <em>Game Builder Garage</em>!</p>
-
-        <div class="mt-200 container-grid">
-            {% for item in site.data.common.gbg_tools %}
-                <a class="card theme-darker-purple wave-hover-animation" href="{{ item.url }}">
-                    <img src="/data/gbg/{{ item.cover }}.png" alt="" class="wave-bottom">
-                    <div class="card-contents">
-                        <h2 class="text-teal">{{ item.name }}</h2>
-                        <spacer-block class="h-100"></spacer-block>
-                        <p>
-                            {{ item.description }}
-                        </p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="pv-600" id="places">
-    <div class="container">
-
-        <h1 class="text-purple"><span class="icon icon-adaptive">🪐</span> Places</h1>
-        <p class="tagline">Other pockets of Internet where you can find me!</p>
-
-
-        <div class="mt-200 container-grid">
-            {% for item in site.data.common.places %}
-            <a href="{{ item.url }}" class="card theme-purple center-on-axis">
-                <div class="card-contents">
-                    <h2>{{ item.name }}</h2>
-                    <p class="mt-0">{{ item.description }}</p>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
+<section id="projects">
+    <h2>projects</h2>
 </section>

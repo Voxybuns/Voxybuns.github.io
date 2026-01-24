@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}" />
+    <link rel="stylesheet" href="/data/styles/style.css">
+    <link rel="shortcut icon" href="/data/common/img/favicon.png" type="image/x-icon">
+    <link rel="me" href="https://mastodon.gamedev.place/@voxybuns">
+    <title>{{ page.title }} - voxy's space</title>
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" value="summary">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ page.title }} - voxy's space" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/data/common/img/favicon.png" />
+    <meta property="og:image:secure_url" content="{{ site.url }}/data/common/img/favicon.png" />
+    <meta property="og:description" content="{{ page.description }}" />
+</head>
+<body>
+    {{ content }}
+</body>
+</html>

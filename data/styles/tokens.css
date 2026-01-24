@@ -1,0 +1,20 @@
+/**
+    tokens sheet
+    ---
+    global variables
+**/
+
+:root {
+    --color-base-black:     #000000;
+    --color-base-darker:    #0a0a0d;
+    --color-base-dark:      #141416;
+    --color-base-light:     #e3ded2;
+    --color-base-lighter:   #efeee9;
+    --color-base-white:     #ffffff;
+
+    --color-base-cyan:      #00c5c5;
+    --color-base-yellow:    #ffd900;
+    --color-base-magenta:   #ff4e9b;
+
+    color-scheme: light dark;
+}

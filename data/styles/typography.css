@@ -1,0 +1,130 @@
+/**
+    typography sheet
+    ---
+    font declarations & rules for typographical elements
+**/
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/fonts/MohrRounded-MediumIt.woff2') format('woff2'),
+         url('/data/fonts/MohrRounded-MediumIt.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/fonts/MohrRounded-Medium.woff2') format('woff2'),
+         url('/data/fonts/MohrRounded-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/fonts/MohrRounded-BoldIt.woff2') format('woff2'),
+         url('/data/fonts/MohrRounded-BoldIt.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/fonts/MohrRounded-Bold.woff2') format('woff2'),
+         url('/data/fonts/MohrRounded-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded Heavy It';
+    src: url('/data/fonts/MohrRounded-HeavyIt.woff2') format('woff2'),
+         url('/data/fonts/MohrRounded-HeavyIt.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mohr Rounded';
+    src: url('/data/fonts/MohrRounded-Heavy.woff2') format('woff2'),
+        url('/data/fonts/MohrRounded-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    font-family: 'Mohr Rounded', sans-serif;
+    /* font size will fluidly scale from 16px to 20px based on viewport size */
+    font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+    /* more readable line-height */
+    line-height: 1.4;
+    /* mohr rounded is a little too loose by default so we tighten it */
+    letter-spacing: -0.03em;
+}
+
+/* ensure readable line length... */
+* {
+    max-inline-size: 60ch;
+}
+
+/* ...but not on layout elements */
+html,
+body,
+div,
+header,
+nav,
+main,
+section,
+article,
+img,
+video,
+figure,
+footer {
+    max-inline-size: none;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 900;
+    /* reset letter spacing due to extra weight */
+    letter-spacing: normal;
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(3rem, 3rem + 1.25vw, 4rem);
+    letter-spacing: -0.03em;
+}
+
+.hero {
+    & h1 {
+        font-weight: normal;
+        line-height: 1;
+    }
+    & strong {
+        font-weight: 900;
+    }
+}
+
+h2 {
+    font-size: 3em;
+}
+
+/* remove bullets from menu lists to differentiate from unordered lists */
+menu {
+    list-style: none;
+    /* style links inside a menu to look less... link-y */
+    & a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+        letter-spacing: initial;
+    }
+}

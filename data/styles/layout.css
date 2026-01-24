@@ -1,0 +1,118 @@
+/**
+    layout sheet
+    ---
+    rules for global & composed layout elements
+**/
+
+:root {
+    block-size: 100%;
+}
+
+body {
+    background: light-dark(
+        var(--color-base-lighter),
+        var(--color-base-darker)
+    );
+    color: light-dark(
+        var(--color-base-darker),
+        var(--color-base-lighter)
+    );
+    min-block-size: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header,
+footer,
+section {
+    display: grid;
+    grid-template-columns:
+        1fr
+        min(42rem, calc( 100% - 2rem ))
+        1fr
+    ;
+    
+    & > * {
+        grid-column: 2;
+    }
+}
+
+header {
+    --header-background: light-dark(
+        var(--color-base-white),
+        var(--color-base-dark)
+    );
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    & > nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--header-background);
+        margin-block-start: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        corner-shape: superellipse(1.5);
+
+        & img {
+            block-size: 3rem;
+        }
+
+        & menu {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+}
+
+footer {
+    --footer-background: light-dark(
+        var(--color-base-light),
+        var(--color-base-black)
+    );
+
+    background: var(--footer-background);
+
+    & nav {
+        padding-block: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+main > :first-child {
+    margin-block-start: -6rem;
+    padding-block-start: 7rem;
+}
+
+section {
+    --section-background: light-dark(
+        var(--color-base-lighter),
+        var(--color-base-darker)
+    );
+    --section-text: inherit;
+    padding-block: 3rem;
+
+    background: var(--section-background);
+    color: var(--section-text);
+}
+
+.stack {
+    --stack-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    & * + * {
+        margin-block-start: 1em;
+    }
+}
+
+.stack-uniform {
+    gap: var(--stack-gap);
+}
