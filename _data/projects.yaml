@@ -1,0 +1,27 @@
+- name: "townbox™"
+  description: "ui design and programming for townbox™, a cozy town-building sandbox"
+  thumbnail: "townbox-thumbnail"
+  actions:
+    - text: "learn more"
+      url: "/"
+    - text: "wishlist"
+      url: "/"
+
+- name: "videodojo games"
+  description: "branding and website design for uk-based indie studio videodojo games"
+  thumbnail: "townbox-thumbnail"
+  actions:
+    - text: "learn more"
+      url: "/"
+    - text: "wishlist"
+      url: "/"
+
+
+- name: "war is hare"
+  description: "a jam game for playdate heavily inspired by \"worms\", created in a month for the yellow square jam"
+  thumbnail: "townbox-thumbnail"
+  actions:
+    - text: "learn more"
+      url: "/"
+    - text: "wishlist"
+      url: "/"

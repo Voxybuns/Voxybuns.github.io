@@ -27,10 +27,11 @@ body {
 header,
 footer,
 section {
+    --max-content-width: 1024px;
     display: grid;
     grid-template-columns:
         1fr
-        min(42rem, calc( 100% - 2rem ))
+        min(var(--max-content-width), calc( 100% - 2rem ))
         1fr
     ;
     
@@ -134,11 +135,33 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    & * + * {
+    & > * + * {
         margin-block-start: 1em;
     }
 }
 
 .stack-uniform {
     gap: var(--stack-gap);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill, minmax(
+            20rem,
+            1fr
+        )
+    );
+    gap: 1rem;
+}
+
+.cluster {
+    --gap: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    &.cluster-equal > * {
+        flex-grow: 1;
+        flex-basis: 0;
+    }
 }

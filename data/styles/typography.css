@@ -117,6 +117,14 @@ h2 {
     font-size: 3em;
 }
 
+h3 {
+    font-size: 1.5em;
+}
+
+p.subheading {
+    font-size: 1.25em;
+}
+
 a:any-link {
     font-weight: bold;
     color: inherit;

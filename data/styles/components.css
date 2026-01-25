@@ -1,0 +1,77 @@
+.card {
+    --card-background: light-dark(
+        var(--color-base-white),
+        var(--color-base-dark)
+    );
+    --card-text: light-dark(
+        var(--color-base-dark),
+        var(--color-base-white)
+    );
+
+    display: grid;
+    grid-template-areas: 
+        "thumbnail contents"
+        "actions actions";
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-background);
+    color: var(--card-text);
+    corner-shape: superellipse(1.5);
+    border-radius: 2rem;
+
+    &.card-featured {
+        grid-template-areas: 
+            "thumbnail"
+            "contents"
+            "actions";
+        grid-template-rows: 1fr auto auto;
+        grid-row: 1 / span 2;
+        & .card-image {
+            max-inline-size: 100%;
+            aspect-ratio: 16 / 8;
+            object-position: top;
+        }
+    }
+
+    & .card-image {
+        corner-shape: superellipse(1.5);
+        border-radius: 1rem;
+        grid-area: thumbnail;
+        max-inline-size: 5rem;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    & .card-contents {
+        grid-area: contents;
+    }
+
+    & .card-actions {
+        grid-area: actions;
+    }
+
+}
+
+a.button:any-link {
+    --button-background: light-dark(
+        var(--color-base-dark),
+        var(--color-base-white)
+    );
+    --button-text: light-dark(
+        var(--color-base-white),
+        var(--color-base-dark)
+    );
+    display: flex;
+    padding: 0.5rem 1rem;
+    background: var(--button-background);
+    color: var(--button-text);
+    text-decoration: none;
+    corner-shape: superellipse(1.5);
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    &.button-themed {
+        --button-background: var(--color-base-yellow);
+        --button-text: var(--color-base-black);
+    }
+}
