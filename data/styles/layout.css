@@ -20,6 +20,8 @@ body {
     min-block-size: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
+
+    container-type: inline-size;
 }
 
 header,
@@ -48,12 +50,13 @@ header {
 
     & > nav {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 0.5rem;
         background: var(--header-background);
         margin-block-start: 1rem;
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
         border-radius: 2rem;
         corner-shape: superellipse(1.5);
 
@@ -64,31 +67,54 @@ header {
         & menu {
             display: flex;
             flex-direction: row;
-            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0rem 1rem;
+        }
+    }
+
+    @container (min-inline-size: 30rem) {
+        & > nav {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem 2rem;
         }
     }
 }
 
 footer {
-    --footer-background: light-dark(
-        var(--color-base-light),
-        var(--color-base-black)
-    );
+    --footer-background: var(--color-base-black);
 
     background: var(--footer-background);
+    color: var(--color-base-white);
 
     & nav {
         padding-block: 2rem;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        justify-content: flex-start;
+        & img {
+            inline-size: 100%;
+        }
+    }
+
+    @container (min-inline-size: 30rem) {
+        & nav {
+            flex-direction: row;
+            justify-content: space-between;
+
+            & p {
+                text-align: right;
+            }
+        }
     }
 }
 
 main > :first-child {
-    margin-block-start: -6rem;
-    padding-block-start: 7rem;
+    /* bit of a magic number situation but it works... */
+    margin-block-start: -12rem;
+    padding-block-start: 15rem;
 }
 
 section {

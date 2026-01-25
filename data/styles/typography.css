@@ -117,11 +117,16 @@ h2 {
     font-size: 3em;
 }
 
+a:any-link {
+    font-weight: bold;
+    color: inherit;
+}
+
 /* remove bullets from menu lists to differentiate from unordered lists */
 menu {
     list-style: none;
     /* style links inside a menu to look less... link-y */
-    & a {
+    & a:any-link {
         text-decoration: none;
         color: inherit;
         font-weight: bold;
