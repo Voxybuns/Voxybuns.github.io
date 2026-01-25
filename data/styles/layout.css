@@ -142,6 +142,9 @@ section {
 
 .stack-uniform {
     gap: var(--stack-gap);
+    & > * + * {
+        margin-block-start: 0;
+    }
 }
 
 .grid {
@@ -161,6 +164,7 @@ section {
     flex-wrap: wrap;
     gap: var(--gap);
     &.cluster-equal > * {
+        inline-size: 100%;
         flex-grow: 1;
         flex-basis: 0;
     }

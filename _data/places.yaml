@@ -1,0 +1,15 @@
+- name: "bluesky"
+  description: "posting whatever i feel like posting"
+  url: "https://bsky.app/profile/voxy.space"
+
+- name: "itch.io"
+  description: "download my games there"
+  url: "https://voxybuns.itch.io/"
+
+- name: "youtube"
+  description: "streaming once in a blue moon"
+  url: "https://www.youtube.com/@Voxybuns"
+
+- name: "github"
+  description: "open source projects"
+  url: "https://github.com/Voxybuns"

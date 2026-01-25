@@ -141,3 +141,7 @@ menu {
         letter-spacing: initial;
     }
 }
+
+.text-muted {
+    color: rgb(from currentColor r g b / 0.6);
+}

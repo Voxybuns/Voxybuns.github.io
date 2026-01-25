@@ -5,11 +5,16 @@ description: Welcome to the space of a silly bunny!
 ---
 
 <section style="--section-background: var(--color-base-yellow); --section-text: var(--color-base-black);" class="hero">
-    <h1>
-        hi! i'm <strong>valentin</strong>,<br>
-        i <strong>design</strong> stuff<br>
-        & create <strong>games</strong>!
-    </h1>
+    <div class="stack">
+        <h1>
+            hi! i'm <strong>valentin</strong>,<br>
+            i <strong>design</strong> stuff<br>
+            & create <strong>games</strong>!
+        </h1>
+        <p class="subheading">
+            welcome to my own pocket of internet, where i'll be showing off and talking about my various projects. hope you enjoy your stay! :)
+        </p>
+    </div>
 </section>
 <section id="projects">
     <div class="stack">
@@ -34,6 +39,59 @@ description: Welcome to the space of a silly bunny!
                 {% endfor %}
                 </div>
             </article>
+        {% endfor %}
+        </div>
+
+        <a href="/" class="button">view all</a>
+    </div>
+</section>
+
+<section id="thoughts">
+    <div class="stack">
+        <div>
+            <h2>thoughts</h2>
+            <p class="subheading">long-form blog posts about the things i do</p>
+        </div>
+
+        <div class="grid">
+        {% for post in site.posts %}
+            <a href="{{ post.url }}" class="card stack stack-uniform">
+                <div>
+                    <h3>
+                        {{ post.title | downcase }}
+                    </h3>
+                    <p class="text-muted">
+                        published {{ post.date | date_to_string: "ordinal", "US" | downcase }}
+                    </p>
+                </div>
+                {{ post.excerpt | downcase }}
+            </a>
+        {% endfor %}
+        </div>
+
+        <a href="/" class="button">view all</a>
+    </div>
+</section>
+
+<section id="places">
+    <div class="stack">
+        <div>
+            <h2>places</h2>
+            <p class="subheading">other places you can connect with me at</p>
+        </div>
+
+        <div class="grid">
+        {% for place in site.data.places %}
+            <a href="{{ place.url }}" class="card stack">
+                <div>
+                    <h3>
+                        {{ place.name }}
+                    </h3>
+                    <p>
+                        {{ place.description }}
+                    </p>
+                </div>
+            </a>
         {% endfor %}
         </div>
     </div>

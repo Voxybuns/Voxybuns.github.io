@@ -19,6 +19,15 @@
     corner-shape: superellipse(1.5);
     border-radius: 2rem;
 
+    &.stack {
+        display: flex;
+    }
+
+    &:any-link {
+        text-decoration: none;
+        font-weight: initial;
+    }
+
     &.card-featured {
         grid-template-areas: 
             "thumbnail"
@@ -61,6 +70,7 @@ a.button:any-link {
         var(--color-base-white),
         var(--color-base-dark)
     );
+    inline-size: fit-content;
     display: flex;
     padding: 0.5rem 1rem;
     background: var(--button-background);
