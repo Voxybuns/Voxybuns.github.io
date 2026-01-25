@@ -20,11 +20,11 @@ description: Welcome to the space of a silly bunny!
     <div class="stack">
         <div>
             <h2>projects</h2>
-            <p class="subheading">various projects i've worked, or am working on</p>
+            <p class="subheading text-muted">various projects i've worked, or am working on</p>
         </div>
 
         <div class="grid">
-        {% for project in site.data.projects %}
+        {% for project in site.data.projects limit:3 %}
             <article class="card {% if forloop.first %}card-featured{% endif %}">
                 <img src="/data/images/projects/{{ project.thumbnail}}.png" alt="" class="card-image">
                 <div class="card-contents">
@@ -33,7 +33,7 @@ description: Welcome to the space of a silly bunny!
                 </div>
                 <div class="cluster card-actions cluster-equal">
                 {% for action in project.actions %}
-                <a href="{{ action.url }}" class="button {% if forloop.first %}button-themed{% endif %}">
+                <a href="{{ action.url }}" class="button">
                     {{ action.text }}
                 </a>
                 {% endfor %}
@@ -42,7 +42,7 @@ description: Welcome to the space of a silly bunny!
         {% endfor %}
         </div>
 
-        <a href="/" class="button">view all</a>
+        <a href="/projects/" class="button">view all</a>
     </div>
 </section>
 
@@ -50,11 +50,11 @@ description: Welcome to the space of a silly bunny!
     <div class="stack">
         <div>
             <h2>thoughts</h2>
-            <p class="subheading">long-form blog posts about the things i do</p>
+            <p class="subheading text-muted">long-form blog posts about the things i do</p>
         </div>
 
         <div class="grid">
-        {% for post in site.posts %}
+        {% for post in site.posts limit:4 %}
             <a href="{{ post.url }}" class="card stack stack-uniform">
                 <div>
                     <h3>
@@ -77,7 +77,7 @@ description: Welcome to the space of a silly bunny!
     <div class="stack">
         <div>
             <h2>places</h2>
-            <p class="subheading">other places you can connect with me at</p>
+            <p class="subheading text-muted">other places you can connect with me at</p>
         </div>
 
         <div class="grid">

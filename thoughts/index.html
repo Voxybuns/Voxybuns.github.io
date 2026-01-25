@@ -1,0 +1,30 @@
+---
+title: thoughts
+layout: page
+description: long-form blog posts about the things i do
+---
+
+<section>
+    <div class="stack">
+        <div>
+            <h1>thoughts</h1>
+            <p class="subheading text-muted">long-form blog posts about the things i do</p>
+        </div>
+
+        <div class="grid">
+        {% for post in site.posts limit:4 %}
+            <a href="{{ post.url }}" class="card stack stack-uniform">
+                <div>
+                    <h3>
+                        {{ post.title | downcase }}
+                    </h3>
+                    <p class="text-muted">
+                        published {{ post.date | date_to_string: "ordinal", "US" | downcase }}
+                    </p>
+                </div>
+                {{ post.excerpt | downcase }}
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</section>

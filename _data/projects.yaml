@@ -1,27 +1,27 @@
 - name: "townbox™"
-  description: "ui design and programming for townbox™, a cozy town-building sandbox"
+  description: "ui design and programming for <em>townbox™</em>, a cozy town-building sandbox"
   thumbnail: "townbox-thumbnail"
   actions:
-    - text: "learn more"
-      url: "/"
-    - text: "wishlist"
-      url: "/"
+    - text: "wishlist on steam "
+      url: "https://store.steampowered.com/app/2906440/Townbox/"
 
 - name: "videodojo games"
-  description: "branding and website design for uk-based indie studio videodojo games"
-  thumbnail: "townbox-thumbnail"
+  description: "branding and website design for uk-based indie studio <em>videodojo games</em>"
+  thumbnail: "videodojogames-thumbnail"
   actions:
-    - text: "learn more"
-      url: "/"
-    - text: "wishlist"
-      url: "/"
-
+    - text: "visit ↗"
+      url: "https://videodojo.games"
 
 - name: "war is hare"
   description: "a jam game for playdate heavily inspired by \"worms\", created in a month for the yellow square jam"
-  thumbnail: "townbox-thumbnail"
+  thumbnail: "warishare-thumbnail"
   actions:
-    - text: "learn more"
-      url: "/"
-    - text: "wishlist"
-      url: "/"
+    - text: "check it out ↗"
+      url: "https://voxybuns.itch.io/war-is-hare"
+
+- name: "gbg tools"
+  description: "a collection of utilities for <em>game builder garage</em> on the nintendo switch"
+  thumbnail: "gbg-thumbnail"
+  actions:
+    - text: "check it out"
+      url: "/gbg/"

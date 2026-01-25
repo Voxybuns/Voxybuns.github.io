@@ -1,0 +1,33 @@
+---
+title: projects
+layout: page
+description: various projects i've worked, or am working on
+---
+
+<section>
+    <div class="stack">
+        <div>
+            <h1>projects</h1>
+            <p class="subheading text-muted">various projects i've worked, or am working on</p>
+        </div>
+
+        <div class="grid">
+        {% for project in site.data.projects %}
+            <article class="card {% if forloop.first %}card-featured{% endif %}">
+                <img src="/data/images/projects/{{ project.thumbnail}}.png" alt="" class="card-image">
+                <div class="card-contents">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description }}</p>
+                </div>
+                <div class="cluster card-actions cluster-equal">
+                {% for action in project.actions %}
+                <a href="{{ action.url }}" class="button">
+                    {{ action.text }}
+                </a>
+                {% endfor %}
+                </div>
+            </article>
+        {% endfor %}
+        </div>
+    </div>
+</section>
