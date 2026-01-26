@@ -12,6 +12,8 @@
     grid-template-areas: 
         "thumbnail contents"
         "actions actions";
+    grid-template-columns: 8rem 1fr;
+    grid-template-rows: 1fr auto;
     gap: 1rem;
     padding: 1rem;
     background: var(--card-background);
@@ -34,10 +36,11 @@
             "contents"
             "actions";
         grid-template-rows: 1fr auto auto;
+        grid-template-columns: 1fr;
         grid-row: 1 / span 2;
         & .card-image {
-            max-inline-size: 100%;
-            aspect-ratio: 16 / 8;
+            inline-size: 100%;
+            block-size: 100%;
             object-position: top;
         }
     }
@@ -46,9 +49,8 @@
         corner-shape: superellipse(1.5);
         border-radius: 1rem;
         grid-area: thumbnail;
-        max-inline-size: 5rem;
-        aspect-ratio: 1 / 1;
         object-fit: cover;
+        block-size: 8rem;
     }
 
     & .card-contents {
@@ -58,13 +60,27 @@
     & .card-actions {
         grid-area: actions;
     }
+}
 
+a.card:any-link {
+    --card-hover: light-dark(
+        hsl(from var(--color-base-white) h s calc(l - 3)),
+        hsl(from var(--color-base-dark) h s calc(l + 10))
+    );
+    transition: background 0.1s ease;
+    &:hover {
+        background: var(--card-hover);
+    }
 }
 
 a.button:any-link {
     --button-background: light-dark(
         var(--color-base-dark),
         var(--color-base-white)
+    );
+    --button-hover: light-dark(
+        hsl(from var(--color-base-dark) h s calc(l + 10)),
+        hsl(from var(--color-base-white) h s calc(l - 3))
     );
     --button-text: light-dark(
         var(--color-base-white),
@@ -80,8 +96,13 @@ a.button:any-link {
     border-radius: 1rem;
     justify-content: center;
     align-items: center;
+    transition: background 0.1s ease;
+    &:hover {
+        background: var(--button-hover);
+    }
     &.button-themed {
         --button-background: var(--color-base-yellow);
+        --button-hover: lch(from var(--color-base-yellow) calc(l + 10) c h);
         --button-text: var(--color-base-black);
     }
 }

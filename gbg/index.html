@@ -1,0 +1,29 @@
+---
+title: gbg tools
+layout: page
+description: a collection of utilities for game builder garage on the nintendo switch
+---
+
+<section>
+    <div class="stack">
+        <div>
+            <h1>gbg tools</h1>
+            <p class="subheading text-muted">a collection of utilities for <em>game builder garage</em> on the nintendo switch</p>
+        </div>
+
+        <div class="grid">
+        {% for tool in site.data.gbg_tools %}
+            <a href="{{ tool.url }}" class="card stack stack-uniform">
+                <div>
+                    <h3>
+                        {{ tool.name }}
+                    </h3>
+                    <p>
+                        {{ tool.description }}
+                    </p>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</section>

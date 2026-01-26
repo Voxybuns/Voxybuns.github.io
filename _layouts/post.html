@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+{% include header.html %}
+<main>
+    <section style="--section-background: var(--color-base-yellow); --section-text: var(--color-base-black); --max-content-width: 50ch;">
+        <h1>{{ page.title }}</h1>
+        <p class="text-muted subheading">published {{ page.date | date_to_string: "ordinal", "US" | downcase }}</p>
+    </section>
+    <section style="--max-content-width: 50ch;">
+        <div class="stack">
+            {% include anchor_headings.html html=content anchorBody="#" anchorClass="header-anchor" %}
+        </div>
+    </section>
+</main>
+{% include footer.html %}

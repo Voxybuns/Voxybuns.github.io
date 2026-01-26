@@ -1,5 +1,4 @@
 ---
-layout: common/article
 title: Introducing... Thoughts!
 ---
 

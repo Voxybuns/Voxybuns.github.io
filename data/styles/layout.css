@@ -148,13 +148,16 @@ section {
 }
 
 .grid {
+    --inline-threshold: 20rem;
+    --block-threshold: 20rem;
     display: grid;
     grid-template-columns: repeat(
         auto-fill, minmax(
-            20rem,
+            var(--inline-threshold),
             1fr
         )
     );
+    grid-auto-rows: 1fr;
     gap: 1rem;
 }
 

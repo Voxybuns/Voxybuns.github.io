@@ -2,7 +2,7 @@
   description: "ui design and programming for <em>townbox™</em>, a cozy town-building sandbox"
   thumbnail: "townbox-thumbnail"
   actions:
-    - text: "wishlist on steam "
+    - text: "wishlist on steam ↗"
       url: "https://store.steampowered.com/app/2906440/Townbox/"
 
 - name: "videodojo games"

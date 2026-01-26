@@ -96,15 +96,26 @@ h3 {
     /* reset letter spacing due to extra weight */
     letter-spacing: normal;
     line-height: 1.1;
+    scroll-margin-block-start: 7rem;
+
+    .header-anchor:any-link {
+        opacity: 0;
+        text-decoration: none;
+    }
+
+    &:hover .header-anchor:any-link {
+        opacity: 0.5;
+    }
 }
 
 h1 {
-    font-size: clamp(3rem, 3rem + 1.25vw, 4rem);
+    font-size: 3rem;
     letter-spacing: -0.03em;
 }
 
 .hero {
     & h1 {
+        font-size: clamp(3rem, 3rem + 1.25vw, 4rem);
         font-weight: normal;
         line-height: 1;
     }
@@ -114,7 +125,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 h3 {

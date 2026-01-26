@@ -1,0 +1,14 @@
+- name: online nodopedia
+  cover: nodopedia
+  description: "an online version of the <em>Game Builder Garage</em> e-manual, to learn everything about the different nodon, on the go!"
+  url: /gbg/nodopedia/
+
+- name: programming set-ups
+  cover: setups
+  description: "a repository of all the programming samples published by Nintendo."
+  url: /gbg/setups/
+
+- name: controller glyphs
+  cover: glyphs
+  description: "a collection of controller and input icons to make your in-game tutorials look really pro!"
+  url: /gbg/glyphs/
