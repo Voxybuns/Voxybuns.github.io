@@ -1,0 +1,245 @@
+@layer reset {
+    /* css reset from josh w. comeau */
+    
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    *:not(dialog) {
+        margin: 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            interpolate-size: allow-keywords;
+        }
+    }
+    body {
+        line-height: 1.4;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+    }
+    input, button, textarea, select {
+        font: inherit;
+    }
+    p, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: break-word;
+    }
+    p {
+        text-wrap: pretty;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        text-wrap: balance;
+    }
+    menu {
+        list-style: none;
+        padding: 0;
+    }
+    #root, #__next {
+        isolation: isolate;
+    }
+}
+
+@layer tokens {
+    :root {
+        --color-yellow: #FFD900;
+        --color-magenta: #FF4E9B;
+        --color-cyan: #00C5C5;
+        --color-black: #000000;
+        --color-darker: #0A0A0D;
+        --color-dark: #141416;
+        --color-light: #E3DED2;
+        --color-lighter: #EFEEE9;
+        --color-white: #FFFFFF;
+
+        --color-magenta-light: oklch(from var(--color-magenta) l c h / 0.5);
+        --color-yellow-light: oklch(from var(--color-yellow) l c h / 0.5);
+        --color-cyan-light: oklch(from var(--color-cyan) l c h / 0.5);
+
+        --color-background: var(--color-lighter);
+        --color-text: var(--color-darker);
+    }
+}
+
+@layer typography {
+    /* font declarations */
+
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-Medium.woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-MediumIt.woff2");
+        font-weight: normal;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-SemiBold.woff2");
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-SemiBoldIt.woff2");
+        font-weight: 600;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-Bold.woff2");
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-BoldIt.woff2");
+        font-weight: bold;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-Heavy.woff2");
+        font-weight: 900;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: "Mohr Rounded";
+        src: url("/assets/font/MohrRounded-HeavyIt.woff2");
+        font-weight: 900;
+        font-style: italic;
+    }
+
+    html {
+        font-family: "Mohr Rounded";
+        font-size: clamp(1rem, 0.8645rem + 0.6024vw, 1.25rem);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 900;
+        line-height: 1;
+        max-inline-size: 65ch;
+        color: var(--color-text);
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: clamp(2rem, 1.6rem + 1.2vw, 3rem);
+        letter-spacing: -0.02em;
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 1.2289rem + 1.2048vw, 2rem);
+        font-weight: 700;
+    }
+
+    p {
+        max-inline-size: 65ch;
+    }
+
+    p.lead {
+        font-size: 1.25rem;
+        letter-spacing: -0.02em;
+    }
+
+    h1 + p.lead {
+        margin-block-start: 1rem;
+    }
+
+    menu a:any-link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+    }
+
+    h1 strong {
+        font-weight: 900;
+        color: var(--color-text);
+    }
+}
+
+@layer layout {
+    body {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        background-color: var(--color-background);
+        container-type: inline-size;
+    }
+
+    header {
+        container-type: inline-size;
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, calc(1024px - 2rem)) 1fr;
+        position: sticky;
+        top: 0;
+        background-color: var(--color-white);
+
+        @container (min-width: calc(1024px - 2rem)) {
+            padding-block-start: 1rem;
+            background-color: transparent;
+        }
+        & > nav {
+            background-color: var(--color-white);
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            padding-inline: 1.5rem;
+            padding-block: 0.5rem;
+            border-radius: 1.5rem;
+
+            @supports (corner-shape: round) {
+                corner-shape: superellipse(1.5);
+                border-radius: 1.75rem;
+            }
+
+            @container (min-width: 24rem) {
+                flex-direction: row;
+            }
+
+            & .nav-logo {
+                inline-size: 3rem;
+            }
+
+            & > menu {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr min( calc(1024px - 2rem), calc(100% - 2rem) ) 1fr;
+        padding-block: 3rem;
+
+        > * {
+            grid-column: 2;
+        }
+
+        > div {
+            background-color: var(--color-background);
+            padding: 2rem;
+            border-radius: 1.5rem;
+
+            @supports (corner-shape: round) {
+                corner-shape: superellipse(1.5);
+                border-radius: 1.75rem;
+            }
+        }
+    }
+}

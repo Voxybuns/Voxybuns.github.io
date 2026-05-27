@@ -1,0 +1,16 @@
+<header>
+    <nav>
+        <a href="/">
+            <img src="/assets/img/voxy_icon.svg" alt="Voxy" class="nav-logo">
+        </a>
+        <menu>
+            {% for navigation_item in site.data.navigation %}
+            <li>
+                <a href="{{ navigation_item.url }}">
+                    {{ navigation_item.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </menu>
+    </nav>
+</header>
