@@ -143,6 +143,11 @@
         font-weight: 700;
     }
 
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
     p {
         max-inline-size: 65ch;
     }
@@ -241,5 +246,88 @@
                 border-radius: 1.75rem;
             }
         }
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 6rem 6rem;
+        gap: 1rem;
+    }
+}
+
+@layer components {
+    a.button:any-link {
+        display: flex;
+        align-items: center;
+        inline-size: fit-content;
+        padding: 0.51rem 1rem;
+        border-radius: 0.5rem;
+        background-color: var(--color-yellow);
+        color: var(--color-black);
+        font-weight: 700;
+        text-decoration: none;
+        &.full-width {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+    .project-card {
+        display: grid;
+        grid-template-columns: 4rem 1fr;
+        grid-template-rows: 4rem auto;
+        grid-template-areas:
+            "thumbnail content"
+            "buttons buttons"
+        ;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        background: var(--color-lighter);
+
+        @supports (corner-shape: round) {
+            corner-shape: superellipse(1.5);
+            border-radius: 1.25rem;
+        }
+
+        &.featured {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto auto;
+            grid-template-areas:
+                "thumbnail"
+                "content"
+                "buttons"
+            ;
+            grid-row: 1 / span 2;
+            grid-column: 1;
+        }
+
+        & > img {
+            grid-area: thumbnail;
+            border-radius: 0.5rem;
+        }
+        & > .card-contents {
+            grid-area: content;
+        }
+        & > .card-buttons {
+            grid-area: buttons;
+        }
+    }
+
+    span.badge {
+        display: inline-flex;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+        background-color: var(--color-yellow);
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 1.0;
+        text-transform: uppercase;
+    }
+
+    :is(h1,h2,h3,h4,h5,h6):has(span.badge) {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 }
