@@ -4,49 +4,37 @@ layout: default
 description: Welcome to the space of a silly bunny!
 ---
 
-<section>
+<section style="--color-background: var(--color-yellow);">
     <h1>
-        Hi! I'm <strong>Valentin</strong>,<br>
-        and I like creatin' stuff!
+        Hi, hello!
     </h1>
     <p class="lead">
-        I have lots of fun designing things, building web pages, and dabbling in game development. But I also like sharing it with others, hence why I created this website, so you can learn all about the projects I've worked on! I hope you enjoy your stay!
+        I'm <strong>Voxy</strong> <small>(he/him)</small>, a graphic and UI designer from Belgium, and a certified silly bunny rabbit!
+    </p>
+    <p class="lead">
+        I love creating stuff and learning new things like web development or game development. I built this humble website so I can share my creative endeavors with you, because making stuff is fun, but so is sharing it with others! Hope you'll enjoy your stay!
     </p>
 </section>
 
-<section style="--color-background: var(--color-magenta-light);">
-    <div>
-        <h2>Projects</h2>
+<section>
+    <h2>{% include icons/hammer.html %} Projects</h2>
 
-        <div class="project-grid">
-            <article class="project-card featured">
-                <img src="/assets/img/projects/at-icons-thumbnail.png">
-                <div class="card-contents">
-                    <h3>@icons <span class="badge">assets</span></h3>
-                    <p>A free library of custom node icons for Godot projects.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="/" class="button full-width">Button</a>
-                </div>
-            </article>
-            <article class="project-card">
-                <img src="/assets/img/projects/at-icons-thumbnail.png">
-                <div class="card-contents">
-                    <h3>Townbox</h3>
-                </div>
-                <div class="card-buttons">
-                    <a href="/" class="button full-width">Button</a>
-                </div>
-            </article>
-            <article class="project-card">
-                <img src="/assets/img/projects/at-icons-thumbnail.png">
-                <div class="card-contents">
-                    <h3>Townbox</h3>
-                </div>
-                <div class="card-buttons">
-                    <a href="/" class=" full-width">Button</a>
-                </div>
-            </article>
-        </div>
+    <div class="project-grid">
+        {% for project in site.data.projects limit: 3 %}
+        <article class="project-card {% if forloop.first ==true %}featured{% endif %}">
+            <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
+            <div class="card-contents">
+                <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
+                <p>{{ project.description }}</p>
+            </div>
+            <div class="card-buttons">
+                {% for button in project.buttons %}
+                <a href="{{ button.url }}" class="button full-width">
+                    {{ button.label }}
+                </a>
+                {% endfor %}
+            </div>
+        </article>
+        {% endfor %}
     </div>
 </section>

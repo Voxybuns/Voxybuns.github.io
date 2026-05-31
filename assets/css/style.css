@@ -117,7 +117,7 @@
 
     html {
         font-family: "Mohr Rounded";
-        font-size: clamp(1rem, 0.8645rem + 0.6024vw, 1.25rem);
+        font-size: clamp(1em, 0.9em + 1vw, 1.25em);
     }
 
     h1,
@@ -133,14 +133,31 @@
     }
 
     h1 {
-        font-weight: 600;
-        font-size: clamp(2rem, 1.6rem + 1.2vw, 3rem);
-        letter-spacing: -0.02em;
+        font-weight: 700;
+        font-size: 4rem;
+        letter-spacing: -0.04em;
+        text-transform: lowercase;
+        font-style: italic;
     }
 
     h2 {
-        font-size: clamp(1.5rem, 1.2289rem + 1.2048vw, 2rem);
+        font-size: 3rem;
         font-weight: 700;
+        letter-spacing: -0.04em;
+        text-transform: lowercase;
+        font-style: italic;
+        &:has(svg) {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            & svg {
+                inline-size: 1em;
+                block-size: 1em;
+            }
+        }
+        &+ * {
+            margin-block-start: 1rem;
+        }
     }
 
     h3 {
@@ -153,8 +170,11 @@
     }
 
     p.lead {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         letter-spacing: -0.02em;
+        + p.lead {
+            margin-block-start: 1rem;
+        }
     }
 
     h1 + p.lead {
@@ -171,6 +191,20 @@
         font-weight: 900;
         color: var(--color-text);
     }
+
+    small {
+        font-size: 0.8em;
+        font-style: italic;
+    }
+
+    a:any-link:not(.button, menu a) {
+        font-weight: 700;
+        font-style: italic;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 @layer layout {
@@ -185,12 +219,12 @@
     header {
         container-type: inline-size;
         display: grid;
-        grid-template-columns: 1fr minmax(auto, calc(1024px - 2rem)) 1fr;
+        grid-template-columns: 1fr minmax(auto, calc(1200px - 2rem)) 1fr;
         position: sticky;
         top: 0;
         background-color: var(--color-white);
 
-        @container (min-width: calc(1024px - 2rem)) {
+        @container (min-width: calc(1200px - 2rem)) {
             padding-block-start: 1rem;
             background-color: transparent;
         }
@@ -223,35 +257,67 @@
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
+                & li > a {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 0.25rem;
+                }
             }
+        }
+    }
+
+    footer {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        display: grid;
+        grid-template-columns: 1fr minmax(auto, calc(1200px - 2rem)) 1fr;
+        grid-template-rows: auto auto;
+        padding-block-start: 2rem;
+        gap: 2rem;
+        border-radius: 2rem 2rem 0 0;
+        > * {
+            grid-column: 2;
+        }
+        > div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            > p:last-child {
+                text-align: right;
+            }
+        }
+        > img {
+            inline-size: 100%;
+            max-block-size: 12rem;
+            object-fit: cover;
+            object-position: top center;
+        }
+        & a:any-link {
+            color: var(--color-yellow);
         }
     }
 
     section {
         display: grid;
-        grid-template-columns: 1fr min( calc(1024px - 2rem), calc(100% - 2rem) ) 1fr;
+        grid-template-columns: 1fr min( calc(1200px - 2rem), calc(100% - 2rem) ) 1fr;
         padding-block: 3rem;
+        background-color: var(--color-background);
+
+        &:first-of-type {
+            margin-block-start: -5rem;
+            padding-block-start: 7rem;
+        }
 
         > * {
             grid-column: 2;
-        }
-
-        > div {
-            background-color: var(--color-background);
-            padding: 2rem;
-            border-radius: 1.5rem;
-
-            @supports (corner-shape: round) {
-                corner-shape: superellipse(1.5);
-                border-radius: 1.75rem;
-            }
         }
     }
 
     .project-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 6rem 6rem;
+        grid-template-rows: auto auto;
         gap: 1rem;
     }
 }
@@ -274,8 +340,8 @@
     }
     .project-card {
         display: grid;
-        grid-template-columns: 4rem 1fr;
-        grid-template-rows: 4rem auto;
+        grid-template-columns: 6rem 1fr;
+        grid-template-rows: 6rem auto;
         grid-template-areas:
             "thumbnail content"
             "buttons buttons"
@@ -283,7 +349,7 @@
         gap: 1rem;
         padding: 1rem;
         border-radius: 1rem;
-        background: var(--color-lighter);
+        background: var(--color-white);
 
         @supports (corner-shape: round) {
             corner-shape: superellipse(1.5);
@@ -300,34 +366,145 @@
             ;
             grid-row: 1 / span 2;
             grid-column: 1;
+
+            & > img {
+                aspect-ratio: unset;
+                block-size: 100%;
+            }
         }
 
         & > img {
             grid-area: thumbnail;
             border-radius: 0.5rem;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
         }
         & > .card-contents {
             grid-area: content;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
         }
         & > .card-buttons {
             grid-area: buttons;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 0.5rem;
         }
     }
 
     span.badge {
         display: inline-flex;
         padding: 0.25rem 0.5rem;
+        padding-block-start: 0.4rem;
         border-radius: 0.5rem;
-        background-color: var(--color-yellow);
-        font-size: 0.8rem;
-        font-weight: 500;
+        background-color: var(--color-cyan);
+        font-size: 0.75rem;
+        font-weight: 700;
         line-height: 1.0;
         text-transform: uppercase;
+        &::before {
+            content: attr(data-type);
+        }
     }
 
     :is(h1,h2,h3,h4,h5,h6):has(span.badge) {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+    }
+}
+
+@layer animations {
+    @keyframes hammer-swing {
+        0% {
+            transform: rotate(0deg);
+        }
+        40% {
+            transform: rotate(-10deg);
+        }
+        50% {
+            transform: rotate(45deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes thought-jiggle {
+        0% {
+            transform: scale(1);
+        }
+        40% {
+            transform: scale(1.1);
+        }
+        90% {
+            transform: scale(0.95);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes thought-tail-jiggle {
+        0% {
+            transform: scale(1);
+        }
+        40% {
+            transform: scale(1.25);
+        }
+        90% {
+            transform: scale(0.90);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes planet-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(60deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
+    :has(> .icon-hammer):hover > .icon-hammer {
+        transform-origin: 20% 75%;
+        animation-name: hammer-swing;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-timing-function: ease;
+    }
+
+    :has(> .icon-thoughts):hover {
+        & > .icon-thoughts > .thought-tail, > .icon-thoughts > .thought-cloud {
+            transform-origin: calc((100% / 24) * 6) calc((100% / 24) * 19);
+            animation-name: thought-tail-jiggle;
+            animation-duration: 300ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: both;
+            animation-timing-function: ease;
+        }
+        & > .icon-thoughts > .thought-cloud {
+            animation-name: thought-jiggle;
+            transform-origin: calc((100% / 24) * 12) calc((100% / 24) * 10);
+            animation-delay: 100ms;
+        }
+    }
+
+    :has(> .icon-planet):hover > .icon-planet {
+        transform-origin: 50% 50%;
+        animation-name: planet-spin;
+        animation-duration: 500ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
     }
 }
