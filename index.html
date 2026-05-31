@@ -4,16 +4,21 @@ layout: default
 description: Welcome to the space of a silly bunny!
 ---
 
-<section style="--color-background: var(--color-yellow);">
-    <h1>
-        Hi, hello!
-    </h1>
-    <p class="lead">
-        I'm <strong>Voxy</strong> <small>(he/him)</small>, a graphic and UI designer from Belgium, and a certified silly bunny rabbit!
-    </p>
-    <p class="lead">
-        I love creating stuff and learning new things like web development or game development. I built this humble website so I can share my creative endeavors with you, because making stuff is fun, but so is sharing it with others! Hope you'll enjoy your stay!
-    </p>
+<section style="--color-background: var(--color-yellow); padding-block-end: 0">
+    <div class="hero-container">
+        <div>
+            <h1>
+                Hi, hello!
+            </h1>
+            <p class="lead">
+                I'm <strong>Voxy</strong> <small>(he/him)</small>, a graphic and UI designer from Belgium, and a certified silly bunny rabbit!
+            </p>
+            <p>
+                I love creating stuff and learning new things like web development or game development. I built this humble website so I can share my creative endeavors with you, because making stuff is fun, but so is sharing it with others! Hope you'll enjoy your stay!
+            </p>
+        </div>
+        <img src="/assets/img/bunny.svg" alt="Stylized silhouette illustration of an anthropomorphic rabbit wearing large round glasses, doing a victory sign." class="hero-illustration">
+    </div>
 </section>
 
 <section>
@@ -37,4 +42,8 @@ description: Welcome to the space of a silly bunny!
         </article>
         {% endfor %}
     </div>
+</section>
+
+<section>
+    <h2>{% include icons/thoughts.html %} Thoughts</h2>
 </section>

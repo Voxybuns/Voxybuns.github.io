@@ -172,7 +172,7 @@
     p.lead {
         font-size: 1.5rem;
         letter-spacing: -0.02em;
-        + p.lead {
+        + p {
             margin-block-start: 1rem;
         }
     }
@@ -281,10 +281,16 @@
         }
         > div {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            > p:last-child {
-                text-align: right;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            @container (min-inline-size: 28rem) {
+                flex-direction: row;
+                justify-content: space-between;
+
+                > p:last-child {
+                    text-align: right;
+                }
             }
         }
         > img {
@@ -292,6 +298,7 @@
             max-block-size: 12rem;
             object-fit: cover;
             object-position: top center;
+            aspect-ratio: 29 / 6;
         }
         & a:any-link {
             color: var(--color-yellow);
@@ -303,6 +310,7 @@
         grid-template-columns: 1fr min( calc(1200px - 2rem), calc(100% - 2rem) ) 1fr;
         padding-block: 3rem;
         background-color: var(--color-background);
+        container-type: inline-size;
 
         &:first-of-type {
             margin-block-start: -5rem;
@@ -314,11 +322,48 @@
         }
     }
 
+    .hero-container {
+        padding-block-end: 0;
+        display: grid;
+        grid-template-rows: 1fr auto;
+
+        > div {
+            padding-block-end: 2rem;
+        }
+
+        @container (min-inline-size: 48rem) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+
+            > * {
+                grid-column: 1;
+            }
+
+            & .hero-illustration {
+                justify-self: flex-end;
+                grid-column: 2;
+            }
+        }
+    }
+
+    .hero-illustration {
+        inline-size: 16rem;
+        margin-block-end: -1.3rem;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
     .project-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
         gap: 1rem;
+
+        @container (min-width: 1024px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
 }
 
@@ -341,7 +386,7 @@
     .project-card {
         display: grid;
         grid-template-columns: 6rem 1fr;
-        grid-template-rows: 6rem auto;
+        grid-template-rows: auto auto;
         grid-template-areas:
             "thumbnail content"
             "buttons buttons"
@@ -350,6 +395,7 @@
         padding: 1rem;
         border-radius: 1rem;
         background: var(--color-white);
+        container-type: inline-size;
 
         @supports (corner-shape: round) {
             corner-shape: superellipse(1.5);
@@ -411,8 +457,14 @@
 
     :is(h1,h2,h3,h4,h5,h6):has(span.badge) {
         display: flex;
-        align-items: center;
-        gap: 0.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        @container (min-inline-size: 25rem) {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
     }
 }
 
