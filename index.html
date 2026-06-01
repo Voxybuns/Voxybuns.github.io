@@ -26,7 +26,7 @@ description: Welcome to the space of a silly bunny!
 
     <div class="project-grid">
         {% for project in site.data.projects limit: 3 %}
-        <article class="project-card {% if forloop.first ==true %}featured{% endif %}">
+        <article class="card {% if forloop.first ==true %}featured{% endif %}">
             <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
             <div class="card-contents">
                 <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
@@ -46,4 +46,17 @@ description: Welcome to the space of a silly bunny!
 
 <section>
     <h2>{% include icons/thoughts.html %} Thoughts</h2>
+
+    <div class="card-grid">
+        {% for post in site.posts %}
+            <article class="card">
+                <div class="card-contents">
+                    <h3>{{ post.title }}</h3>
+                </div>
+                <a href="{{ post.url }}" class="button">
+                    Read more
+                </a>
+            </article>
+        {% endfor %}
+    </div>
 </section>

@@ -383,19 +383,27 @@
             width: 100%;
         }
     }
-    .project-card {
+    .card {
         display: grid;
-        grid-template-columns: 6rem 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         grid-template-areas:
-            "thumbnail content"
-            "buttons buttons"
+            "content"
+            "buttons"
         ;
         gap: 1rem;
         padding: 1rem;
         border-radius: 1rem;
         background: var(--color-white);
         container-type: inline-size;
+
+        &:has(img) {
+            grid-template-columns: auto 1fr;
+            grid-template-areas:
+                "thumbnail content"
+                "buttons buttons"
+            ;
+        }
 
         @supports (corner-shape: round) {
             corner-shape: superellipse(1.5);
@@ -422,6 +430,7 @@
         & > img {
             grid-area: thumbnail;
             border-radius: 0.5rem;
+            block-size: 6rem;
             aspect-ratio: 1 / 1;
             object-fit: cover;
         }
