@@ -1,0 +1,12 @@
+- name: YouTube
+  url: 'https://www.youtube.com/@Voxybuns'
+  description: (Very) occasional streams and videos.
+- name: Bluesky
+  url: 'https://bsky.app/profile/voxy.space'
+  description: Ramblings and short-form updates.
+- name: itch.io
+  url: 'https://voxybuns.itch.io/'
+  description: Games and resources I've created.
+- name: GitHub
+  url: 'https://github.com/Voxybuns'
+  description: Open-source projects.

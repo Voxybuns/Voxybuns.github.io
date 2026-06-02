@@ -24,20 +24,20 @@ description: Welcome to the space of a silly bunny!
 <section>
     <h2>{% include icons/hammer.html %} Projects</h2>
 
-    <div class="project-grid">
+    <div class="card-grid">
         {% for project in site.data.projects limit: 3 %}
         <article class="card {% if forloop.first ==true %}featured{% endif %}">
-            <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
             <div class="card-contents">
+                <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
                 <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
                 <p>{{ project.description }}</p>
-            </div>
-            <div class="card-buttons">
-                {% for button in project.buttons %}
-                <a href="{{ button.url }}" class="button full-width">
-                    {{ button.label }}
-                </a>
-                {% endfor %}
+                <div class="button-cluster">
+                    {% for button in project.buttons %}
+                    <a href="{{ button.url }}" class="button full-width">
+                        {{ button.label }}
+                    </a>
+                    {% endfor %}
+                </div>
             </div>
         </article>
         {% endfor %}
@@ -52,10 +52,32 @@ description: Welcome to the space of a silly bunny!
             <article class="card">
                 <div class="card-contents">
                     <h3>{{ post.title }}</h3>
+                    <p>
+                        <span class="post-date">Published {{ post.date | date: "%e %B %Y"}}</span><br>
+                        {{ post.excerpt }}
+                    </p>
+                    <div class="button-cluster">
+                        <a href="{{ post.url }}" class="button">
+                            Read more
+                        </a>
+                    </div>
                 </div>
-                <a href="{{ post.url }}" class="button">
-                    Read more
-                </a>
+                
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section>
+    <h2>{% include icons/planet.html %} Places</h2>
+
+    <div class="card-grid">
+        {% for place in site.data.places %}
+            <article class="card no-thumbnail">
+                <div class="card-contents">
+                    <h3>{{ place.name }}</h3>
+                    <p>{{ place.description }}</p>
+                </div>
             </article>
         {% endfor %}
     </div>
