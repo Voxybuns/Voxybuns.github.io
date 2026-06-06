@@ -1,0 +1,25 @@
+---
+title: Thoughts
+layout: page
+description: Welcome to the space of a silly bunny!
+---
+
+<div class="card-grid">
+    {% for post in site.posts %}
+        <article class="card">
+            <div class="card-contents">
+                <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+                <p>
+                    <span class="post-date">Published {{ post.date | date: "%e %B %Y"}}</span><br>
+                    {{ post.excerpt }}
+                </p>
+                <div class="button-cluster">
+                    <a href="{{ post.url }}" class="button">
+                        Read more
+                    </a>
+                </div>
+            </div>
+            
+        </article>
+    {% endfor %}
+</div>

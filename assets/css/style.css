@@ -360,6 +360,7 @@
     }
 
     section {
+        scroll-margin-block-start: 4rem;
         display: grid;
         grid-template-columns: 1fr min( calc(1200px - 2rem), calc(100% - 2rem) ) 1fr;
         padding-block: 3rem;
