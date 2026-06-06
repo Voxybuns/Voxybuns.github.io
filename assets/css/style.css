@@ -369,7 +369,7 @@
 
         &:first-of-type {
             margin-block-start: -5rem;
-            padding-block-start: 7rem;
+            padding-block-start: 8rem;
         }
 
         > * {
@@ -403,8 +403,8 @@
     }
 
     .hero-illustration {
-        inline-size: 16rem;
-        margin-block-end: -1.3rem;
+        inline-size: 20rem;
+        margin-block-end: -1.325rem;
         justify-self: center;
         align-self: flex-end;
     }
