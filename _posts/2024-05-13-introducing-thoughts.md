@@ -1,7 +1,7 @@
 ---
-layout: common/article
 title: Introducing... Thoughts!
 excerpt: "An introductory post to my website's blog section."
+last-edit: 2026-06-06
 ---
 
 Hey folks! This post marks the debut of the "Thoughts" section of my website, a space where I'll be able to write long-form content about whatever comes to my mind!

@@ -4,7 +4,7 @@ layout: default
 description: Welcome to the space of a silly bunny!
 ---
 
-<section style="--color-background: var(--color-yellow); padding-block-end: 0">
+<section style="--color-background: var(--color-yellow); --color-text: var(--color-darker); padding-block-end: 0" id="hero">
     <div class="hero-container">
         <div>
             <h1>
@@ -21,17 +21,31 @@ description: Welcome to the space of a silly bunny!
     </div>
 </section>
 
-<section>
+<section id="projects">
     <h2>{% include icons/hammer.html %} Projects</h2>
+    <p class="lead">
+        Look at the cool stuff I worked on!
+    </p>
 
     <div class="card-grid">
-        {% for project in site.data.projects limit: 3 %}
+        {% for project in site.projects limit: 3 %}
         <article class="card {% if forloop.first ==true %}featured{% endif %}">
             <div class="card-contents">
                 <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
                 <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
                 <p>{{ project.description }}</p>
                 <div class="button-cluster">
+                    {% if project.main_button_override %}
+                        <a href="{{ project.main_button_override.url }}" class="button full-width">
+                            {{ project.main_button_override.label }}&nbsp;
+                            {% include icons/arrow-right.html %}
+                        </a>
+                    {% else %}
+                        <a href="{{ project.url }}" class="button full-width">
+                            Learn more&nbsp;
+                            {% include icons/arrow-right.html %}
+                        </a>
+                    {% endif %}
                     {% for button in project.buttons %}
                     <a href="{{ button.url }}" class="button full-width">
                         {{ button.label }}&nbsp;
@@ -45,16 +59,21 @@ description: Welcome to the space of a silly bunny!
         </article>
         {% endfor %}
     </div>
+
+    <a href="/projects/" class="button">
+        See all&nbsp;{% include icons/arrow-right.html %}
+    </a>
 </section>
 
 <section>
-    <h2>{% include icons/thoughts.html %} Thoughts</h2>
+    <h2 id="thoughts">{% include icons/thoughts.html %} Thoughts</h2>
+    <p class="lead">Long-form yapping, slightly more organized than usual.</p>
 
     <div class="card-grid">
-        {% for post in site.posts %}
+        {% for post in site.posts limit: 4 %}
             <article class="card">
                 <div class="card-contents">
-                    <h3>{{ post.title }}</h3>
+                    <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
                     <p>
                         <span class="post-date">Published {{ post.date | date: "%e %B %Y"}}</span><br>
                         {{ post.excerpt }}
@@ -69,19 +88,29 @@ description: Welcome to the space of a silly bunny!
             </article>
         {% endfor %}
     </div>
+
+    <a href="/thoughts/" class="button">
+        See all&nbsp;{% include icons/arrow-right.html %}
+    </a>
 </section>
 
-<section>
+<section id="places">
     <h2>{% include icons/planet.html %} Places</h2>
+    <p class="lead">
+        Other pockets of the Internet you can find me on.
+    </p>
 
     <div class="card-grid">
         {% for place in site.data.places %}
             <article class="card no-thumbnail">
                 <div class="card-contents">
-                    <h3>{{ place.name }}</h3>
+                    <a href="{{ place.url }}"><h3>{{ place.name }}</h3></a>
                     <p>{{ place.description }}</p>
                 </div>
             </article>
         {% endfor %}
     </div>
+    <p>
+        (Psst! If you'd like to contact me, <a href="mailto:contact@voxy.space">click here!</a>)
+    </p>
 </section>

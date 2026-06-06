@@ -54,12 +54,30 @@
         --color-lighter: #EFEEE9;
         --color-white: #FFFFFF;
 
-        --color-magenta-light: oklch(from var(--color-magenta) l c h / 0.5);
-        --color-yellow-light: oklch(from var(--color-yellow) l c h / 0.5);
-        --color-cyan-light: oklch(from var(--color-cyan) l c h / 0.5);
+        /* used for page backgrounds */
+        --color-background: light-dark(
+            var(--color-lighter),
+            var(--color-darker)
+        );   
+        /* primarily used for cards */
+        --color-raised-container: light-dark(
+            var(--color-white),
+            var(--color-dark)
+        );
+        /* used for blockquotes, code blocks, and similar */
+        --color-inset-container: light-dark(
+            var(--color-light),
+            var(--color-black)
+        );
+        --color-text: light-dark(
+            var(--color-darker),
+            var(--color-light)
+        );
+        --color-accent-primary: var(--color-yellow);
+        --color-accent-secondary: var(--color-cyan);
+        --color-text-on-accent: var(--color-black);
 
-        --color-background: var(--color-lighter);
-        --color-text: var(--color-darker);
+        color-scheme: light dark;
     }
 }
 
@@ -133,15 +151,17 @@
     }
 
     h1 {
+        scroll-margin-block-start: 7rem;
         font-weight: 700;
-        font-size: 4rem;
+        font-size: 3rem;
         letter-spacing: -0.04em;
         text-transform: lowercase;
         font-style: italic;
     }
 
     h2 {
-        font-size: 3rem;
+        scroll-margin-block-start: 7rem;
+        font-size: 2rem;
         font-weight: 700;
         letter-spacing: -0.04em;
         text-transform: lowercase;
@@ -161,36 +181,46 @@
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 700;
         letter-spacing: -0.04em;
     }
 
     p {
         max-inline-size: 65ch;
+        color: var(--color-text);
+        + p {
+            margin-block-start: 1.5rem;
+        }
+        + :is(h1, h2, h3, h4, h5, h6) {
+            margin-block-start: 2.5rem;
+        }
     }
 
     p.lead {
-        font-size: 1.5rem;
+        color: oklch(from var(--color-text) l c h / 75%);
+        font-size: 1.2rem;
         letter-spacing: -0.02em;
-        + p {
+        + * {
             margin-block-start: 1rem;
         }
     }
 
-    h1 + p.lead {
+    h1 + p.lead, h2 + p.lead {
         margin-block-start: 0rem;
     }
 
-    menu a:any-link {
+    menu a:any-link, #table-of-contents a:any-link {
         text-decoration: none;
         color: inherit;
         font-weight: bold;
-    }
-
-    h1 strong {
-        font-weight: 900;
-        color: var(--color-text);
+        transition: text-underline-offset 0.1s ease;
+        text-underline-offset: 0.1em;
+        &:hover {
+            text-underline-offset: 0.2em;
+            text-decoration: underline;
+            text-decoration-color: var(--color-accent-primary);
+        }
     }
 
     small {
@@ -198,14 +228,23 @@
         font-style: italic;
     }
 
-    a:any-link:not(.button, menu a) {
+    .muted {
+        color: oklch(from var(--color-text) l c h / 75%);
+    }
+
+    a:any-link:not(.button, menu a, #table-of-contents a) {
         font-weight: 700;
-        font-style: italic;
-        text-underline-offset: 0.05em;
+        text-underline-offset: 0.1em;
         transition: text-underline-offset 0.1s ease;
+        text-decoration-color: var(--color-accent-primary);
+        color: inherit;
         &:hover {
             text-underline-offset: 0.2em;
             text-decoration: underline;
+            text-decoration-color: var(--color-accent-primary);
+        }
+        &:active, &:visited {
+            text-decoration-color: var(--color-accent-primary);
         }
     }
 
@@ -216,6 +255,10 @@
 }
 
 @layer layout {
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         min-height: 100vh;
         display: grid;
@@ -231,6 +274,8 @@
         position: sticky;
         top: 0;
         background-color: var(--color-white);
+        color: var(--color-darker);
+        z-index: 10;
 
         @container (min-width: calc(1200px - 2rem)) {
             padding-block-start: 1rem;
@@ -276,6 +321,7 @@
     }
 
     footer {
+        color-scheme: only dark;
         background-color: var(--color-black);
         color: var(--color-white);
         display: grid;
@@ -309,7 +355,7 @@
             aspect-ratio: 29 / 6;
         }
         & a:any-link {
-            color: var(--color-yellow);
+            color: var(--color-accent-primary);
         }
     }
 
@@ -362,10 +408,48 @@
         align-self: flex-end;
     }
 
+    .post-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 2rem;
+        > #table-of-contents {
+            display: none;
+            background-color: var(--color-raised-container);
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-block-start: -1rem;
+            position: sticky;
+            top: 7rem;
+            flex-direction: column;
+            & > h3 {
+                margin-block-end: 1rem;
+            }
+            & > ul {
+                list-style: none;
+                padding: 0;
+            }
+        }
+
+        @container (min-inline-size: 48rem) {
+            grid-template-columns: 1fr 16rem;
+            > #table-of-contents {
+                display: flex;
+                grid-column: 2;
+                grid-row: 1;
+                align-self: flex-start;
+            }
+        }
+    }
+
     .card-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 1rem;
+
+        & + * {
+            margin-block-start: 1rem;
+        }
 
         @container (min-inline-size: 48rem) {
             grid-template-columns: 1fr 1fr;
@@ -385,14 +469,14 @@
 
 @layer components {
     a.button:any-link {
-        --color-button-background: var(--color-yellow);
+        --color-button-background: var(--color-accent-primary);
         display: flex;
         align-items: center;
         inline-size: fit-content;
         padding: 0.51rem 1rem;
         border-radius: 0.5rem;
         background-color: var(--color-button-background);
-        color: var(--color-black);
+        color: var(--color-text-on-accent);
         font-weight: 700;
         text-decoration: none;
         transition: background-color 0.1s ease;
@@ -412,7 +496,7 @@
         flex-direction: column;
         gap: 1rem;
         container-type: inline-size;
-        background: var(--color-white);
+        background: var(--color-raised-container);
         padding: 1rem;
         border-radius: 2rem;
         
@@ -525,7 +609,8 @@
         padding: 0.25rem 0.5rem;
         padding-block-start: 0.4rem;
         border-radius: 0.5rem;
-        background-color: var(--color-cyan);
+        background-color: var(--color-accent-secondary);
+        color: var(--color-text-on-accent);
         font-size: 0.75rem;
         font-weight: 700;
         line-height: 1.0;
