@@ -14,8 +14,10 @@
   description: "UI design for Townbox, a casual town-building game currently in development."
   buttons:
     - label: "Learn more"
+      icon: "arrow-right"
       url: "/"
     - label: "Download"
+      icon: "external-link"
       url: "/"
 
 - title: "VideoDojo Games"

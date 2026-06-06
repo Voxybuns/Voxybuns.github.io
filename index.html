@@ -34,7 +34,10 @@ description: Welcome to the space of a silly bunny!
                 <div class="button-cluster">
                     {% for button in project.buttons %}
                     <a href="{{ button.url }}" class="button full-width">
-                        {{ button.label }}
+                        {{ button.label }}&nbsp;
+                        {% if button.icon %}
+                            {% include icons/{{ button.icon }}.html %}
+                        {% endif %}
                     </a>
                     {% endfor %}
                 </div>
