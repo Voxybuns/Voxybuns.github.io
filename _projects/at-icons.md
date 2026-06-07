@@ -7,5 +7,6 @@ buttons:
 - label: "Download"
   icon: "external-link"
   url: "/"
-layout: page
+layout: project
 ---
+![@icons logotype](/assets/img/projects/at-icons-thumbnail.png)

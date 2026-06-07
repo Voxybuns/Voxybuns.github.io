@@ -337,6 +337,9 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            > p:last-child {
+                margin: 0;
+            }
 
             @container (min-inline-size: 28rem) {
                 flex-direction: row;
@@ -366,6 +369,22 @@
         padding-block: 3rem;
         background-color: var(--color-background);
         container-type: inline-size;
+
+        & > .readable-width {
+            display: grid;
+            grid-template-columns: 1fr min(65ch, 100%) 1fr;
+            & > * {
+                grid-column: 2;
+            }
+            & > :has(.full-bleed, img, video) {
+                grid-column: 1 / 4;
+                max-inline-size: 100%;
+                inline-size: 100%;
+                > :is(.full-bleed, img, video) {
+                    border-radius: 2rem;
+                }
+            }
+        }
 
         &:first-of-type {
             margin-block-start: -5rem;
