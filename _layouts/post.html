@@ -2,13 +2,17 @@
 layout: default
 ---
 <section style="--color-background: var(--color-yellow); --color-text: var(--color-darker);">
-    <h1>
-        {{ page.title }}
-    </h1>
-    <p class="lead">
-        {{ page.excerpt }}
-    </p>
-    <p><small><em class="muted">Originally written on </em>{{ page.date | date_to_string: "ordinal", "US" }}, <em class="muted">last updated on </em>{{ page.last-edit | date_to_string: "ordinal", "US" }}.</small></p>
+    <hgroup>
+        <h1>
+            {{ page.title }}
+        </h1>
+        <p>
+            {{ page.excerpt }}
+        </p>
+    </hgroup>
+    <p><small>
+        <em class="muted">Originally written on </em>{{ page.date | date_to_string: "ordinal", "US" }}, <em class="muted">last updated on </em>{{ page.last-edit | date_to_string: "ordinal", "US" }}.
+    </small></p>
 </section>
 <section>
     <div class="post-grid">

@@ -7,12 +7,14 @@ description: Welcome to the space of a silly bunny!
 <section style="--color-background: var(--color-yellow); --color-text: var(--color-darker); padding-block-end: 0" id="hero">
     <div class="hero-container">
         <div>
-            <h1>
-                Hi, hello!
-            </h1>
-            <p class="lead">
-                I'm <strong>Voxy</strong> <small>(he/him)</small>, a graphic and UI designer from Belgium, and a certified silly bunny rabbit!
-            </p>
+            <hgroup>
+                <h1>
+                    Hi, hello!
+                </h1>
+                <p>
+                    I'm <strong>Voxy</strong> <small>(he/him)</small>, a graphic and UI designer from Belgium, and a certified silly bunny rabbit!
+                </p>
+            </hgroup>
             <p>
                 I love creating stuff and learning new things like web development or game development. I built this humble website so I can share my creative endeavors with you, because making stuff is fun, but so is sharing it with others! Hope you'll enjoy your stay!
             </p>
@@ -22,11 +24,15 @@ description: Welcome to the space of a silly bunny!
 </section>
 
 <section id="projects">
-    <h2>{% include icons/hammer.html %} Projects</h2>
-    <p class="lead">
-        Look at the cool stuff I worked on!
-    </p>
-
+    <hgroup>
+        <h2>
+            {% include icons/hammer.html %} Projects
+        </h2>
+        <p>
+            Look at the cool stuff I worked on!
+        </p>
+    </hgroup>
+    
     <div class="card-grid">
         {% for project in site.projects limit: 3 %}
         <article class="card {% if forloop.first ==true %}featured{% endif %}">
@@ -65,9 +71,15 @@ description: Welcome to the space of a silly bunny!
     </a>
 </section>
 
-<section>
-    <h2 id="thoughts">{% include icons/thoughts.html %} Thoughts</h2>
-    <p class="lead">Long-form yapping, slightly more organized than usual.</p>
+<section id="thoughts">
+    <hgroup>
+        <h2>
+            {% include icons/thoughts.html %} Thoughts
+        </h2>
+        <p>
+            Long-form yapping, slightly more organized than usual.
+        </p>
+    </hgroup>
 
     <div class="card-grid">
         {% for post in site.posts limit: 4 %}
@@ -95,10 +107,14 @@ description: Welcome to the space of a silly bunny!
 </section>
 
 <section id="places">
-    <h2>{% include icons/planet.html %} Places</h2>
-    <p class="lead">
-        Other pockets of the Internet you can find me on.
-    </p>
+    <hgroup>
+        <h2>
+            {% include icons/planet.html %} Places
+        </h2>
+        <p>
+            Other pockets of the Internet you can find me on.
+        </p>
+    </hgroup>
 
     <div class="card-grid">
         {% for place in site.data.places %}
@@ -110,7 +126,10 @@ description: Welcome to the space of a silly bunny!
             </article>
         {% endfor %}
     </div>
-    <p>
-        (Psst! If you'd like to contact me, <a href="mailto:contact@voxy.space">click here!</a>)
-    </p>
+    
+    <address>
+        <p>
+            (Psst! If you'd like to contact me, <a href="mailto:contact@voxy.space">click here!</a>)
+        </p>
+    </address>
 </section>

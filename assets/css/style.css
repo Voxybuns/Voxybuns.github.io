@@ -132,10 +132,20 @@
         font-weight: 900;
         font-style: italic;
     }
+    @font-face {
+        font-family: "Cartograph CF";
+        src: url("/assets/font/CartographCF-Regular.woff2");
+        font-weight: normal;
+        font-style: normal;
+    }
 
     html {
-        font-family: "Mohr Rounded";
+        font-family: "Mohr Rounded", sans-serif;
         font-size: clamp(1em, 0.9em + 1vw, 1.25em);
+    }
+
+    code, kbd, pre {
+        font-family: "Cartograph CF", monospace;
     }
 
     h1,
@@ -197,17 +207,15 @@
         }
     }
 
-    p.lead {
+    hgroup > p:first-of-type {
         color: oklch(from var(--color-text) l c h / 75%);
         font-size: 1.2rem;
         letter-spacing: -0.02em;
-        + * {
-            margin-block-start: 1rem;
-        }
+        margin-block-start: 0rem;
     }
 
-    h1 + p.lead, h2 + p.lead {
-        margin-block-start: 0rem;
+    hgroup + * {
+        margin-block-start: 1rem;
     }
 
     menu a:any-link, #table-of-contents a:any-link {
@@ -226,6 +234,25 @@
     small {
         font-size: 0.8em;
         font-style: italic;
+    }
+
+    kbd {
+        font-family: "Mohr Rounded", sans-serif;
+        font-weight: bold;
+        display: inline-flex;
+        justify-content: center;
+        min-inline-size: 1.5rem;
+        padding: 0.25rem 0.3rem;
+        border-radius: 0.25rem;
+        line-height: 1.0;
+        background-color: var(--color-raised-container);
+        box-shadow: 0 0.25rem var(--color-inset-container);
+    }
+
+    :not(pre) > code {
+        padding-inline: 0.25rem;
+        border-radius: 0.25rem;
+        background-color: var(--color-inset-container);
     }
 
     .muted {
@@ -484,6 +511,12 @@
         @container (min-inline-size: 20rem) {
             flex-direction: row;
         }
+    }
+
+    pre {
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: var(--color-inset-container);
     }
 }
 
@@ -796,5 +829,71 @@
     :has(> .icon-external-link):hover .link-arrow{
         animation-name: link-arrow;
         animation-duration: 0.6s;
+    }
+}
+
+@layer highlighter {
+    .highlight {
+        color: #24292f;
+
+        & .w {
+            color: #24292f;
+        }
+        & :is(.k, .kd, .kn, .kp, .kr, .kt, .kv) {
+            color: #cf222e;
+        }
+        & .gr {
+            color: var(--color-inset-container);
+        }
+        & .gd {
+            color: #82071e;
+        background-color: #ffebe9;
+        }
+        & :is(.nb, .nc, .no, .nn) {
+            color: #953800;
+        }
+        & :is(.sr, .na, .nt, .gi) {
+            color: #116329;
+        }
+        & .gi {
+            background-color: #dafbe1;
+        }
+        & :is(.kc, .l, .ld, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .sb, .bp, .ne, .nl, .py, .nv, .vc, .ig, .vi, .vm, .o, .ow, .gh, .gu) {
+            color: #0550ae;
+        }
+        & :is(.s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss) {
+            color: #0a3069;
+        }
+        & :is(.nd, .nf, .fm) {
+            color: #8250df;
+        }
+        & .err {
+            color: var(--color-inset-container);
+            background-color: #82071e;
+        }
+        & :is(.c, .ch, .cd, .cm, .cp, .cpf)
+    }
+    .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs {
+    color: #6e7781;
+    }
+    .highlight .gl {
+    color: #6e7781;
+    }
+    .highlight .gt {
+    color: #6e7781;
+    }
+    .highlight .ni {
+    color: #24292f;
+    }
+    .highlight .si {
+    color: #24292f;
+    }
+    .highlight .ge {
+    color: #24292f;
+    font-style: italic;
+    }
+    .highlight .gs {
+    color: #24292f;
+    font-weight: bold;
     }
 }
