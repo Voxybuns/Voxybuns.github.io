@@ -49,7 +49,7 @@
         --color-cyan: #00C5C5;
         --color-black: #000000;
         --color-darker: #0A0A0D;
-        --color-dark: #141416;
+        --color-dark: #1f1f23;
         --color-light: #E3DED2;
         --color-lighter: #EFEEE9;
         --color-white: #FFFFFF;
@@ -199,7 +199,7 @@
     p {
         max-inline-size: 65ch;
         color: var(--color-text);
-        + p {
+        + :is(p, pre, img, figure, blockquote, table, video, .card-grid) {
             margin-block-start: 1.5rem;
         }
         + :is(h1, h2, h3, h4, h5, h6) {
@@ -207,7 +207,7 @@
         }
     }
 
-    hgroup > p:first-of-type {
+    hgroup > p:first-of-type, .lead {
         color: oklch(from var(--color-text) l c h / 75%);
         font-size: 1.2rem;
         letter-spacing: -0.02em;
@@ -227,7 +227,7 @@
         &:hover {
             text-underline-offset: 0.2em;
             text-decoration: underline;
-            text-decoration-color: var(--color-accent-primary);
+            text-decoration-color: var(--color-accent-secondary);
         }
     }
 
@@ -263,15 +263,15 @@
         font-weight: 700;
         text-underline-offset: 0.1em;
         transition: text-underline-offset 0.1s ease;
-        text-decoration-color: var(--color-accent-primary);
+        text-decoration-color: var(--color-accent-secondary);
         color: inherit;
         &:hover {
             text-underline-offset: 0.2em;
             text-decoration: underline;
-            text-decoration-color: var(--color-accent-primary);
+            text-decoration-color: var(--color-accent-secondary);
         }
         &:active, &:visited {
-            text-decoration-color: var(--color-accent-primary);
+            text-decoration-color: var(--color-accent-secondary);
         }
     }
 
@@ -383,9 +383,6 @@
             object-fit: cover;
             object-position: top center;
             aspect-ratio: 29 / 6;
-        }
-        & a:any-link {
-            color: var(--color-accent-primary);
         }
     }
 
@@ -500,6 +497,7 @@
 
         @container (min-inline-size: 48rem) {
             grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr;
         }
     }
 
@@ -514,8 +512,8 @@
     }
 
     pre {
-        padding: 0.5rem;
-        border-radius: 0.5rem;
+        padding: 1rem;
+        border-radius: 1rem;
         background-color: var(--color-inset-container);
     }
 }
@@ -614,11 +612,15 @@
         }
     }
 
-    .card:not(:has(.button-cluster)), .card:not(:has(img)) {
+    .card:not(:has(img)) {
         border-radius: 1rem;
     }
 
-    .card:not(:has(img)) > .card-contents {
+    .card:not(:has(.button-cluster)) {
+        border-radius: 1rem;
+    }
+
+    .card:not(:has(.card-contents > img)):has(.button-cluster) > .card-contents {
         grid-template-columns: 1fr;
         grid-template-areas:
             "title"
@@ -631,7 +633,23 @@
         }
     }
 
-    .card:not(:has(.button-cluster)) > .card-contents {
+    .card:not(:has(.button-cluster)):has(.card-contents > img) > .card-contents {
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "thumbnail title"
+            "description description"
+        ;
+
+        @container (min-inline-size: 24rem) {
+            grid-template-areas: 
+                "thumbnail title"
+                "thumbnail description"
+            ;
+        }
+
+    }
+
+    .card:not(:has(.button-cluster)):not(:has(.card-contents > img)) > .card-contents {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         grid-template-areas:
@@ -654,6 +672,19 @@
             max-inline-size: 100%;
             inline-size: 100%;
             aspect-ratio: 16 / 9;
+        }
+    }
+
+    .nodon-display {
+        display: flex;
+        justify-content: end;
+        gap: 0.5rem;
+        margin-block-start: -1rem;
+        padding-inline: 1rem;
+        > img {
+            inline-size: 3rem;
+            block-size: 3rem;
+            margin-bottom: -1.15rem;
         }
     }
 
@@ -834,66 +865,90 @@
 
 @layer highlighter {
     .highlight {
-        color: #24292f;
+        color: light-dark(
+            #24292f,
+            #c9d1d9
+        );
 
         & .w {
-            color: #24292f;
+            color: light-dark(
+                #24292f,
+                #c9d1d9
+            );
         }
         & :is(.k, .kd, .kn, .kp, .kr, .kt, .kv) {
-            color: #cf222e;
+            color: light-dark(
+                #cf222e,
+                #ff7b72
+            );
         }
         & .gr {
-            color: var(--color-inset-container);
+            color: light-dark(
+                var(--color-inset-container),
+                #f0f6fc
+            );
         }
         & .gd {
-            color: #82071e;
-        background-color: #ffebe9;
+            color: light-dark(
+                #82071e,
+                #ffdcd7
+            );
+            background-color: light-dark(
+                #ffebe9,
+                #67060c
+            );
         }
         & :is(.nb, .nc, .no, .nn) {
-            color: #953800;
+            color: light-dark(
+                #953800,
+                #ffa657
+            );
         }
         & :is(.sr, .na, .nt, .gi) {
-            color: #116329;
+            color: light-dark(
+                #116329,
+                #7ee787
+            );
         }
         & .gi {
-            background-color: #dafbe1;
+            background-color: light-dark(
+                #dafbe1,
+                #033a16
+            );
         }
         & :is(.kc, .l, .ld, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .sb, .bp, .ne, .nl, .py, .nv, .vc, .ig, .vi, .vm, .o, .ow, .gh, .gu) {
-            color: #0550ae;
+            color: light-dark(
+                #0550ae,
+                #79c0ff
+            );
         }
         & :is(.s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss) {
-            color: #0a3069;
+            color: light-dark(
+                #0a3069,
+                #a5d6ff
+            );
         }
         & :is(.nd, .nf, .fm) {
-            color: #8250df;
+            color: light-dark(
+                #8250df,
+                #d2a8ff
+            );
         }
         & .err {
-            color: var(--color-inset-container);
-            background-color: #82071e;
+            color: light-dark(
+                var(--color-inset-container),
+                #f0f6fc
+            );
+            background-color: light-dark(
+                #82071e,
+                #8e1519
+            );
         }
-        & :is(.c, .ch, .cd, .cm, .cp, .cpf)
-    }
-    .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs {
-    color: #6e7781;
-    }
-    .highlight .gl {
-    color: #6e7781;
-    }
-    .highlight .gt {
-    color: #6e7781;
-    }
-    .highlight .ni {
-    color: #24292f;
-    }
-    .highlight .si {
-    color: #24292f;
-    }
-    .highlight .ge {
-    color: #24292f;
-    font-style: italic;
-    }
-    .highlight .gs {
-    color: #24292f;
-    font-weight: bold;
+        & :is(.c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs, .gl, .gt, .ni, .si, .ge, .gs) {
+            color: light-dark(
+                #6e7781,
+                #8b949e
+            );
+        }
     }
 }

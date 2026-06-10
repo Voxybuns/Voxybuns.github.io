@@ -8,10 +8,10 @@ last-edit: 2026-06-06
 
 This is a good article that isn't doing anything, yippee! <kbd>Ctrl</kbd> + <kbd>A</kbd>
 
-This bit is a <code>{ code_snippet }</code> I think... woaw...
+This bit is a `{ code_snippet }` I think... woaw...
 
-{% highlight gdscript %}
+<pre>
 @icon ("res://addons/at-icons/node/bunny.svg")
 class_name MyNode
 extends Node
-{% endhighlight %}
+</pre>
