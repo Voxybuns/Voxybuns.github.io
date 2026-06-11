@@ -3,7 +3,7 @@ title: "War is Hare"
 thumbnail_path: "at-icons-thumbnail.png"
 type: game
 description: >-
-  A 2-player artillery game for <em>Playdate</em>, created for the <a href="https://itch.io/jam/yellow-square-jam">Yellow Square Jam</a>.
+  A 2-player artillery game for <em>Playdate</em>, created for the <a href='https://itch.io/jam/yellow-square-jam'>Yellow Square Jam</a>.
 buttons:
 - label: "Download"
   icon: "external-link"
