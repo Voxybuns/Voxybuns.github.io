@@ -7,7 +7,7 @@ category: tips
 Game Builder Garage uses the x, y, and z axes to refer to direction, position, and rotation.<br>
 All three axes meet each other at right angles.
 
-<img src="/data/nodopedia/img/figures/axes.svg">
+<img src="/assets/img/gbg/nodopedia/figures/axes.svg">
 
 # Referring to Direction
 If the x-axis is running left and right, then the y-axis will run up and down, and the z-axis back and forth.<br>
