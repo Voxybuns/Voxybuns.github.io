@@ -10,8 +10,10 @@ This is a good article that isn't doing anything, yippee! <kbd>Ctrl</kbd> + <kbd
 
 This bit is a `{ code_snippet }` I think... woaw...
 
+<div class="codeblock">
 <pre>
-@icon ("res://addons/at-icons/node/bunny.svg")
-class_name MyNode
-extends Node
+<code>@icon ("res://addons/at-icons/node/bunny.svg")</code>
+<code>class_name MyNode</code>
+<code>extends Node</code>
 </pre>
+</div>
