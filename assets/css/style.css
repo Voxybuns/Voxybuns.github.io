@@ -11,6 +11,14 @@
         html {
             interpolate-size: allow-keywords;
             transition-behavior: allow-discrete;
+            scroll-behavior: smooth;
+        }
+    }
+
+    @media  (prefers-reduced-motion: reduce) {
+        * {
+            transition-duration: 0s !important;
+            animation-duration: 0s !important;
         }
     }
     body {
@@ -159,6 +167,7 @@
     h6 {
         font-weight: 900;
         line-height: 1;
+        inline-size: fit-content;
         max-inline-size: 65ch;
         color: var(--color-text);
     }
@@ -188,9 +197,6 @@
                 block-size: 1em;
             }
         }
-        &+ * {
-            margin-block-start: 1rem;
-        }
     }
 
     h3 {
@@ -202,12 +208,12 @@
     p {
         max-inline-size: 65ch;
         color: var(--color-text);
-        + * {
+        /* + * {
             margin-block-start: 1.5rem;
         }
         + :is(h1, h2, h3, h4, h5, h6) {
             margin-block-start: 2.5rem;
-        }
+        } */
     }
 
     hgroup > p:first-of-type, .lead {
@@ -219,6 +225,25 @@
 
     hgroup + * {
         margin-block-start: 1rem;
+    }
+
+    ul, ol, menu {
+        padding: 0;
+    }
+
+    ul, ol {
+        padding-inline-start: 1lh;
+        & li:not(:last-child) {
+            margin-block-end: 0.25lh;
+        }
+        & ul, ol {
+            margin-block-start: 0.25lh;
+        }
+    }
+
+    li::marker {
+        font-weight: bold;
+        color: oklch(from var(--color-text) l c h / 75%);
     }
 
     menu a:any-link, #table-of-contents a:any-link {
@@ -263,6 +288,7 @@
     }
 
     a:any-link:not(.button, menu a, #table-of-contents a) {
+        inline-size: fit-content;
         font-weight: 700;
         text-underline-offset: 0.1em;
         transition: text-underline-offset 0.1s ease;
@@ -282,13 +308,13 @@
         font-size: 0.8em;
         font-style: italic;
     }
+
+    *:focus-visible {
+        outline-offset: 0.25rem;
+    }
 }
 
 @layer layout {
-    html {
-        scroll-behavior: smooth;
-    }
-
     body {
         min-height: 100vh;
         display: grid;
@@ -342,6 +368,7 @@
                 gap: 1rem;
                 & li > a {
                     display: flex;
+                    overflow: hidden;
                     flex-direction: row;
                     align-items: center;
                     gap: 0.25rem;
@@ -403,9 +430,6 @@
             & > * {
                 grid-column: 2;
             }
-            & :is(img, video) {
-                border-radius: 2rem;
-            }
             & > :has(.full-bleed) {
                 grid-column: 1 / 4;
                 max-inline-size: 100%;
@@ -453,6 +477,24 @@
         margin-block-end: -1.325rem;
         justify-self: center;
         align-self: flex-end;
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+        gap: var(--stack-gap, 1rem)
+    }
+
+    .prose {
+        > :is(img, video, .video) {
+            border-radius: 2rem;
+        }
+        > figure > img {
+            border-radius: 2rem;
+        }
+        > * + * {
+            margin-block-start: 1.5em;
+        }
     }
 
     .post-grid {
@@ -526,6 +568,7 @@
 
     .codeblock {
         overflow-x: auto;
+        border-radius: 1rem;
     }
 
     pre {
@@ -539,15 +582,20 @@
         
     }
 
-    :is(img, video, iframe, figure) + * {
-        margin-block-start: 2rem;
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        & > figcaption {
+            font-style: italic;
+        }
     }
 
     .video {
         max-inline-size: 65ch;
         inline-size: 100%;
         aspect-ratio: 16 / 9;
-        border-radius: 2rem;
     }
 }
 
