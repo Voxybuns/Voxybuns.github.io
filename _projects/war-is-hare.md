@@ -9,6 +9,7 @@ buttons:
   icon: "external-link"
   url: "/"
 layout: project
+date: 2023-10-29
 ---
 
 **War is Hare** is a game I created for the Yellow Square Jam, a game jam organized by grhmhome where participants had one month to create a game for the Playdate handheld console. It managed to win [second place](https://itch.io/jam/yellow-square-jam/results), which is a pretty substantial achievement considering it's my very first time publishing a game I've built from zero!

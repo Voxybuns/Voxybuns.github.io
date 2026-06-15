@@ -8,6 +8,7 @@ buttons:
   icon: "external-link"
   url: "/"
 layout: project
+date: 2026-05-26
 ---
 
 **@icons** is a free and open source library of icons, designed to be used as custom node icons by *Godot Engine* users, either within their game projects or as part of their plug-ins and add-ons.

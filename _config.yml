@@ -38,6 +38,7 @@ collections:
   projects:
       output: true
       permalink: /projects/:title
+      sort_by: date
       order:
         - at-icons.md
         - townbox.md

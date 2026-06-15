@@ -3,6 +3,11 @@
     
     *, *::before, *::after {
         box-sizing: border-box;
+        border-radius: var(--roundness, initial);
+        @supports (corner-shape: round) {
+            corner-shape: superellipse(1.5);
+            border-radius: calc(var(--roundness) * 1.17);
+        }
     }
     *:not(dialog) {
         margin: 0;
@@ -208,12 +213,6 @@
     p {
         max-inline-size: 65ch;
         color: var(--color-text);
-        /* + * {
-            margin-block-start: 1.5rem;
-        }
-        + :is(h1, h2, h3, h4, h5, h6) {
-            margin-block-start: 2.5rem;
-        } */
     }
 
     hgroup > p:first-of-type, .lead {
@@ -271,15 +270,15 @@
         justify-content: center;
         min-inline-size: 1.5rem;
         padding: 0.25rem 0.3rem;
-        border-radius: 0.25rem;
+        --roundness: 0.5rem;
         line-height: 1.0;
         background-color: var(--color-raised-container);
         box-shadow: 0 0.25rem var(--color-inset-container);
     }
 
     :not(pre) > code {
+        --roundness: 0.5rem;
         padding-inline: 0.25rem;
-        border-radius: 0.25rem;
         background-color: var(--color-inset-container);
     }
 
@@ -338,6 +337,7 @@
             background-color: transparent;
         }
         & > nav {
+            --roundness: 2rem;
             background-color: var(--color-white);
             grid-column: 2;
             display: flex;
@@ -347,12 +347,6 @@
             gap: 0.5rem;
             padding-inline: 1.5rem;
             padding-block: 0.5rem;
-            border-radius: 1.5rem;
-
-            @supports (corner-shape: round) {
-                corner-shape: superellipse(1.5);
-                border-radius: 1.75rem;
-            }
 
             @container (min-width: 24rem) {
                 flex-direction: row;
@@ -378,6 +372,7 @@
     }
 
     footer {
+        --roundness: 2rem;
         color-scheme: only dark;
         background-color: var(--color-black);
         color: var(--color-white);
@@ -386,7 +381,9 @@
         grid-template-rows: auto auto;
         padding-block-start: 2rem;
         gap: 2rem;
-        border-radius: 2rem 2rem 0 0;
+        border-end-start-radius: 0;
+        border-end-end-radius: 0;
+        
         > * {
             grid-column: 2;
         }
@@ -482,15 +479,26 @@
     .stack {
         display: flex;
         flex-direction: column;
-        gap: var(--stack-gap, 1rem)
+        gap: var(--stack-gap, 1rem);
+    }
+
+    .cluster {
+        display: flex;
+        gap: var(--cluster-gap, 1rem);
+        flex-wrap: wrap;
+        > * {
+            flex-basis: 20rem;
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
     }
 
     .prose {
-        > :is(img, video, .video) {
-            border-radius: 2rem;
+        :is(img, video, .video) {
+            --roundness: 2rem;
         }
         > figure > img {
-            border-radius: 2rem;
+            --roundness: 2rem;
         }
         > * + * {
             margin-block-start: 1.5em;
@@ -503,10 +511,10 @@
         grid-template-rows: 1fr;
         gap: 2rem;
         > #table-of-contents {
+            --roundness: 1rem;
             display: none;
             background-color: var(--color-raised-container);
             padding: 1rem;
-            border-radius: 1rem;
             margin-block-start: -1rem;
             position: sticky;
             top: 7rem;
@@ -567,13 +575,13 @@
     }
 
     .codeblock {
+        --roundness: 1rem;
         overflow-x: auto;
-        border-radius: 1rem;
     }
 
     pre {
+        --roundness: 1rem;
         padding: 1rem;
-        border-radius: 1rem;
         min-inline-size: fit-content;
         max-inline-size: 100%;
         inline-size: 100%;
@@ -589,10 +597,13 @@
         gap: 0.5rem;
         & > figcaption {
             font-style: italic;
+            color: oklch(from var(--color-text) l c h / 75%);
+            font-size: 0.8em;
         }
     }
 
     .video {
+        --roundness: 1rem;
         max-inline-size: 65ch;
         inline-size: 100%;
         aspect-ratio: 16 / 9;
@@ -601,12 +612,12 @@
 
 @layer components {
     a.button:any-link, button {
+        --roundness: 1rem;
         --color-button-background: var(--color-accent-primary);
         display: flex;
         align-items: center;
         inline-size: fit-content;
         padding: 0.51rem 1rem;
-        border-radius: 0.5rem;
         border: none;
         background-color: var(--color-button-background);
         color: var(--color-text-on-accent);
@@ -614,6 +625,9 @@
         text-decoration: none;
         transition: background-color 0.1s ease;
         cursor: pointer;
+        > img {
+            --roundness: 0rem;
+        }
         &.icon-button {
             padding: 0.25rem;
         }
@@ -629,13 +643,13 @@
         }
     }
     .card {
+        --roundness: 2rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
         container-type: inline-size;
         background: var(--color-raised-container);
         padding: 1rem;
-        border-radius: 2rem;
         
         &.featured {
             grid-row: span 2;
@@ -655,11 +669,11 @@
         ;
 
         & > img {
+            --roundness: 1rem;
             grid-area: thumbnail;
             max-inline-size: 6rem;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 1rem;
         }
 
         & > h3 {
@@ -701,11 +715,11 @@
     }
 
     .card:not(:has(img)) {
-        border-radius: 1rem;
+        --roundness: 2rem;
     }
 
     .card:not(:has(.button-cluster)) {
-        border-radius: 1rem;
+        --roundness: 2rem;
     }
 
     .card:not(:has(.card-contents > img)):has(.button-cluster) > .card-contents {
@@ -779,7 +793,7 @@
 
     details {
         background-color: var(--color-raised-container);
-        border-radius: 1rem;
+        --roundness: 1rem;
 
         & + * {
             margin-block-start: 1rem;
@@ -819,10 +833,10 @@
     }
 
     span.badge {
+        --roundness: 0.5rem;
         display: inline-flex;
         padding: 0.25rem 0.5rem;
         padding-block-start: 0.4rem;
-        border-radius: 0.5rem;
         background-color: var(--color-accent-secondary);
         color: var(--color-text-on-accent);
         font-size: 0.75rem;
@@ -839,7 +853,7 @@
         visibility: hidden;
         display: block;
         background: var(--color-accent-secondary);
-        border-radius: 1rem;
+        --roundness: 1rem;
         padding: 1rem;
         position: fixed;
         bottom: 3rem;
@@ -1069,95 +1083,5 @@
         animation-name: download-bracket;
         animation-duration: 0.6s;
         animation-delay: calc(0.6s / 5);
-    }
-}
-
-@layer highlighter {
-    .highlight {
-        color: light-dark(
-            #24292f,
-            #c9d1d9
-        );
-
-        & .w {
-            color: light-dark(
-                #24292f,
-                #c9d1d9
-            );
-        }
-        & :is(.k, .kd, .kn, .kp, .kr, .kt, .kv) {
-            color: light-dark(
-                #cf222e,
-                #ff7b72
-            );
-        }
-        & .gr {
-            color: light-dark(
-                var(--color-inset-container),
-                #f0f6fc
-            );
-        }
-        & .gd {
-            color: light-dark(
-                #82071e,
-                #ffdcd7
-            );
-            background-color: light-dark(
-                #ffebe9,
-                #67060c
-            );
-        }
-        & :is(.nb, .nc, .no, .nn) {
-            color: light-dark(
-                #953800,
-                #ffa657
-            );
-        }
-        & :is(.sr, .na, .nt, .gi) {
-            color: light-dark(
-                #116329,
-                #7ee787
-            );
-        }
-        & .gi {
-            background-color: light-dark(
-                #dafbe1,
-                #033a16
-            );
-        }
-        & :is(.kc, .l, .ld, .m, .mb, .mf, .mh, .mi, .il, .mo, .mx, .sb, .bp, .ne, .nl, .py, .nv, .vc, .ig, .vi, .vm, .o, .ow, .gh, .gu) {
-            color: light-dark(
-                #0550ae,
-                #79c0ff
-            );
-        }
-        & :is(.s, .sa, .sc, .dl, .sd, .s2, .se, .sh, .sx, .s1, .ss) {
-            color: light-dark(
-                #0a3069,
-                #a5d6ff
-            );
-        }
-        & :is(.nd, .nf, .fm) {
-            color: light-dark(
-                #8250df,
-                #d2a8ff
-            );
-        }
-        & .err {
-            color: light-dark(
-                var(--color-inset-container),
-                #f0f6fc
-            );
-            background-color: light-dark(
-                #82071e,
-                #8e1519
-            );
-        }
-        & :is(.c, .ch, .cd, .cm, .cp, .cpf, .c1, .cs, .gl, .gt, .ni, .si, .ge, .gs) {
-            color: light-dark(
-                #6e7781,
-                #8b949e
-            );
-        }
     }
 }

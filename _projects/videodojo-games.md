@@ -8,9 +8,10 @@ buttons:
   icon: "external-link"
   url: "/"
 layout: project
+date: 2024-08-28
 ---
 
-VideoDojo Games is an indie game development studio based in the United Kingdom and founded in 2023. I was tasked to design and build the studio's website to help establish its online presence, and provide information about its debut game, Townbox™. (Which I'm also working on!)
+[VideoDojo Games](https://videodojo.games/) is an indie game development studio based in the United Kingdom and founded in 2023. I was tasked to design and build the studio's website to help establish its online presence, and provide information about its debut game, *Townbox™*. (Which I'm also working on!)
 
 The website was built using [Jekyll](https://jekyllrb.com), and is written in good old HTML, CSS, and vanilla JavaScript.
 

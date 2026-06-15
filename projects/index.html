@@ -6,8 +6,10 @@ hero_illustration: "bunny-projects.svg"
 hero_illustration_alt: "Stylized silhouette illustration of an anthropomorphic rabbit wearing large round glasses and a hard hat, holding a hammer."
 ---
 <div class="card-grid">
-    {% for project in site.projects %}
-    <article class="card {% if forloop.first ==true %}featured{% endif %}">
+    {% assign sorted-projects = site.projects | sort: 'date' | reverse %}
+
+    {% for project in sorted-projects %}
+    <article class="card">
         <div class="card-contents">
             <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
             <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
