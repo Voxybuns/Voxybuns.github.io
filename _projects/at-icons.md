@@ -6,7 +6,7 @@ description: "A free library of custom node icons for your Godot projects."
 buttons:
 - label: "Download"
   icon: "external-link"
-  url: "/"
+  url: "https://voxybuns.itch.io/at-icons"
 layout: project
 date: 2026-05-26
 ---

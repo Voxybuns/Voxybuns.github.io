@@ -1,12 +1,12 @@
 ---
 title: "The Story of PiCPAC"
-thumbnail_path: "at-icons-thumbnail.png"
+thumbnail_path: "picpac-thumbnail.png"
 type: freelance
 description: "Art direction and motion graphics for a documentary about <em>Namco</em>'s elusive animatronic band <em>PiCPAC</em>."
 buttons:
 - label: "Check it out"
   icon: "external-link"
-  url: "/"
+  url: "https://www.youtube.com/watch?v=lgoXhFGq9Y8"
 layout: project
 date: 2022-07-15
 ---
@@ -44,12 +44,12 @@ Working on these animations was also a great opportunity to explore Adobe's *Ess
 
 <div class="cluster">
   <figure>
-    <video controls src="/media/picpac_logo.webm"></video>
-    <figcaption>Final animated title sequence</figcaption>
+    <video loop="true" autoplay src="/media/picpac_logo.webm"></video>
+    <figcaption>Final animated title sequence.</figcaption>
   </figure>
 
   <figure>
-    <video controls src="/media/picpac_photo.webm"></video>
-    <figcaption>Final template for archival photos</figcaption>
+    <video loop="true" autoplay src="/media/picpac_photo.webm"></video>
+    <figcaption>Final template for archival photos.</figcaption>
   </figure>
 </div>

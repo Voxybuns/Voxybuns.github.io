@@ -37,7 +37,7 @@ description: Welcome to the space of a silly bunny!
         {% for project in site.projects limit: 3 %}
         <article class="card {% if forloop.first ==true %}featured{% endif %}">
             <div class="card-contents">
-                <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
+                <img src="/assets/img/projects/{{ project.thumbnail_path | remove: '.png' }}{% if forloop.first ==true %}-large{% endif %}.png" alt="">
                 <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
                 <p>{{ project.description }}</p>
                 <div class="button-cluster">
@@ -92,7 +92,8 @@ description: Welcome to the space of a silly bunny!
                     </p>
                     <div class="button-cluster">
                         <a href="{{ post.url }}" class="button">
-                            Read more
+                            Read more&nbsp;
+                            {% include icons/arrow-right.html %}
                         </a>
                     </div>
                 </div>

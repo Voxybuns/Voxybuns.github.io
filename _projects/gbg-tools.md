@@ -1,6 +1,6 @@
 ---
 title: "GBG Tools"
-thumbnail_path: "at-icons-thumbnail.png"
+thumbnail_path: "gbg-thumbnail.png"
 type: assets
 description: "Resources for <em>Game Builder Garage</em> on the Nintendo Switch."
 layout: page

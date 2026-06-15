@@ -596,6 +596,7 @@
         align-items: center;
         gap: 0.5rem;
         & > figcaption {
+            text-align: center;
             font-style: italic;
             color: oklch(from var(--color-text) l c h / 75%);
             font-size: 0.8em;
@@ -788,6 +789,7 @@
             block-size: 3rem;
             margin-block-end: -1.15rem;
             margin-block-start: 0;
+            --roundness: 0;
         }
     }
 
