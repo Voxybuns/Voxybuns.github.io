@@ -616,32 +616,49 @@
         --roundness: 1rem;
         --color-button-background: var(--color-accent-primary);
         display: flex;
+        position: relative;
         align-items: center;
         inline-size: fit-content;
         padding: 0.51rem 1rem;
         border: none;
-        background-color: var(--color-button-background);
         color: var(--color-text-on-accent);
         font-weight: 700;
         text-decoration: none;
-        transition: background-color 0.1s ease;
         cursor: pointer;
+        z-index: 1;
         > img {
             --roundness: 0rem;
         }
         &.icon-button {
             padding: 0.25rem;
         }
-        &:hover {
+        &:hover::before{
+            transform: scale(1.05);
             background-color: oklch(from var(--color-button-background) calc(l + 0.05) c h);
         }
-        &:active {
+        &:active::before {
+            transform: scale(1.05);
             background-color: oklch(from var(--color-button-background) calc(l - 0.05) c h);
         }
         &.full-width {
             justify-content: center;
             width: 100%;
         }
+    }
+    a.button::before, button::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        inline-size: 100%;
+        block-size: 100%;
+        transform: scale(1.0);
+        z-index: -1;
+        background-color: var(--color-button-background);
+        transition: background-color 0.1s ease, transform 0.5s linear(0, 0.002 0.5%, 0.009 1.1%, 0.022 1.7%, 0.04 2.3%, 0.062 2.9%, 0.093 3.6%, 0.123 4.2%, 0.163 4.9%, 0.239 6.1%, 0.331 7.4%, 0.686 12%, 0.825 13.9%, 0.893 14.9%, 0.95 15.8%, 1.003 16.7%, 1.051 17.6%, 1.095 18.5%, 1.134 19.4%, 1.164 20.2%, 1.194 21.1%, 1.216 21.9%, 1.236 22.8%, 1.252 23.7%, 1.263 24.6%, 1.268 25.2%, 1.271 25.9%, 1.272 27.2%, 1.265 28.6%, 1.249 30.1%, 1.229 31.5%, 1.201 33.1%, 1.169 34.7%, 1.06 39.9%, 1.026 41.7%, 1 43.3%, 0.973 45.2%, 0.954 47%, 0.939 48.8%, 0.93 50.7%, 0.927 52.1%, 0.926 53.5%, 0.927 55%, 0.932 56.7%, 0.946 59.8%, 0.983 66.4%, 0.998 69.5%, 1.011 73%, 1.018 76.4%, 1.02 79.6%, 1.019 83.2%, 1.002 95.1%, 1);
     }
     .card {
         --roundness: 2rem;
