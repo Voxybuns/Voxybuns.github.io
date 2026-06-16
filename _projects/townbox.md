@@ -33,6 +33,11 @@ The design language I came up with closely matches the game's peaceful and welco
 
 I also had a hand in translating the designs into working components within the *Godot Engine*, which could then get hooked up into the game's logic by lead developer [Sam Auber](https://dicemaster5.github.io/website/).
 
+<figure>
+  <video loop="true" autoplay src="/media/townbox_uishowcase.webm"></video>
+  <figcaption>Snippets of the in-game quest animations.</figcaption>
+</figure>
+
 Townbox™ is still in development, but you can already [wishlist it on Steam](https://store.steampowered.com/app/2906440/Townbox/) to show your interest in the game!
 
 <small>All footage and material &copy; 2023–present VideoDojo Games, used with permission.<br>Game footage is not final and is subject to change.</small>
