@@ -865,6 +865,7 @@
             gap: 0.5rem;
             > .comment-container {
                 padding-inline-start: 1rem;
+                border-inline-start: 2px solid color(from var(--color-text) srgb r g b / 25%);
             }
         }
     }

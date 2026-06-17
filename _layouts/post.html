@@ -29,6 +29,15 @@ layout: default
 
 {% if page.bluesky_URI %}
 <script>
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
     function httpGetAsJsonAsync(url, callback) {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() { 
@@ -58,8 +67,9 @@ layout: default
 
         const textEncoder = new TextEncoder();
         const utf8Decoder = new TextDecoder();
-        const utf8Text = new Uint8Array(record.text.length * 3);
-        textEncoder.encodeInto(record.text, utf8Text);
+        var postText = escapeHtml(record.text);
+        const utf8Text = new Uint8Array(postText.length * 3);
+        textEncoder.encodeInto(postText, utf8Text);
 
         var charIdx = 0;
         for (const facetIdx in record.facets) {
@@ -121,10 +131,14 @@ layout: default
                 const image = images[imageIdx];
                 const thumbnailLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, true);
                 const fullSizelLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, false);
-                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${image.alt}" style="height: 10rem; width: fit-content"></a>`
+                var imageAltText = escapeHtml(image.alt);
+                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${imageAltText}" style="height: 10rem; width: fit-content"></a>`
                 }
             }
             }
+
+            var authorDisplayName = escapeHtml(replyPost.author.displayName);
+            var authorHandle = escapeHtml(replyPost.author.handle);
 
             htmlText += `
                 <div class="comment-container">
@@ -132,8 +146,8 @@ layout: default
                         <div class="comment-header">
                             <img src="${replyPost.author.avatar}" class="comment-author-avatar">
                             <div class="comment-author">
-                                <p><a href="https://bsky.app/profile/${replyPost.author.did}">${replyPost.author.displayName}</a></p>
-                                <p>@${replyPost.author.handle}</p>
+                                <p><a href="https://bsky.app/profile/${replyPost.author.did}">${authorDisplayName}</a></p>
+                                <p>@${authorHandle}</p>
                             </div>
                         </div>
                         <p>${postText}</p>
