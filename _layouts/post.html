@@ -23,12 +23,11 @@ layout: default
         <div class="prose">
             {{ content }}
         </div>
+        <div id="social-section" class="prose"></div>
     </div>
 </section>
-<section>
-    <div id="social-section"></div>
-</section>
 
+{% if page.bluesky_URI %}
 <script>
     function httpGetAsJsonAsync(url, callback) {
         var xmlHttp = new XMLHttpRequest();
@@ -103,6 +102,8 @@ layout: default
         for (const replyIdx in replies) {
             const reply = replies[replyIdx];
             const replyPost = reply.post;
+            const replyDate = new Date(reply.post.record.createdAt);
+            const replyDateFormatted = replyDate.toLocaleDateString('en-US');
             const postLink = getPostLinkFromUri(replyPost.uri);
             const postText = createHtmlTextForRecord(replyPost.record);
             
@@ -120,58 +121,50 @@ layout: default
                 const image = images[imageIdx];
                 const thumbnailLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, true);
                 const fullSizelLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, false);
-                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${image.alt}" style="height: 100px;"></a>`
+                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${image.alt}" style="height: 10rem"></a>`
                 }
             }
             }
 
             htmlText += `
-                <div style="margin-left:20px;">
-                    <p>
-                        <img src="${replyPost.author.avatar}" style="height:20px;width:20px;">
-                        ${replyPost.author.displayName}
-                        <a href="https://bsky.app/profile/${replyPost.author.did}">@${replyPost.author.handle}</a>
-                    </p>
-                    <p>${postText}</p>
-                    ${embedHtml}
-                    <p>
-                        <a href="${postLink}">${replyPost.replyCount} replies</a>
-                        <a href="${postLink}">${replyPost.repostCount + replyPost.quoteCount} reposts</a>
-                        <a href="${postLink}">${replyPost.likeCount} likes</a></p>
-                    <div>${createHtmlForReplies(reply.replies)}</div>
+                <div>
+                    <article class="comment-card">
+                        <div class="comment-header">
+                            <img src="${replyPost.author.avatar}" class="comment-author-avatar">
+                            <div class="comment-author">
+                                <p><a href="https://bsky.app/profile/${replyPost.author.did}">${replyPost.author.displayName}</a></p>
+                                <p>@${replyPost.author.handle}</p>
+                            </div>
+                        </div>
+                        <p>${postText}</p>
+                        ${embedHtml}
+                        <a href="${postLink}" class="comment-time"><small>Posted on ${replyDateFormatted}</small></a>
+                    </article>
+                    ${createHtmlForReplies(reply.replies)}
                 </div>`
         }
         return htmlText;
     }
 
-    var atPostUri = "at://did:plc:qgozdd2deahkas52eklef6sz/app.bsky.feed.post/3mn6hqonfmk2k";
+    var atPostUri = "{{ page.bluesky_URI }}";
     httpGetAsJsonAsync(
         "https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=" + atPostUri,
         function(responseJson) {
         const thread = responseJson["thread"];
         const threadPost = thread["post"];
         const postLink = getPostLinkFromUri(threadPost.uri);
+        const threadRepliesCount = threadPost.replyCount;
 
         const threadReplies = thread.replies;
         document.getElementById("social-section").innerHTML = `
-            <h3>
-                <a href="${postLink}">
-                    ${threadPost.replyCount} replies
-                </a>
-                <a href="${postLink}">
-                    ${threadPost.repostCount + threadPost.quoteCount} reposts
-                </a>
-                <a href="${postLink}">
-                    ${threadPost.likeCount} likes
-                </a>
-            </h3>
+            <h2>Comments (${threadRepliesCount})</h2>
 
-            <h3>Comments</h3>
-            <p>Reply on Bluesky <a href="${postLink}">here</a> to join the conversation.</p>
+            <a href="${postLink}" class="button">Comment this post on Bluesky&nbsp;{% include icons/external-link.html %}</a>
 
-            <div>
-            ${threadReplies.length > 0 ? createHtmlForReplies(threadReplies) : '<p>No comments to display</p>'}
+            <div class="comments-wrapper">
+            ${threadReplies.length > 0 ? createHtmlForReplies(threadReplies) : '<article class="comment-card"><p>No comments to display yet.</p></article>'}
             </div>`
     });
         
 </script>
+{% endif %}
