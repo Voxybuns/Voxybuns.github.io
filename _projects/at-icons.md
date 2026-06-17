@@ -13,7 +13,9 @@ date: 2026-05-26
 
 **@icons** is a free and open source library of icons, designed to be used as custom node icons by *Godot Engine* users, either within their game projects or as part of their plug-ins and add-ons.
 
-![@icons logotype](/assets/img/projects/at-icons-thumbnail.png)
+<figure>
+  <img src="/assets/img/projects/at-icons-thumbnail-large.png">
+</figure>
 
 The library contains **400 vector (SVG) icons**, designed on a 16×16 canvas and styled to fit right at home alongside the existing Godot Engine user interface icons.
 

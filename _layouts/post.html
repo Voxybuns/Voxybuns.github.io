@@ -112,7 +112,7 @@ layout: default
             if (replyPost.embed.$type == "app.bsky.embed.external#view") {
                 const postEmbedExternal = replyPost.embed.external;
                 if (postEmbedExternal.uri.includes(".gif?")) {
-                embedHtml += `<img src="${postEmbedExternal.uri}" title="${postEmbedExternal.title}" alt="${postEmbedExternal.description}" style="height: 100px;">`
+                embedHtml += `<img src="${postEmbedExternal.uri}" title="${postEmbedExternal.title}" alt="${postEmbedExternal.description}" style="height: 10rem; width: fit-content">`
                 }
             }
             else if (replyPost.embed.$type == "app.bsky.embed.images#view") {
@@ -121,13 +121,13 @@ layout: default
                 const image = images[imageIdx];
                 const thumbnailLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, true);
                 const fullSizelLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, false);
-                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${image.alt}" style="height: 10rem"></a>`
+                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${image.alt}" style="height: 10rem; width: fit-content"></a>`
                 }
             }
             }
 
             htmlText += `
-                <div>
+                <div class="comment-container">
                     <article class="comment-card">
                         <div class="comment-header">
                             <img src="${replyPost.author.avatar}" class="comment-author-avatar">

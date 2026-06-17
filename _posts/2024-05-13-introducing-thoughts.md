@@ -2,6 +2,7 @@
 title: Introducing... Thoughts!
 excerpt: "An introductory post to my website's blog section."
 last-edit: 2026-06-06
+bluesky_URI: "at://did:plc:qgozdd2deahkas52eklef6sz/app.bsky.feed.post/3mmriycbn322c"
 ---
 
 Hey folks! This post marks the debut of the "Thoughts" section of my website, a space where I'll be able to write long-form content about whatever comes to my mind!
