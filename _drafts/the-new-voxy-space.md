@@ -123,6 +123,27 @@ last-edit: 2026-06-06
         justify-content: center;
         align-items: center;
     }
+
+    #demo-linear-spring, #demo-curve-spring {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #demo-icons {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        align-items: center;
+        flex-wrap: wrap;
+        & > svg {
+            inline-size: 2rem;
+            block-size: 2rem;
+            &:nth-child(-n + 3) > path {
+                fill: currentColor;
+            }
+        }
+    }
 </style>
 
 I’ve been neglecting my website lately, having forgotten just how nice it was having one in the first place. But at last, after a couple of false starts and a few weeks of work, the new version of voxy.space is live! And what better way to celebrate than to walk you through all that shiny new stuff I’ve made for it?
@@ -139,11 +160,11 @@ I also decided to use the humble squircle as a connective tissue of sorts, with 
 
 ## All my projects, front and center
 
-The previous “Games” section has evolved a fair bit. It’s now the “Projects” section, a place where I can showcase all kinds of notable things I’ve worked on. Of course, games will still belong there, but so will other projects of mine, like freelance work, assets, and more.
+The previous “*Games*” section has evolved a fair bit. It’s now the “*Projects*” section, a place where I can showcase all kinds of notable things I’ve worked on. Of course, games will still belong there, but so will other projects of mine, like freelance work, assets, and more.
 
 I also realized it was a great opportunity to just… talk about them, share some insights about the process of working on these, and showing off previously unreleased concepts and material along the way, too! 👀
 
-You’ll find a curated selection of projects on the homepage, but I strongly encourage you to learn about the full roster by checking out the dedicated projects page.
+You’ll find a curated selection of projects on the homepage, but I strongly encourage you to learn about the full roster by checking out the dedicated [projects](/projects/) page.
 
 ## Sprinkling a dash of whimsy
 
@@ -151,9 +172,9 @@ While browsing this website, you might notice things are a little livelier, with
 
 Techniques like these are so incredibly neat, and I can’t resist yapping about them in case some of you are interested in the technical deets. Strap in!
 
-**Warning: Here be jargons**
-
-The following subchapters will contain a few more technical concepts and code snippets. It’s best to read them with some basic familiarity with HTML and CSS!
+> <strong class="warning">Warning: Here be jargons!</strong>
+> 
+> The following subchapters will contain a few more technical concepts and code snippets. It’s best to read them with some basic familiarity with HTML and CSS!
 
 ### Making things spring to life
 
@@ -292,18 +313,115 @@ Example of a curve represented by the <code>linear(0, 0.1 0.25, 0.75 0.5, 1)</co
 So how does that help us represent spring physics? Well, if you’re clever and use… eugh… math… you can actually depict the motion of a curve as a kind of sine wave, that dampens (weakens) over time until it comes to a rest, like so:
 
 <figure>
-<div class="demo-bit" id="demo-linear-spring">
-    <svg width="18rem" viewBox="0 0 398 259" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M1.50049 257.5C23.2255 251.592 35.0755 1.5 68.6505 1.5C87.3481 1.5 102.167 78.3 135.8 78.3C155.55 78.3 171.35 54.6692 199 54.6692C222.7 54.6692 238.5 60.5769 258.25 60.5769C274.05 60.5769 357 60.5769 396.5 60.5769" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<div class="demo-bit" id="demo-curve-spring">
+    <svg width="18rem" height="18rem" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 410C31.725 404.092 43.575 154 77.15 154C95.8476 154 110.667 230.8 144.3 230.8C164.05 230.8 179.85 207.169 207.5 207.169C231.2 207.169 247 213.077 266.75 213.077C282.55 213.077 365.5 213.077 405 213.077" stroke="var(--color-magenta)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M10 10V410H410" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
     </svg>
 </div>
 <figcaption>
-Example of a curve representing string motion over time.
+Example of a curve representing spring motion over time.
 </figcaption>
 </figure>
 
 Then, you can simplify it into a bunch of straight lines, feed those numbers into the linear() function, and voilà! Beautiful spring animations, provided you give it enough lines to accurately represent the curve.
 
+<figure>
+<div class="demo-bit" id="demo-linear-spring">
+    <svg width="18rem" height="18rem" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13 407L16 405L19 399L26 374L48 239L58.03 193.074L67 164L72 156L77 151H83L89 156L96 166L114 198L123 212L133 222L143 227L156 225L190 209L209 204L223 205L274 211L340 209H408" stroke="var(--color-magenta)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 10V410H410" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="77" cy="151" r="3" fill="currentColor"/>
+    <circle cx="83" cy="151" r="3" fill="currentColor"/>
+    <circle cx="89" cy="156" r="3" fill="currentColor"/>
+    <circle cx="96" cy="166" r="3" fill="currentColor"/>
+    <circle cx="114" cy="198" r="3" fill="currentColor"/>
+    <circle cx="123" cy="212" r="3" fill="currentColor"/>
+    <circle cx="133" cy="222" r="3" fill="currentColor"/>
+    <circle cx="143" cy="227" r="3" fill="currentColor"/>
+    <circle cx="156" cy="225" r="3" fill="currentColor"/>
+    <circle cx="190" cy="209" r="3" fill="currentColor"/>
+    <circle cx="209" cy="204" r="3" fill="currentColor"/>
+    <circle cx="222" cy="205" r="3" fill="currentColor"/>
+    <circle cx="274" cy="211" r="3" fill="currentColor"/>
+    <circle cx="340" cy="209" r="3" fill="currentColor"/>
+    <circle cx="408" cy="209" r="3" fill="currentColor"/>
+    <circle cx="72" cy="156" r="3" fill="currentColor"/>
+    <circle cx="67" cy="164" r="3" fill="currentColor"/>
+    <circle cx="58" cy="193" r="3" fill="currentColor"/>
+    <circle cx="48" cy="239" r="3" fill="currentColor"/>
+    <circle cx="26" cy="374" r="3" fill="currentColor"/>
+    <circle cx="19" cy="399" r="3" fill="currentColor"/>
+    <circle cx="13" cy="407" r="3" fill="currentColor"/>
+    <circle cx="16" cy="405" r="3" fill="currentColor"/>
+    </svg>
+</div>
+<figcaption>
+The same curve, simplified into points connected by line segments.
+</figcaption>
+</figure>
+
+<figure>
+<div class="highlighter-rouge">
+<div class="highlight">
+<pre class="highlight">
+linear(
+    0,
+    0.003 0.4%,
+    0.011 0.8%,
+    0.025 1.2%,
+    0.043 1.6%,
+    0.093 2.4%,
+    0.166 3.3%,
+    0.244 4.1%,
+    0.33 4.9%,
+    0.692 8%,
+    0.836 9.3%,
+    0.966 10.6%,
+    1.067 11.8%,
+    1.117 12.5%,
+    1.155 13.1%,
+    1.188 13.7%,
+    1.215 14.3%,
+    1.238 14.9%,
+    1.256 15.5%,
+    1.269 16.1%,
+    1.278 16.8%,
+    1.282 17.6%,
+    1.28 18.4%,
+    1.271 19.2%,
+    1.256 20.1%,
+    1.235 21%,
+    1.207 22%,
+    1.057 26.6%,
+    1.022 27.8%,
+    0.992 29%,
+    0.964 30.3%,
+    0.944 31.6%,
+    0.93 32.9%,
+    0.922 34.3%,
+    0.921 35.9%,
+    0.927 37.7%,
+    0.941 39.6%,
+    0.983 44.2%,
+    1.001 46.5%,
+    1.015 49.1%,
+    1.022 51.7%,
+    1.022 53.5%,
+    1.02 55.4%,
+    1 64%,
+    0.994 68.9%,
+    0.994 73%,
+    1.002 85.9%,
+    1
+)
+</pre>
+</div>
+</div>
+<figcaption>
+The <code>linear()</code> function generated from the simplified curve.
+</figcaption>
+</figure>
 
 
 To generate the linear() function for my transitions and animations, I used this handy website called [Easing Wizard](https://easingwizard.com/), that allows you to tweak the parameters of the springs and lets you preview the results in real time. Neato!
@@ -312,7 +430,21 @@ To generate the linear() function for my transitions and animations, I used this
 
 On my website, you’ll find a bunch of icons decorating buttons and sections. They already look pretty good on their own, but as an added bonus, they each have a unique animation that plays when you move your mouse cursor over them!
 
-My icons are drawn using the SVG format, a standard format for vector images on the web, which represents shapes and paths in a text format similar to HTML. If we open the SVG file for the download icon in a text editor, this is what it looks like:
+<figure>
+    <div class="demo-bit" id="demo-icons">
+        {% include icons/hammer.html %}
+        {% include icons/thoughts.html %}
+        {% include icons/planet.html %}
+        {% include icons/arrow-right.html %}
+        {% include icons/download.html %}
+        {% include icons/external-link.html %}
+    </div>
+    <figcaption>
+        The animated icons on voxy.space
+    </figcaption>
+</figure>
+
+My icons are drawn using the *SVG format*, a standard format for vector images on the web, which represents shapes and paths in a text format similar to HTML. If we open the SVG file for the download icon in a text editor, this is what it looks like:
 
 ```html
 <svg
@@ -390,9 +522,9 @@ I’ll admit, it’s not a particularly intuitive way to create animations. Sinc
 
 Starting with this one, future articles on my blog now feature a comments section, powered by Bluesky! Each article will have an associated post on Bluesky, and replies to that post will be displayed below as comments. It’s a neat way to add some extra interactivity to this website without too much bloat or maintenance.
 
-I yoinked the code from Caps Collective, who put up a great blogpost explaining how it works, and providing an example you can use on your own sites. Adding this feature reminded me of Tom Scott’s video about APIs in the days of Web 2.0, an optimistic era of the web where massive amounts of data could be accessible and transformed in new ways. The moment I peeked into the code and saw how simple it was to request a full JSON file containing every bit of useful data you could gather from a Bluesky thread, and how easily it could be displayed on a page like this, I felt that same high that web engineers from the Web 2.0 era likely felt upon realizing the possibilities of websites being able to “talk” to each other, exchange data and knowledge with such ease.
+I yoinked the code from [Caps Collective](https://capscollective.com/), who put up [a great blogpost](https://capscollective.com/blog/bluesky-blog-comments/) explaining how it works, and providing an example you can use on your own sites. Adding this feature reminded me of [Tom Scott’s video about APIs in the days of Web 2.0](https://www.youtube.com/watch?v=BxV14h0kFs0), an optimistic era of the web where massive amounts of data could be accessible and transformed in new ways. The moment I peeked into the code and saw how simple it was to request a full JSON file containing every bit of useful data you could gather from a Bluesky thread, and how easily it could be displayed on a page like this, I felt that same high that web engineers from the Web 2.0 era likely felt upon realizing the possibilities of websites being able to “talk” to each other, exchange data and knowledge with such ease.
 
-In an era where sharing your knowledge and/or craft means putting yourself at risk of having AI scrapers stealing your work and leaving it inaccessible to actual people to boot, it genuinely feels refreshing knowing that this sort of consensual data exchanging between sites is still possible and encouraged.
+In an era where sharing your knowledge and/or craft means putting yourself at risk of having AI scrapers stealing your work and [leaving it inaccessible to actual people](https://bsky.app/profile/eddcoates.bsky.social/post/3mogztzkyc22a) to boot, it genuinely feels refreshing knowing that this sort of consensual data exchanging between sites is still possible and encouraged.
 
 ## Closing thoughts
 

@@ -629,7 +629,23 @@
         inline-size: 100%;
     }
 
-    
+    blockquote {
+        display: block;
+        padding: 1rem;
+        --roundness: 1rem;
+        background-color: var(--color-raised-container);
+        --quote-color: var(--color-inset-container);
+        border: 0.1rem solid var(--quote-color);
+        &:has(.warning ) {
+            --quote-color: var(--color-magenta);
+        }
+        & .warning {
+            color: var(--color-magenta);
+        }
+        & > * + * {
+            margin-block-start: 1em;
+        }
+    }
 }
 
 @layer components {
