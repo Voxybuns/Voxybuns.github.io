@@ -184,7 +184,7 @@ The previous “*Games*” section has evolved a fair bit. It’s now the “*Pr
 
 I also realized it was a great opportunity to just… talk about them, share some insights about the process of working on these, and showing off previously unreleased concepts and material along the way, too! 👀
 
-You’ll find a curated selection of projects on the homepage, but I strongly encourage you to learn about the full roster by checking out the dedicated [projects](/projects/) page.
+You’ll find a curated selection of projects on the homepage, but I strongly encourage you to learn about the full roster by checking out the dedicated [projects](/projects/) page. You'll also find my [Game Builder Garage tools](/gbg/) there!
 
 ## Sprinkling a dash of whimsy
 
