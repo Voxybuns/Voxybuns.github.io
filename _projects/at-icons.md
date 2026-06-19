@@ -9,6 +9,7 @@ buttons:
   url: "https://voxybuns.itch.io/at-icons"
 layout: project
 date: 2026-05-26
+order: 1
 ---
 
 **@icons** is a free and open source library of icons, designed to be used as custom node icons by *Godot Engine* users, either within their game projects or as part of their plug-ins and add-ons.

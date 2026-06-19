@@ -9,6 +9,7 @@ buttons:
   url: "https://videodojo.games/"
 layout: project
 date: 2024-08-28
+order: 3
 ---
 
 [VideoDojo Games](https://videodojo.games/) is an indie game development studio based in the United Kingdom and founded in 2023. I was tasked to design and build the studio's website to help establish its online presence, and provide information about its debut game, *Townbox™*. (Which I'm also working on!)

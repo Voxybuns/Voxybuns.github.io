@@ -9,6 +9,7 @@ buttons:
   url: "https://store.steampowered.com/app/2906440/Townbox/"
 layout: project
 date: 2023-05-12
+order: 2
 ---
 
 *Townbox™* is an independant town-building sandbox currently in development, created by UK-based studio *[VideoDojo Games](https://videodojo.games/)*. The game is set inside a simulated world, where the player can create and develop small towns, one building at a time, and let their creativity speak. At any time, they can also switch to a different perspective in which they can freely roam around the town they've built, and interact with the quirky residents that inhabit it.
