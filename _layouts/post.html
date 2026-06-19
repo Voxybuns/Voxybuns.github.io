@@ -11,7 +11,7 @@ layout: default
         </p>
     </hgroup>
     <p><small>
-        <em class="muted">Originally written on </em>{{ page.date | date_to_string: "ordinal", "US" }}, <em class="muted">last updated on </em>{{ page.last-edit | date_to_string: "ordinal", "US" }}.
+        <em class="muted">Originally written on </em>{{ page.date | date_to_string: "ordinal", "US" }}{% if page.last-edit %}, <em class="muted">last updated on </em>{{ page.last-edit | date_to_string: "ordinal", "US" }}{% endif %}.
     </small></p>
 </section>
 <section>

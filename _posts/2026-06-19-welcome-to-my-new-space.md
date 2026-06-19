@@ -1,7 +1,6 @@
 ---
 title: Welcome to my new space!
 excerpt: "I spent the last few weeks working on a brand new version of my website, here's a rundown of all the new stuff."
-last-edit: 2026-06-06
 ---
 
 <style>
@@ -152,9 +151,30 @@ I’ve been neglecting my website lately, having forgotten just how nice it was 
 
 Let’s talk about the new design first, which was likely the first thing you’ve noticed. This new look builds upon my “rebrand” from late 2025. It was a time where I found myself struggling with what I wanted to represent myself with, cycling through iterations on my logo and visual language every few months, but never finding myself satisfied with it. Ultimately, I decided to start from scratch, and now that I’ve been rolling with it for several months, I think that was the move.
 
+<figure>
+    <img src="/media/website_logos.png">
+    <figcaption>
+        Line-up of my previous logos (top) and the new one (bottom).
+    </figcaption>
+</figure>
+
 The soft purple and pastel colors gave way to a smaller, bolder palette of pure black and white, with a saturated yellow accompanied by magenta and cyan. This choice of colors is a nod to my background as a graphic designer (CMYK being the model of color printing), as well as my own identity as a pansexual person. On the topic of colors, my website is now (finally) available in both light and dark modes, unlike the previous version that was technically always in dark mode. It’s set up to automatically switch the theme based on your browser or operating system settings, but I might look into adding a manual toggle eventually!
 
-As for my logo, I went with a bolder, bubblier look, white-on-black (or the other way around depending on context) to make it extra striking, making the letters overlap to inject some color back in. I also put my rabbit sona front and center, shoving him into the simplify-o-tron 3000 to turn him into a suitable lil’ mascot I could use as an avatar or an icon alongside the main logo.
+<figure>
+    <img src="/media/website_light_dark.png">
+    <figcaption>
+        A comparison between the website's light theme (left) and dark theme (right).
+    </figcaption>
+</figure>
+
+As for my logo, I went with a bolder, bubblier look, white-on-black (or the other way around depending on context) to make it extra striking, making the letters overlap to inject some color back in. I also put my rabbit sona front and center, shoving him into the *simplify-o-tron 3000* to turn him into a suitable lil’ mascot I could use as an avatar or an icon alongside the main logo.
+
+<figure>
+    <img src="/media/website_explorations.png">
+    <figcaption>
+        Various explorations for the final icon, and logo colors.
+    </figcaption>
+</figure>
 
 I also decided to use the humble squircle as a connective tissue of sorts, with one being the holding shape of the icon and the shape of the O in the logo, as well as all rounded corners on this website being squircular thanks to some recent CSS goodness. (Which will display as regular rounded corners if your browser isn’t compatible with that yet!)
 
@@ -168,7 +188,7 @@ You’ll find a curated selection of projects on the homepage, but I strongly en
 
 ## Sprinkling a dash of whimsy
 
-While browsing this website, you might notice things are a little livelier, with buttons bouncing under your cursor or finger, and icons having a bunch of fun animations to them. This was heavily inspired by the awesome work of web developer and educator Josh W. Comeau, whose website is filled to the brim with this kind of absolutely delightful animations, and plenty of resources to teach you how to integrate them on your own website.
+While browsing this website, you might notice things are a little livelier, with buttons bouncing under your cursor or finger, and icons having a bunch of fun animations to them. This was heavily inspired by the awesome work of web developer and educator [Josh W. Comeau](https://www.joshwcomeau.com/), whose website is filled to the brim with this kind of absolutely delightful animations, and plenty of resources to teach you how to integrate them on your own website.
 
 Techniques like these are so incredibly neat, and I can’t resist yapping about them in case some of you are interested in the technical deets. Strap in!
 
@@ -532,6 +552,6 @@ It’s been quite the journey reaching this point, and I’m very glad I took it
 
 I hope that’ll inspire me to continue writing for my blog. It might be just as sporadic as it is now, but honestly? I think that’s okay. And I hope you’ll be around when I write my next post. Until then, I hope you enjoy your time on my little space on the Internet, and thank you very much for reading this! 🫶
 
-Oh, and  one last thing! If you encounter issues with the new version of the website, please consider letting me know on GitHub! Your feedback is very much appreciated!
+Oh, and  one last thing! If you encounter issues with the new version of the website, please consider letting me know on [GitHub](https://github.com/Voxybuns/Voxybuns.github.io/issues)! Your feedback is very much appreciated!
 
 Have a lovely day!
