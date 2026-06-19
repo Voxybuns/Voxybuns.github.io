@@ -34,7 +34,7 @@ description: Welcome to the space of a silly bunny!
     </hgroup>
     
     <div class="card-grid">
-        {% assign sorted_projects = site.projects | sort: "order" %}
+        {% assign sorted_projects = site.projects | sort: "order", "last" %}
         {% for project in sorted_projects limit: 3 %}
         <article class="card {% if forloop.first ==true %}featured{% endif %}">
             <div class="card-contents">

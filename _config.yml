@@ -39,10 +39,6 @@ collections:
       output: true
       permalink: /projects/:title
       sort_by: date
-      order:
-        - at-icons.md
-        - townbox.md
-        - videodojo-games.md
   gbg_tools:
       output: true
       permalink: /gbg/:title
