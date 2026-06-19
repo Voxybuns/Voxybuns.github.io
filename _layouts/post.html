@@ -1,0 +1,184 @@
+---
+layout: default
+---
+<section style="--color-background: var(--color-yellow); --color-text: var(--color-darker);">
+    <hgroup>
+        <h1>
+            {{ page.title }}
+        </h1>
+        <p>
+            {{ page.excerpt }}
+        </p>
+    </hgroup>
+    <p><small>
+        <em class="muted">Originally written on </em>{{ page.date | date_to_string: "ordinal", "US" }}{% if page.last-edit %}, <em class="muted">last updated on </em>{{ page.last-edit | date_to_string: "ordinal", "US" }}{% endif %}.
+    </small></p>
+</section>
+<section>
+    <div class="post-grid">
+        <aside id="table-of-contents">
+            <h3>Table of contents</h3>
+            {% include toc.html html=content sanitize=true h_min=2 h_max=2 %}
+        </aside>
+        <div class="prose">
+            {{ content }}
+        </div>
+        <div id="social-section" class="prose"></div>
+    </div>
+</section>
+
+{% if page.bluesky_URI %}
+<script>
+    function escapeHtml(text) {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function httpGetAsJsonAsync(url, callback) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() { 
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                var responseJson = JSON.parse(xmlHttp.responseText);
+                if (typeof(responseJson) == 'undefined') {
+                    return;
+                }
+                console.log(responseJson)
+                callback(responseJson);
+            }
+        }
+        xmlHttp.open("GET", url, true);
+        xmlHttp.send(null);
+    }
+
+    function getPostLinkFromUri(uri) {
+    return `https://bsky.app/profile/${uri.replace("at://", "").replace("/app.bsky.feed.post/", "/post/")}`;
+    }
+
+    function getImageLinkFromBlob(did, blobLink, useThumbnail) {
+    return `https://cdn.bsky.app/img/${useThumbnail ? "feed_thumbnail" : "feed_fullsize"}/plain/${did}/${blobLink}`;
+    }
+
+    function createHtmlTextForRecord(record) {
+        var htmlText = `<span>`
+
+        const textEncoder = new TextEncoder();
+        const utf8Decoder = new TextDecoder();
+        var postText = escapeHtml(record.text);
+        const utf8Text = new Uint8Array(postText.length * 3);
+        textEncoder.encodeInto(postText, utf8Text);
+
+        var charIdx = 0;
+        for (const facetIdx in record.facets) {
+            const facet = record.facets[facetIdx];
+            const facetFeature = facet.features[0];
+            const facetType = facetFeature.$type;
+
+            var facetLink = "#";
+            if (facetType == "app.bsky.richtext.facet#tag") {
+                facetLink = `https://bsky.app/hashtag/${facetFeature.tag}`;
+            }
+            else if (facetType == "app.bsky.richtext.facet#link") {
+                facetLink = facetFeature.uri;
+            }
+            else if (facetType == "app.bsky.richtext.facet#mention") {
+                facetLink = `https://bsky.app/profile/${facetFeature.did}`;
+            }
+
+            if (charIdx < facet.index.byteStart) {
+                const preFacetText = utf8Text.slice(charIdx, facet.index.byteStart);
+                htmlText += utf8Decoder.decode(preFacetText)
+            }
+
+            const facetText = utf8Text.slice(facet.index.byteStart, facet.index.byteEnd);
+            htmlText += `<a href="${facetLink}" target="_blank">` + utf8Decoder.decode(facetText) + '</a>';
+
+            charIdx = facet.index.byteEnd;
+        }
+
+        if (charIdx < utf8Text.length) {
+            const postFacetText = utf8Text.slice(charIdx, utf8Text.length);
+            htmlText += utf8Decoder.decode(postFacetText);
+        }
+
+        return htmlText + '</span>';
+    }
+
+    function createHtmlForReplies(replies) {
+        var htmlText = ""
+        for (const replyIdx in replies) {
+            const reply = replies[replyIdx];
+            const replyPost = reply.post;
+            const replyDate = new Date(reply.post.record.createdAt);
+            const replyDateFormatted = replyDate.toLocaleDateString('en-US');
+            const postLink = getPostLinkFromUri(replyPost.uri);
+            const postText = createHtmlTextForRecord(replyPost.record);
+            
+            var embedHtml = "";
+            if (replyPost.embed) {
+            if (replyPost.embed.$type == "app.bsky.embed.external#view") {
+                const postEmbedExternal = replyPost.embed.external;
+                if (postEmbedExternal.uri.includes(".gif?")) {
+                embedHtml += `<img src="${postEmbedExternal.uri}" title="${postEmbedExternal.title}" alt="${postEmbedExternal.description}" style="height: 10rem; width: fit-content">`
+                }
+            }
+            else if (replyPost.embed.$type == "app.bsky.embed.images#view") {
+                const images = replyPost.record.embed.images;
+                for (const imageIdx in images) {
+                const image = images[imageIdx];
+                const thumbnailLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, true);
+                const fullSizelLink = getImageLinkFromBlob(replyPost.author.did, image.image.ref.$link, false);
+                var imageAltText = escapeHtml(image.alt);
+                embedHtml += `<a href="${fullSizelLink}" target="_blank"><img src="${thumbnailLink}" alt="${imageAltText}" style="height: 10rem; width: fit-content"></a>`
+                }
+            }
+            }
+
+            var authorDisplayName = escapeHtml(replyPost.author.displayName);
+            var authorHandle = escapeHtml(replyPost.author.handle);
+
+            htmlText += `
+                <div class="comment-container">
+                    <article class="comment-card">
+                        <div class="comment-header">
+                            <img src="${replyPost.author.avatar}" class="comment-author-avatar">
+                            <div class="comment-author">
+                                <p><a href="https://bsky.app/profile/${replyPost.author.did}">${authorDisplayName}</a></p>
+                                <p>@${authorHandle}</p>
+                            </div>
+                        </div>
+                        <p>${postText}</p>
+                        ${embedHtml}
+                        <a href="${postLink}" class="comment-time"><small>Posted on ${replyDateFormatted}</small></a>
+                    </article>
+                    ${createHtmlForReplies(reply.replies)}
+                </div>`
+        }
+        return htmlText;
+    }
+
+    var atPostUri = "{{ page.bluesky_URI }}";
+    httpGetAsJsonAsync(
+        "https://public.api.bsky.app/xrpc/app.bsky.feed.getPostThread?uri=" + atPostUri,
+        function(responseJson) {
+        const thread = responseJson["thread"];
+        const threadPost = thread["post"];
+        const postLink = getPostLinkFromUri(threadPost.uri);
+        const threadRepliesCount = threadPost.replyCount;
+
+        const threadReplies = thread.replies;
+        document.getElementById("social-section").innerHTML = `
+            <h2>Comments (${threadRepliesCount})</h2>
+
+            <a href="${postLink}" class="button">Comment this post on Bluesky&nbsp;{% include icons/external-link.html %}</a>
+
+            <div class="comments-wrapper">
+            ${threadReplies.length > 0 ? createHtmlForReplies(threadReplies) : '<article class="comment-card"><p>No comments to display yet.</p></article>'}
+            </div>`
+    });
+        
+</script>
+{% endif %}

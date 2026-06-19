@@ -1,0 +1,41 @@
+---
+title: Projects
+layout: page
+description: Look at the cool stuff I worked on!
+hero_illustration: "bunny-projects.svg"
+hero_illustration_alt: "Stylized silhouette illustration of an anthropomorphic rabbit wearing large round glasses and a hard hat, holding a hammer."
+---
+<div class="card-grid">
+    {% assign sorted-projects = site.projects | sort: 'date' | reverse %}
+
+    {% for project in sorted-projects %}
+    <article class="card">
+        <div class="card-contents">
+            <img src="/assets/img/projects/{{ project.thumbnail_path }}" alt="">
+            <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
+            <p>{{ project.description }}</p>
+            <div class="button-cluster">
+                {% if project.main_button_override %}
+                    <a href="{{ project.main_button_override.url }}" class="button full-width">
+                        {{ project.main_button_override.label }}&nbsp;
+                        {% include icons/arrow-right.html %}
+                    </a>
+                {% else %}
+                    <a href="{{ project.url }}" class="button full-width">
+                        Learn more&nbsp;
+                        {% include icons/arrow-right.html %}
+                    </a>
+                {% endif %}
+                {% for button in project.buttons %}
+                <a href="{{ button.url }}" class="button full-width">
+                    {{ button.label }}&nbsp;
+                    {% if button.icon %}
+                        {% include icons/{{ button.icon }}.html %}
+                    {% endif %}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+    {% endfor %}
+</div>

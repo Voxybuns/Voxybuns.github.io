@@ -1,0 +1,19 @@
+---
+title: GBG Tools
+description: "Resources for <em>Game Builder Garage</em> on the Nintendo Switch."
+redirect_from:
+- /projects/gbg_tools
+layout: page
+---
+
+<div class="card-grid">
+    {% for tool in site.data.gbg_tools %}
+        <article class="card">
+            <div class="card-contents">
+                <img src="/assets/img/gbg/{{ tool.cover }}.png" alt="">
+                <h3><a href="{{ tool.url }}">{{ tool.name }}</a></h3>
+                <p>{{ tool.description }}</p>
+            </div>
+        </article>
+    {% endfor %}
+</div>

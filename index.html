@@ -1,114 +1,136 @@
 ---
 title: Home
-layout: common/page
+layout: default
 description: Welcome to the space of a silly bunny!
 ---
 
-<section class="theme-yellow wave-bottom wave-bottom-animated hero">
-    <div class="container">
-        <div class="pv-600">
-            <h1>Hello!</h1>
-            <p class="tagline">Welcome to the space of a silly bunny! I've created this website to list some of the silly things I've made, mostly games and lil' web dohickeys. I hope you enjoy your stay!</p>
+<section style="--color-background: var(--color-yellow); --color-text: var(--color-darker); padding-block-end: 0" id="hero">
+    <div class="hero-container">
+        <div>
+            <hgroup>
+                <h1>
+                    Hi, hello!
+                </h1>
+                <p>
+                    I'm <strong>Voxy</strong> <small>(he/him)</small>, a graphic and UI designer from Belgium, and a certified silly bunny rabbit!
+                </p>
+            </hgroup>
+            <p>
+                I love creating stuff and learning new things like web development or game development. I built this humble website so I can share my creative endeavors with you, because making stuff is fun, but so is sharing it with others! Hope you'll enjoy your stay!
+            </p>
         </div>
-        <img src="/data/common/img/hero-image.png" alt="">
+        <img src="/assets/img/bunny-home.svg" alt="Stylized silhouette illustration of an anthropomorphic rabbit wearing large round glasses, doing a victory sign." class="hero-illustration">
     </div>
 </section>
-<section class="pt-600" id="games">
-    <div class="container">
 
-        <h1 class="text-pink"><span class="icon icon-adaptive">🎮</span> Games</h1>
-        <p class="tagline">Some games I worked on, or created myself!</p>
-
-        <div class="mt-200 container-grid">
-            {% for item in site.data.common.games %}
-                <article class="card theme-darker-purple wave-hover-animation">
-                    <img src="/data/games/{{ item.cover }}.png" alt="" class="wave-bottom">
-                    <div class="card-contents">
-                        <h2 class="text-pink">{{ item.name }}</h2>
-                        <h6 class="text-muted">{{ item.platform }}</h6>
-                        <spacer-block class="h-100"></spacer-block>
-                        <p>
-                            {{ item.description }}
-                        </p>
-                        <spacer-block class="h-150"></spacer-block>
-                        {% if item.button-active == true %}
-                        <a class="button theme-pink" href="{{ item.button-link }}">{{ item.button-text }}</a>
-                        {% elsif item.button-active == false %}
-                        <a class="button theme-dark-purple">{{ item.button-text }}</a>
+<section id="projects">
+    <hgroup>
+        <h2>
+            {% include icons/hammer.html %} Featured projects
+        </h2>
+        <p>
+            Look at the cool stuff I worked on!
+        </p>
+    </hgroup>
+    
+    <div class="card-grid">
+        {% for project in site.projects limit: 3 %}
+        <article class="card {% if forloop.first ==true %}featured{% endif %}">
+            <div class="card-contents">
+                <img src="/assets/img/projects/{{ project.thumbnail_path | remove: '.png' }}{% if forloop.first ==true %}-large{% endif %}.png" alt="">
+                <h3>{{ project.title }} <span class="badge" data-type="{{ project.type }}"></span></h3>
+                <p>{{ project.description }}</p>
+                <div class="button-cluster">
+                    {% if project.main_button_override %}
+                        <a href="{{ project.main_button_override.url }}" class="button full-width">
+                            {{ project.main_button_override.label }}&nbsp;
+                            {% include icons/arrow-right.html %}
+                        </a>
+                    {% else %}
+                        <a href="{{ project.url }}" class="button full-width">
+                            Learn more&nbsp;
+                            {% include icons/arrow-right.html %}
+                        </a>
+                    {% endif %}
+                    {% for button in project.buttons %}
+                    <a href="{{ button.url }}" class="button full-width">
+                        {{ button.label }}&nbsp;
+                        {% if button.icon %}
+                            {% include icons/{{ button.icon }}.html %}
                         {% endif %}
-                    </div>
-                </article>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="pt-600" id="thoughts">
-    <div class="container">
-        <h1 class="text-yellow"><span class="icon icon-adaptive">💭</span> Thoughts</h1>
-        <p class="tagline">A space for me to write about my projects!</p>
-
-        <div class="mt-200 container-grid">
-            {% for post in site.posts %}
-                <a class="card theme-darker-purple wave-hover-animation" href="{{ post.url }}">
-                    <img class="wave-bottom">
-                    <div class="card-contents">
-                        <h2 class="text-yellow">{{ post.title }}</h2>
-                        <h6 class="text-muted">{{ post.date | date_to_string: "ordinal", "US" }}</h6>
-                        <spacer-block class="h-100"></spacer-block>
-                        <p>
-                            {{ post.excerpt | strip_html }}
-                        </p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-        <!-- 
-        <spacer-block class="h-100"></spacer-block>
-        <a href="#" class="button button-full-width theme-yellow">View all posts</a>
-        -->
-    </div>
-</section>
-
-<section class="pt-600" id="gbg-tools">
-    <div class="container">
-
-        <h1 class="text-teal"><span class="icon icon-adaptive">🔨</span> GBG Tools</h1>
-        <p class="tagline">Utilities for <em>Game Builder Garage</em>!</p>
-
-        <div class="mt-200 container-grid">
-            {% for item in site.data.common.gbg_tools %}
-                <a class="card theme-darker-purple wave-hover-animation" href="{{ item.url }}">
-                    <img src="/data/gbg/{{ item.cover }}.png" alt="" class="wave-bottom">
-                    <div class="card-contents">
-                        <h2 class="text-teal">{{ item.name }}</h2>
-                        <spacer-block class="h-100"></spacer-block>
-                        <p>
-                            {{ item.description }}
-                        </p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="pv-600" id="places">
-    <div class="container">
-
-        <h1 class="text-purple"><span class="icon icon-adaptive">🪐</span> Places</h1>
-        <p class="tagline">Other pockets of Internet where you can find me!</p>
-
-
-        <div class="mt-200 container-grid">
-            {% for item in site.data.common.places %}
-            <a href="{{ item.url }}" class="card theme-purple center-on-axis">
-                <div class="card-contents">
-                    <h2>{{ item.name }}</h2>
-                    <p class="mt-0">{{ item.description }}</p>
+                    </a>
+                    {% endfor %}
                 </div>
-            </a>
-            {% endfor %}
-        </div>
+            </div>
+        </article>
+        {% endfor %}
     </div>
+
+    <a href="/projects/" class="button">
+        See all projects&nbsp;{% include icons/arrow-right.html %}
+    </a>
+</section>
+
+<section id="thoughts">
+    <hgroup>
+        <h2>
+            {% include icons/thoughts.html %} Thoughts
+        </h2>
+        <p>
+            Long-form yapping, slightly more organized than usual.
+        </p>
+    </hgroup>
+
+    <div class="card-grid">
+        {% for post in site.posts limit: 4 %}
+            <article class="card">
+                <div class="card-contents">
+                    <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+                    <p>
+                        <span class="post-date">Published {{ post.date | date: "%e %B %Y"}}</span><br>
+                        {{ post.excerpt }}
+                    </p>
+                    <div class="button-cluster">
+                        <a href="{{ post.url }}" class="button">
+                            Read more&nbsp;
+                            {% include icons/arrow-right.html %}
+                        </a>
+                    </div>
+                </div>
+                
+            </article>
+        {% endfor %}
+    </div>
+
+    <a href="/thoughts/" class="button">
+        See all articles&nbsp;{% include icons/arrow-right.html %}
+    </a>
+</section>
+
+<section id="places">
+    <hgroup>
+        <h2>
+            {% include icons/planet.html %} Places
+        </h2>
+        <p>
+            Other pockets of the Internet you can find me on.
+        </p>
+    </hgroup>
+
+    <div class="card-grid">
+        {% for place in site.data.places %}
+            <article class="card">
+                <div class="card-contents">
+                    <a href="{{ place.url }}"><h3>{{ place.name }}</h3></a>
+                    <p>{{ place.description }}</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+    
+    <address>
+        <p>
+            (Psst! If you'd like to contact me, <a href="mailto:contact@voxy.space">click here!</a>)
+        </p>
+    </address>
 </section>

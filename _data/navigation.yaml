@@ -1,0 +1,11 @@
+- title: "projects"
+  icon: "hammer.html"
+  url: "/projects/"
+
+- title: "thoughts"
+  icon: "thoughts.html"
+  url: "/thoughts/"
+
+- title: "places"
+  icon: "planet.html"
+  url: "/#places"

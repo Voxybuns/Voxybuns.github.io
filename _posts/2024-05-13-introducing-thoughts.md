@@ -1,13 +1,14 @@
 ---
-layout: common/article
 title: Introducing... Thoughts!
+excerpt: "An introductory post to my website's blog section."
+last-edit: 2026-06-06
 ---
 
 Hey folks! This post marks the debut of the "Thoughts" section of my website, a space where I'll be able to write long-form content about whatever comes to my mind!
 
 ## Why I created a blog
 
-Whenever I want to share something, be it a neat discovery or updates about a project of mine, I usually just [tweet about it.](https://twitter.com/voxybuns) However, with the ongoing enshittification of this platform, I found myself not wanting to exclusively rely on that to share things anymore. Since I've already spent quite a lot of time building the quaint little space you're reading this on, I figured starting a blog on it would be a logical next step to take.
+Whenever I want to share something, be it a neat discovery or updates about a project of mine, I usually just [tweet about it.](https://bsky.app/profile/voxy.space) However, with the ongoing enshittification of this platform, I found myself not wanting to exclusively rely on that to share things anymore. Since I've already spent quite a lot of time building the quaint little space you're reading this on, I figured starting a blog on it would be a logical next step to take.
 
 Along with keeping everything related to my projects in one place, adding a blog to my website also means that I have full control over what I write, and how it's presented! I don't have to worry about character or media limits, I can embed whatever I want, however I want, and I can make it look all lovely and stuff! ✨
 

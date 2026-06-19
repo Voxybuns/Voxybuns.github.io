@@ -6,7 +6,7 @@
             <menu>
                 {%- for entry in item.entries -%}
                     <a href="{{ entry.url }}" class="navitem {{ entry.category }} {% if entry.url == current_url %}active{% endif %}">
-                        <img src="/data/nodopedia/img/nodon/{{ entry.name | slugify }}.png" alt="">
+                        <img src="/assets/img/gbg/nodopedia/nodon/{{ entry.name | slugify }}.png" alt="">
                         {{ entry.name }}
                     </a>
                 {% endfor %}
