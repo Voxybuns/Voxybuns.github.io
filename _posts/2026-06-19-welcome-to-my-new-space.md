@@ -1,6 +1,7 @@
 ---
 title: Welcome to my new space!
 excerpt: "I spent the last few weeks working on a brand new version of my website, here's a rundown of all the new stuff."
+bluesky_URI: "at://did:plc:qgozdd2deahkas52eklef6sz/app.bsky.feed.post/3moo5q4olnk2h"
 ---
 
 <style>
