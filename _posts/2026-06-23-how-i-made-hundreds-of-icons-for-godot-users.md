@@ -1,6 +1,7 @@
 ---
 title: How I made hundreds of icons for Godot users
-excerpt: "A look into the process of creating @icons, a free library of icons for Godot users."
+description: "A look into the process of creating @icons, a free library of icons for Godot users."
+has_og: true
 bluesky_URI: "at://did:plc:qgozdd2deahkas52eklef6sz/app.bsky.feed.post/3moxvqfu7322m"
 ---
 

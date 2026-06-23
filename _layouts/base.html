@@ -16,7 +16,7 @@
     <meta property="og:title" content="{{ page.title }} — Voxy's Space" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ page.url }}" />
-    <meta property="og:image" content="{{ site.url }}/assets/img/voxy_icon.svg" />
+    <meta property="og:image" content="{{ site.url }}/assets/img/og/{% if page.has_og %}{{ page.path | replace:'.md','.png'}}{% else %}default.png{% endif %}" />
     <meta property="og:image:secure_url" content="{{ site.url }}/assets/img/voxy_icon.svg" />
     <meta property="og:description" content="{{ page.description }}" />
 </head>
