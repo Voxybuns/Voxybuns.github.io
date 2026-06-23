@@ -1,6 +1,7 @@
 ---
 title: How I made hundreds of icons for Godot users
 excerpt: "A look into the process of creating @icons, a free library of icons for Godot users."
+bluesky_URI: "at://did:plc:qgozdd2deahkas52eklef6sz/app.bsky.feed.post/3moxvqfu7322m"
 ---
 
 Last month, I embarked on a new project called **@icons**, a library of vector-format icons for use in Godot projects. This project started when I first read this skeet by developer and former Godot project manager Yuri Sizov:
