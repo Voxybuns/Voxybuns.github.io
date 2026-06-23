@@ -646,6 +646,10 @@
             margin-block-start: 1em;
         }
     }
+
+    .bluesky-embed {
+        inline-size: 100%;
+    }
 }
 
 @layer components {
